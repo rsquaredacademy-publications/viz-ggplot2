@@ -1,6 +1,6 @@
 # Text Annotations {#ggplot2-text-annotations}
 
-## Introduction
+## How text annotations work in ggplot2 {#introduction}
 
 :::{.callout-note}
 ## Why this chart
@@ -22,7 +22,7 @@ In this chapter, we will learn to add text to the plots.
 - modify fontface
 - modify angle
 
-## Annotate
+## How to annotate plots with text in ggplot2 {#annotate}
 
 We will use the `annotate()` function to add custom text to the plots. You can 
 use the `annotate()` function to add rectangles/segments/pointrange as well but 
@@ -44,7 +44,7 @@ library(readr)
 - `fontface` : fontface of text
 - `angle`    : angle of text
 
-### Add Text
+### How to add text labels to a ggplot2 plot {#add-text}
 
 Let us begin by adding text to a scatter plot. We will use the mtcars data set
 and continue to examine the relationship between displacement and miles per 
@@ -66,7 +66,7 @@ ggplot(mtcars) +
   annotate('text', x = 200, y = 30, label = 'Sample Text')
 ```
 
-### Color
+### How to change text annotation color in ggplot2 {#color}
 
 Now that we know how to add text, let us look at modifying the appearance of 
 the text. To change the color, use the `color` argument. In the below example,
@@ -78,7 +78,7 @@ ggplot(mtcars) +
   annotate('text', x = 200, y = 30, label = 'Sample Text', color = 'red')
 ```
 
-### Size
+### How to change text annotation size in ggplot2 {#size}
 
 The `size` argument can be used to modify the size of the text.
 
@@ -88,7 +88,7 @@ ggplot(mtcars) +
   annotate('text', x = 200, y = 30, label = 'Sample Text', size = 6)
 ```
 
-### Font
+### How to change text annotation font face in ggplot2 {#font}
 
 To choose a font of your liking, use the `font` argument and supply it a valid
 value.
@@ -99,7 +99,7 @@ ggplot(mtcars) +
   annotate('text', x = 200, y = 30, label = 'Sample Text', fontface = 'bold')
 ```
 
-### Angle
+### How to rotate text annotations in ggplot2 {#angle}
 
 The angle of the text can also be modified using the `angle` argument. In the 
 below example, we modify the angle of the text to `25`.
@@ -110,7 +110,7 @@ ggplot(mtcars) +
   annotate('text', x = 200, y = 30, label = 'Sample Text', angle = 25)
 ```
 
-## Putting it all together
+## How to combine text annotation options in ggplot2 {#putting-it-all-together}
 
 ```{r ann3, fig.align='center'}
 ggplot(mtcars) +

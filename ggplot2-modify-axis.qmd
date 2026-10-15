@@ -27,7 +27,7 @@ following functions:
 library(ggplot2)
 ```
 
-## Modify a continuous axis {#modify-a-continuous-axis}
+## How to modify a continuous axis in ggplot2 {#modify-a-continuous-axis}
 
 If the X and Y axis represent continuous data, we can use 
 `scale_x_continuous()` and `scale_y_continuous()` to modify the axis. They take
@@ -99,7 +99,7 @@ ggplot(mtcars) +
   scale_x_continuous(position = 'top')
 ```
 
-### Putting it all together
+### How to combine continuous axis options in ggplot2 {#putting-it-all-together}
 
 ```{r guide8, fig.align='center'}
 ggplot(mtcars) + geom_point(aes(disp, mpg)) +
@@ -108,7 +108,7 @@ ggplot(mtcars) + geom_point(aes(disp, mpg)) +
                      labels = c('0', '150', '300', '450', '600'))
 ```
 
-### Modify the Y axis {#modify-the-y-axis}
+### How to modify the y-axis in ggplot2 {#modify-the-y-axis}
 
 ```{r guide9, fig.align='center'}
 ggplot(mtcars) + geom_point(aes(disp, mpg)) +
@@ -117,7 +117,7 @@ ggplot(mtcars) + geom_point(aes(disp, mpg)) +
                      labels = c('0', '15', '30', '45'))
 ```
 
-## Modify a discrete axis {#modify-a-discrete-axis}
+## How to modify a discrete axis in ggplot2 {#modify-a-discrete-axis}
 
 If the X and Y axis represent discrete or categorical data, `scale_x_discrete()` 
 and `scale_y_discrete()` can be used to modify them. They take the following arguments:
@@ -129,7 +129,7 @@ and `scale_y_discrete()` can be used to modify them. They take the following arg
 
 The above options serve the same purpose as in the case of continuous scales.
 
-### Change axis labels {#change-axis-labels}
+### How to change axis labels in ggplot2 {#change-axis-labels}
 
 ```{r guide11, fig.align='center'}
 ggplot(mtcars) +
@@ -137,7 +137,7 @@ ggplot(mtcars) +
   scale_x_discrete(name = "Number of Cylinders")
 ```
 
-### Change axis tick labels {#change-axis-tick-labels}
+### How to change axis tick labels in ggplot2 {#change-axis-tick-labels}
 
 ```{r guide12, fig.align='center'}
 ggplot(mtcars) +
@@ -145,7 +145,7 @@ ggplot(mtcars) +
   scale_x_discrete(labels = c("4" = "Four", "6" = "Six", "8" = "Eight"))
 ```
 
-### Change axis breaks {#change-axis-breaks}
+### How to change axis breaks in ggplot2 {#change-axis-breaks}
 
 ```{r guide13, fig.align='center'}
 ggplot(mtcars) +
@@ -153,7 +153,7 @@ ggplot(mtcars) +
   scale_x_discrete(breaks = c("4", "6", "8"))
 ```
 
-### Move the axis position {#move-the-axis-position}
+### How to move the axis position in ggplot2 {#move-the-axis-position}
 
 ```{r guide14, fig.align='center'}
 ggplot(mtcars) +
@@ -161,7 +161,7 @@ ggplot(mtcars) +
   scale_x_discrete(position = 'bottom')
 ```
 
-## Putting it all together
+## How to combine discrete axis options in ggplot2 {#putting-it-all-together-1}
 
 ```{r guide15, fig.align='center'}
 ggplot(mtcars) + geom_bar(aes(factor(cyl))) +

@@ -94,3 +94,15 @@
   status = 301
   force = true
 
+# Cheat-sheet stub removed from the book (2026-10-15); send old links home.
+[[redirects]]
+  from = "/cheatsheet.html"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/cheatsheet"
+  to = "/"
+  status = 302
+  force = true

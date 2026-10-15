@@ -20,7 +20,7 @@ library(dplyr)
 library(tidyr)
 ```
 
-## Customize legends with guides {#customize-legends-with-guides}
+## How to customize legends with guides in ggplot2 {#customize-legends-with-guides}
 
 In this section, we will learn to modify 
 
@@ -32,7 +32,7 @@ So far, we have learnt to modify the components of a legend using `scale_*`
 family of functions. Now, we will use the `guide` argument and supply it 
 values using the `guide_legend()` function.
 
-### Change the guide title {#change-the-guide-title .unnumbered}
+### How to change the guide title in ggplot2 {#change-the-guide-title .unnumbered}
 
 #### Title Alignment {.unnumbered}
 
@@ -79,7 +79,7 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
       title.position = "top"))
 ```
 
-### Change guide labels {#change-guide-labels .unnumbered}
+### How to change guide labels in ggplot2 {#change-guide-labels .unnumbered}
 
 #### Label Position {.unnumbered}
 
@@ -177,7 +177,7 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
   )
 ```
 
-### Change the legend color bar {#change-the-legend-color-bar .unnumbered}
+### How to change the legend color bar in ggplot2 {#change-the-legend-color-bar .unnumbered}
 
 So far we have looked at modifying components of the legend when it acts as a
 guide for `color`, `fill` or `shape` i.e. when the aesthetics have been mapped 
