@@ -45,7 +45,6 @@ book:
     - ggplot2-label-polish.qmd
     - ggplot2-finale-polish.qmd
     - ggplot2-export-communicate.qmd
-    - cheatsheet.qmd
 
 execute:
   freeze: auto

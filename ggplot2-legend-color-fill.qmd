@@ -20,7 +20,7 @@ library(dplyr)
 library(tidyr)
 ```
 
-## Change legend colors {#change-legend-colors}
+## How to change legend colors in ggplot2 {#change-legend-colors}
 
 We will learn to modify the following when `color` is mapped to categorical variables:
 
@@ -36,7 +36,7 @@ library(dplyr)
 library(tidyr)
 ```
 
-### Basic Plot {.unnumbered}
+### How to create a plot with a color legend in ggplot2 {#basic-plot .unnumbered}
 
 Let us start with a scatter plot examining the relationship between displacement
 and miles per gallon from the mtcars data set. We will map the color of the points
@@ -50,7 +50,7 @@ ggplot(mtcars) +
 As you can see, the legend acts as a guide for the `color` aesthetic. Now, let 
 us learn to modify the different aspects of the legend.
 
-### Change legend color values {#color-legend-values .unnumbered}
+### How to change legend color values in ggplot2 {#color-legend-values .unnumbered}
 
 To change the default colors in the legend, use the `values` argument and
 supply a character vector of color names. The number of colors specified 
@@ -64,7 +64,7 @@ ggplot(mtcars) +
   scale_color_manual(values = c("red", "blue", "green"))
 ```
 
-### Change the legend title {#color-legend-title .unnumbered}
+### How to change the legend title in ggplot2 {#color-legend-title .unnumbered}
 
 In the previous example, the title of the legend (`factor(cyl)`) is not very
 intuitive. If the user does not know the underlying data, they will not be able
@@ -81,7 +81,7 @@ ggplot(mtcars) +
 Now, the user will know that the different colors represent number of cylinders in
 the car.
 
-### Change legend limits {#color-legend-limits .unnumbered}
+### How to change legend limits in ggplot2 {#color-legend-limits .unnumbered}
 
 Let us assume that we want to modify the data to be displayed i.e. instead of 
 examining the relationship between mileage and displacement for all cars, we 
@@ -99,7 +99,7 @@ As you can see above, `ggplot2` returns a warning message indicating data relate
 to 4 cylinders has been dropped. If you observe the legend, it now represents 
 only 6 and 8 cylinders.
 
-### Change legend labels {#color-legend-labels .unnumbered}
+### How to change legend labels in ggplot2 {#color-legend-labels .unnumbered}
 
 The labels in the legend can be modified using the `labels` argument. Let us 
 change the labels to `Four`, `Six` and `Eight` in the next example. Ensure that
@@ -112,7 +112,7 @@ ggplot(mtcars) +
     labels = c('Four', 'Six', 'Eight'))
 ```
 
-### Reorder or hide legend items with breaks {#color-legend-breaks .unnumbered}
+### How to reorder or hide legend items in ggplot2 {#color-legend-breaks .unnumbered}
 
 When there are large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
@@ -127,7 +127,7 @@ ggplot(mtcars) +
     breaks = c(4, 8))
 ```
 
-### Putting it all together {.unnumbered}
+### How to combine color legend options in ggplot2 {#putting-it-all-together .unnumbered}
 
 ```{r legc8, fig.align='center'}
 ggplot(mtcars) +
@@ -136,7 +136,7 @@ ggplot(mtcars) +
     labels = c('Four', 'Six', 'Eight'), limits = c(4, 6, 8), breaks = c(4, 6, 8))
 ```
 
-## Change legend fill colors {#change-legend-fill-colors}
+## How to change legend fill colors in ggplot2 {#change-legend-fill-colors}
 
 we will learn to modify the following using `scale_fill_manual()` when `fill` is mapped to categorical variables:
 
@@ -146,7 +146,7 @@ we will learn to modify the following using `scale_fill_manual()` when `fill` is
 - labels
 - values
 
-### Plot {.unnumbered}
+### How to create a plot with a fill legend in ggplot2 {#plot .unnumbered}
 
 Let us start with a scatter plot examining the relationship between 
 displacement and miles per gallon from the mtcars data set. We will map `fill`
@@ -160,7 +160,7 @@ ggplot(mtcars) +
 As you can see, the legend acts as a guide for the `color` aesthetic. Now, let 
 us learn to modify the different aspects of the legend.
 
-### Change the legend title {#fill-legend-title .unnumbered}
+### How to change the fill legend title in ggplot2 {#fill-legend-title .unnumbered}
 
 The title of the legend (`factor(cyl)`) is not very intuitive. If the user 
 does not know the underlying data, they will not be able to make any sense out 
@@ -173,7 +173,7 @@ ggplot(mtcars) +
     values = c("red", "blue", "green"))
 ```
 
-### Change legend fill values {#fill-legend-values .unnumbered}
+### How to change legend fill values in ggplot2 {#fill-legend-values .unnumbered}
 
 To change the default colors in the legend, use the `values` argument and
 supply a character vector of color names. The number of colors specified 
@@ -187,7 +187,7 @@ ggplot(mtcars) +
   scale_fill_manual(values = c("red", "blue", "green"))
 ```
 
-### Change legend labels {#fill-legend-labels .unnumbered}
+### How to change fill legend labels in ggplot2 {#fill-legend-labels .unnumbered}
 
 The labels in the legend can be modified using the `labels` argument. Let us 
 change the labels to `Four`, `Six` and `Eight` in the next example. Ensure that
@@ -200,7 +200,7 @@ ggplot(mtcars) +
     labels = c('Four', 'Six', 'Eight'))
 ```
 
-### Change legend limits {#fill-legend-limits .unnumbered}
+### How to change fill legend limits in ggplot2 {#fill-legend-limits .unnumbered}
 
 Let us assume that we want to modify the data to be displayed i.e. instead of 
 examining the relationship between mileage and displacement for all cars, we 
@@ -219,7 +219,7 @@ As you can see above, `ggplot2` returns a warning message indicating data relate
 to 4 cylinders has been dropped. If you observe the legend, it now represents 
 only 6 and 8 cylinders.
 
-### Reorder or hide legend items with breaks {#fill-legend-breaks .unnumbered}
+### How to reorder or hide fill legend items in ggplot2 {#fill-legend-breaks .unnumbered}
 
 When there are large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
@@ -234,7 +234,7 @@ ggplot(mtcars) +
     breaks = c(4, 8))
 ```
 
-### Putting it all together {.unnumbered}
+### How to combine fill legend options in ggplot2 {#putting-it-all-together-1 .unnumbered}
 
 ```{r legc15}
 ggplot(mtcars) +
