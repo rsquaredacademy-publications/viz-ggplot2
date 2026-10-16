@@ -487,12 +487,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Export &amp; Communicate</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cheatsheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">ggplot2 Modern Recipe Cheat Sheet</span></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -503,19 +497,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#modify-a-continuous-axis" id="toc-modify-a-continuous-axis" class="nav-link active" data-scroll-target="#modify-a-continuous-axis"><span class="header-section-number">11.1</span> Modify a continuous axis</a>
+  <li><a href="#modify-a-continuous-axis" id="toc-modify-a-continuous-axis" class="nav-link active" data-scroll-target="#modify-a-continuous-axis"><span class="header-section-number">11.1</span> How to modify a continuous axis in ggplot2</a>
   <ul class="collapse">
-  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together"><span class="header-section-number">11.1.1</span> Putting it all together</a></li>
-  <li><a href="#modify-the-y-axis" id="toc-modify-the-y-axis" class="nav-link" data-scroll-target="#modify-the-y-axis"><span class="header-section-number">11.1.2</span> Modify the Y axis</a></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together"><span class="header-section-number">11.1.1</span> How to combine continuous axis options in ggplot2</a></li>
+  <li><a href="#modify-the-y-axis" id="toc-modify-the-y-axis" class="nav-link" data-scroll-target="#modify-the-y-axis"><span class="header-section-number">11.1.2</span> How to modify the y-axis in ggplot2</a></li>
   </ul></li>
-  <li><a href="#modify-a-discrete-axis" id="toc-modify-a-discrete-axis" class="nav-link" data-scroll-target="#modify-a-discrete-axis"><span class="header-section-number">11.2</span> Modify a discrete axis</a>
+  <li><a href="#modify-a-discrete-axis" id="toc-modify-a-discrete-axis" class="nav-link" data-scroll-target="#modify-a-discrete-axis"><span class="header-section-number">11.2</span> How to modify a discrete axis in ggplot2</a>
   <ul class="collapse">
-  <li><a href="#change-axis-labels" id="toc-change-axis-labels" class="nav-link" data-scroll-target="#change-axis-labels"><span class="header-section-number">11.2.1</span> Change axis labels</a></li>
-  <li><a href="#change-axis-tick-labels" id="toc-change-axis-tick-labels" class="nav-link" data-scroll-target="#change-axis-tick-labels"><span class="header-section-number">11.2.2</span> Change axis tick labels</a></li>
-  <li><a href="#change-axis-breaks" id="toc-change-axis-breaks" class="nav-link" data-scroll-target="#change-axis-breaks"><span class="header-section-number">11.2.3</span> Change axis breaks</a></li>
-  <li><a href="#move-the-axis-position" id="toc-move-the-axis-position" class="nav-link" data-scroll-target="#move-the-axis-position"><span class="header-section-number">11.2.4</span> Move the axis position</a></li>
+  <li><a href="#change-axis-labels" id="toc-change-axis-labels" class="nav-link" data-scroll-target="#change-axis-labels"><span class="header-section-number">11.2.1</span> How to change axis labels in ggplot2</a></li>
+  <li><a href="#change-axis-tick-labels" id="toc-change-axis-tick-labels" class="nav-link" data-scroll-target="#change-axis-tick-labels"><span class="header-section-number">11.2.2</span> How to change axis tick labels in ggplot2</a></li>
+  <li><a href="#change-axis-breaks" id="toc-change-axis-breaks" class="nav-link" data-scroll-target="#change-axis-breaks"><span class="header-section-number">11.2.3</span> How to change axis breaks in ggplot2</a></li>
+  <li><a href="#move-the-axis-position" id="toc-move-the-axis-position" class="nav-link" data-scroll-target="#move-the-axis-position"><span class="header-section-number">11.2.4</span> How to move the axis position in ggplot2</a></li>
   </ul></li>
-  <li><a href="#putting-it-all-together-1" id="toc-putting-it-all-together-1" class="nav-link" data-scroll-target="#putting-it-all-together-1"><span class="header-section-number">11.3</span> Putting it all together</a></li>
+  <li><a href="#putting-it-all-together-1" id="toc-putting-it-all-together-1" class="nav-link" data-scroll-target="#putting-it-all-together-1"><span class="header-section-number">11.3</span> How to combine discrete axis options in ggplot2</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">11.4</span> Exercises</a></li>
   <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next">Where to go next</a></li>
   </ul>
@@ -585,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <section id="modify-a-continuous-axis" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="modify-a-continuous-axis"><span class="header-section-number">11.1</span> Modify a continuous axis</h2>
+<h2 data-number="11.1" class="anchored" data-anchor-id="modify-a-continuous-axis"><span class="header-section-number">11.1</span> How to modify a continuous axis in ggplot2</h2>
 <p>If the X and Y axis represent continuous data, we can use <code>scale_x_continuous()</code> and <code>scale_y_continuous()</code> to modify the axis. They take the following arguments:</p>
 <ul>
 <li>name</li>
@@ -673,7 +667,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="putting-it-all-together" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="putting-it-all-together"><span class="header-section-number">11.1.1</span> Putting it all together</h3>
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="putting-it-all-together"><span class="header-section-number">11.1.1</span> How to combine continuous axis options in ggplot2</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(disp, mpg)) <span class="sc">+</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Displacement"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">600</span>),</span>
@@ -689,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="modify-the-y-axis" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="modify-the-y-axis"><span class="header-section-number">11.1.2</span> Modify the Y axis</h3>
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="modify-the-y-axis"><span class="header-section-number">11.1.2</span> How to modify the y-axis in ggplot2</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(disp, mpg)) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Miles Per Gallon"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>),</span>
@@ -706,7 +700,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="modify-a-discrete-axis" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="modify-a-discrete-axis"><span class="header-section-number">11.2</span> Modify a discrete axis</h2>
+<h2 data-number="11.2" class="anchored" data-anchor-id="modify-a-discrete-axis"><span class="header-section-number">11.2</span> How to modify a discrete axis in ggplot2</h2>
 <p>If the X and Y axis represent discrete or categorical data, <code>scale_x_discrete()</code> and <code>scale_y_discrete()</code> can be used to modify them. They take the following arguments:</p>
 <ul>
 <li>name</li>
@@ -716,7 +710,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>The above options serve the same purpose as in the case of continuous scales.</p>
 <section id="change-axis-labels" class="level3" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="change-axis-labels"><span class="header-section-number">11.2.1</span> Change axis labels</h3>
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="change-axis-labels"><span class="header-section-number">11.2.1</span> How to change axis labels in ggplot2</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
@@ -731,7 +725,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="change-axis-tick-labels" class="level3" data-number="11.2.2">
-<h3 data-number="11.2.2" class="anchored" data-anchor-id="change-axis-tick-labels"><span class="header-section-number">11.2.2</span> Change axis tick labels</h3>
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="change-axis-tick-labels"><span class="header-section-number">11.2.2</span> How to change axis tick labels in ggplot2</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
@@ -746,7 +740,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="change-axis-breaks" class="level3" data-number="11.2.3">
-<h3 data-number="11.2.3" class="anchored" data-anchor-id="change-axis-breaks"><span class="header-section-number">11.2.3</span> Change axis breaks</h3>
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="change-axis-breaks"><span class="header-section-number">11.2.3</span> How to change axis breaks in ggplot2</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
@@ -761,7 +755,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="move-the-axis-position" class="level3" data-number="11.2.4">
-<h3 data-number="11.2.4" class="anchored" data-anchor-id="move-the-axis-position"><span class="header-section-number">11.2.4</span> Move the axis position</h3>
+<h3 data-number="11.2.4" class="anchored" data-anchor-id="move-the-axis-position"><span class="header-section-number">11.2.4</span> How to move the axis position in ggplot2</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
@@ -777,7 +771,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="putting-it-all-together-1" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="putting-it-all-together-1"><span class="header-section-number">11.3</span> Putting it all together</h2>
+<h2 data-number="11.3" class="anchored" data-anchor-id="putting-it-all-together-1"><span class="header-section-number">11.3</span> How to combine discrete axis options in ggplot2</h2>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">"Number of Cylinders"</span>,</span>

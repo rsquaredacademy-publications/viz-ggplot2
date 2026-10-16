@@ -487,12 +487,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Export &amp; Communicate</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cheatsheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">ggplot2 Modern Recipe Cheat Sheet</span></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -503,16 +497,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
-  <li><a href="#annotate" id="toc-annotate" class="nav-link" data-scroll-target="#annotate"><span class="header-section-number">5.2</span> Annotate</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> How text annotations work in ggplot2</a></li>
+  <li><a href="#annotate" id="toc-annotate" class="nav-link" data-scroll-target="#annotate"><span class="header-section-number">5.2</span> How to annotate plots with text in ggplot2</a>
   <ul class="collapse">
-  <li><a href="#add-text" id="toc-add-text" class="nav-link" data-scroll-target="#add-text"><span class="header-section-number">5.2.1</span> Add Text</a></li>
-  <li><a href="#color" id="toc-color" class="nav-link" data-scroll-target="#color"><span class="header-section-number">5.2.2</span> Color</a></li>
-  <li><a href="#size" id="toc-size" class="nav-link" data-scroll-target="#size"><span class="header-section-number">5.2.3</span> Size</a></li>
-  <li><a href="#font" id="toc-font" class="nav-link" data-scroll-target="#font"><span class="header-section-number">5.2.4</span> Font</a></li>
-  <li><a href="#angle" id="toc-angle" class="nav-link" data-scroll-target="#angle"><span class="header-section-number">5.2.5</span> Angle</a></li>
+  <li><a href="#add-text" id="toc-add-text" class="nav-link" data-scroll-target="#add-text"><span class="header-section-number">5.2.1</span> How to add text labels to a ggplot2 plot</a></li>
+  <li><a href="#color" id="toc-color" class="nav-link" data-scroll-target="#color"><span class="header-section-number">5.2.2</span> How to change text annotation color in ggplot2</a></li>
+  <li><a href="#size" id="toc-size" class="nav-link" data-scroll-target="#size"><span class="header-section-number">5.2.3</span> How to change text annotation size in ggplot2</a></li>
+  <li><a href="#font" id="toc-font" class="nav-link" data-scroll-target="#font"><span class="header-section-number">5.2.4</span> How to change text annotation font face in ggplot2</a></li>
+  <li><a href="#angle" id="toc-angle" class="nav-link" data-scroll-target="#angle"><span class="header-section-number">5.2.5</span> How to rotate text annotations in ggplot2</a></li>
   </ul></li>
-  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together"><span class="header-section-number">5.3</span> Putting it all together</a></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together"><span class="header-section-number">5.3</span> How to combine text annotation options in ggplot2</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.4</span> Exercises</a></li>
   <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next">Where to go next</a></li>
   </ul>
@@ -542,7 +536,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="introduction" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> How text annotations work in ggplot2</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -579,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="annotate" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="annotate"><span class="header-section-number">5.2</span> Annotate</h2>
+<h2 data-number="5.2" class="anchored" data-anchor-id="annotate"><span class="header-section-number">5.2</span> How to annotate plots with text in ggplot2</h2>
 <p>We will use the <code>annotate()</code> function to add custom text to the plots. You can use the <code>annotate()</code> function to add rectangles/segments/pointrange as well but our focus will be on adding text. Let us start with a simple scatter plot.</p>
 <p><code>annotate()</code> takes the following arguments:</p>
 <ul>
@@ -593,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>angle</code> : angle of text</li>
 </ul>
 <section id="add-text" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="add-text"><span class="header-section-number">5.2.1</span> Add Text</h3>
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="add-text"><span class="header-section-number">5.2.1</span> How to add text labels to a ggplot2 plot</h3>
 <p>Let us begin by adding text to a scatter plot. We will use the mtcars data set and continue to examine the relationship between displacement and miles per gallon. To add the text, we have to indicate that we are using <code>annotate()</code> for adding text, and we do this by ensuring that the first input is the word <code>'text'</code>. Now, ggplot2 knows that it should add a text to the plot but it still needs other information such as:</p>
 <ul>
 <li>where should the text appear on the plot i.e.&nbsp;location of the text</li>
@@ -614,7 +608,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="color" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="color"><span class="header-section-number">5.2.2</span> Color</h3>
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="color"><span class="header-section-number">5.2.2</span> How to change text annotation color in ggplot2</h3>
 <p>Now that we know how to add text, let us look at modifying the appearance of the text. To change the color, use the <code>color</code> argument. In the below example, we modify the color to <code>'red'</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -630,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="size" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="size"><span class="header-section-number">5.2.3</span> Size</h3>
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="size"><span class="header-section-number">5.2.3</span> How to change text annotation size in ggplot2</h3>
 <p>The <code>size</code> argument can be used to modify the size of the text.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -646,7 +640,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="font" class="level3" data-number="5.2.4">
-<h3 data-number="5.2.4" class="anchored" data-anchor-id="font"><span class="header-section-number">5.2.4</span> Font</h3>
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="font"><span class="header-section-number">5.2.4</span> How to change text annotation font face in ggplot2</h3>
 <p>To choose a font of your liking, use the <code>font</code> argument and supply it a valid value.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -662,7 +656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="angle" class="level3" data-number="5.2.5">
-<h3 data-number="5.2.5" class="anchored" data-anchor-id="angle"><span class="header-section-number">5.2.5</span> Angle</h3>
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="angle"><span class="header-section-number">5.2.5</span> How to rotate text annotations in ggplot2</h3>
 <p>The angle of the text can also be modified using the <code>angle</code> argument. In the below example, we modify the angle of the text to <code>25</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -679,7 +673,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="putting-it-all-together" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="putting-it-all-together"><span class="header-section-number">5.3</span> Putting it all together</h2>
+<h2 data-number="5.3" class="anchored" data-anchor-id="putting-it-all-together"><span class="header-section-number">5.3</span> How to combine text annotation options in ggplot2</h2>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(disp, mpg)) <span class="sc">+</span></span>

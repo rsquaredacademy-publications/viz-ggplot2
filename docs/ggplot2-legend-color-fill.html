@@ -487,12 +487,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Export &amp; Communicate</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cheatsheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">ggplot2 Modern Recipe Cheat Sheet</span></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -503,25 +497,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#change-legend-colors" id="toc-change-legend-colors" class="nav-link active" data-scroll-target="#change-legend-colors"><span class="header-section-number">13.1</span> Change legend colors</a>
+  <li><a href="#change-legend-colors" id="toc-change-legend-colors" class="nav-link active" data-scroll-target="#change-legend-colors"><span class="header-section-number">13.1</span> How to change legend colors in ggplot2</a>
   <ul class="collapse">
-  <li><a href="#basic-plot" id="toc-basic-plot" class="nav-link" data-scroll-target="#basic-plot">Basic Plot</a></li>
-  <li><a href="#color-legend-values" id="toc-color-legend-values" class="nav-link" data-scroll-target="#color-legend-values">Change legend color values</a></li>
-  <li><a href="#color-legend-title" id="toc-color-legend-title" class="nav-link" data-scroll-target="#color-legend-title">Change the legend title</a></li>
-  <li><a href="#color-legend-limits" id="toc-color-legend-limits" class="nav-link" data-scroll-target="#color-legend-limits">Change legend limits</a></li>
-  <li><a href="#color-legend-labels" id="toc-color-legend-labels" class="nav-link" data-scroll-target="#color-legend-labels">Change legend labels</a></li>
-  <li><a href="#color-legend-breaks" id="toc-color-legend-breaks" class="nav-link" data-scroll-target="#color-legend-breaks">Reorder or hide legend items with breaks</a></li>
-  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">Putting it all together</a></li>
+  <li><a href="#basic-plot" id="toc-basic-plot" class="nav-link" data-scroll-target="#basic-plot">How to create a plot with a color legend in ggplot2</a></li>
+  <li><a href="#color-legend-values" id="toc-color-legend-values" class="nav-link" data-scroll-target="#color-legend-values">How to change legend color values in ggplot2</a></li>
+  <li><a href="#color-legend-title" id="toc-color-legend-title" class="nav-link" data-scroll-target="#color-legend-title">How to change the legend title in ggplot2</a></li>
+  <li><a href="#color-legend-limits" id="toc-color-legend-limits" class="nav-link" data-scroll-target="#color-legend-limits">How to change legend limits in ggplot2</a></li>
+  <li><a href="#color-legend-labels" id="toc-color-legend-labels" class="nav-link" data-scroll-target="#color-legend-labels">How to change legend labels in ggplot2</a></li>
+  <li><a href="#color-legend-breaks" id="toc-color-legend-breaks" class="nav-link" data-scroll-target="#color-legend-breaks">How to reorder or hide legend items in ggplot2</a></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">How to combine color legend options in ggplot2</a></li>
   </ul></li>
-  <li><a href="#change-legend-fill-colors" id="toc-change-legend-fill-colors" class="nav-link" data-scroll-target="#change-legend-fill-colors"><span class="header-section-number">13.2</span> Change legend fill colors</a>
+  <li><a href="#change-legend-fill-colors" id="toc-change-legend-fill-colors" class="nav-link" data-scroll-target="#change-legend-fill-colors"><span class="header-section-number">13.2</span> How to change legend fill colors in ggplot2</a>
   <ul class="collapse">
-  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">Plot</a></li>
-  <li><a href="#fill-legend-title" id="toc-fill-legend-title" class="nav-link" data-scroll-target="#fill-legend-title">Change the legend title</a></li>
-  <li><a href="#fill-legend-values" id="toc-fill-legend-values" class="nav-link" data-scroll-target="#fill-legend-values">Change legend fill values</a></li>
-  <li><a href="#fill-legend-labels" id="toc-fill-legend-labels" class="nav-link" data-scroll-target="#fill-legend-labels">Change legend labels</a></li>
-  <li><a href="#fill-legend-limits" id="toc-fill-legend-limits" class="nav-link" data-scroll-target="#fill-legend-limits">Change legend limits</a></li>
-  <li><a href="#fill-legend-breaks" id="toc-fill-legend-breaks" class="nav-link" data-scroll-target="#fill-legend-breaks">Reorder or hide legend items with breaks</a></li>
-  <li><a href="#putting-it-all-together-1" id="toc-putting-it-all-together-1" class="nav-link" data-scroll-target="#putting-it-all-together-1">Putting it all together</a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">How to create a plot with a fill legend in ggplot2</a></li>
+  <li><a href="#fill-legend-title" id="toc-fill-legend-title" class="nav-link" data-scroll-target="#fill-legend-title">How to change the fill legend title in ggplot2</a></li>
+  <li><a href="#fill-legend-values" id="toc-fill-legend-values" class="nav-link" data-scroll-target="#fill-legend-values">How to change legend fill values in ggplot2</a></li>
+  <li><a href="#fill-legend-labels" id="toc-fill-legend-labels" class="nav-link" data-scroll-target="#fill-legend-labels">How to change fill legend labels in ggplot2</a></li>
+  <li><a href="#fill-legend-limits" id="toc-fill-legend-limits" class="nav-link" data-scroll-target="#fill-legend-limits">How to change fill legend limits in ggplot2</a></li>
+  <li><a href="#fill-legend-breaks" id="toc-fill-legend-breaks" class="nav-link" data-scroll-target="#fill-legend-breaks">How to reorder or hide fill legend items in ggplot2</a></li>
+  <li><a href="#putting-it-all-together-1" id="toc-putting-it-all-together-1" class="nav-link" data-scroll-target="#putting-it-all-together-1">How to combine fill legend options in ggplot2</a></li>
   </ul></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">13.3</span> Exercises</a></li>
   <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next">Where to go next</a></li>
@@ -579,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="change-legend-colors" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="change-legend-colors"><span class="header-section-number">13.1</span> Change legend colors</h2>
+<h2 data-number="13.1" class="anchored" data-anchor-id="change-legend-colors"><span class="header-section-number">13.1</span> How to change legend colors in ggplot2</h2>
 <p>We will learn to modify the following when <code>color</code> is mapped to categorical variables:</p>
 <ul>
 <li>title</li>
@@ -589,7 +583,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>values</li>
 </ul>
 <section id="basic-plot" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="basic-plot">Basic Plot</h3>
+<h3 class="unnumbered anchored" data-anchor-id="basic-plot">How to create a plot with a color legend in ggplot2</h3>
 <p>Let us start with a scatter plot examining the relationship between displacement and miles per gallon from the mtcars data set. We will map the color of the points to the <code>cyl</code> variable.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -605,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As you can see, the legend acts as a guide for the <code>color</code> aesthetic. Now, let us learn to modify the different aspects of the legend.</p>
 </section>
 <section id="color-legend-values" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="color-legend-values">Change legend color values</h3>
+<h3 class="unnumbered anchored" data-anchor-id="color-legend-values">How to change legend color values in ggplot2</h3>
 <p>To change the default colors in the legend, use the <code>values</code> argument and supply a character vector of color names. The number of colors specified must be equal to the number of levels in the categorical variable mapped. In the below example, <code>cyl</code> has 3 levels (4, 6, 8) and hence we have specified 3 colors.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -621,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="color-legend-title" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="color-legend-title">Change the legend title</h3>
+<h3 class="unnumbered anchored" data-anchor-id="color-legend-title">How to change the legend title in ggplot2</h3>
 <p>In the previous example, the title of the legend (<code>factor(cyl)</code>) is not very intuitive. If the user does not know the underlying data, they will not be able to make any sense out of it. Let us change it to <code>Cylinders</code> using the <code>name</code> argument.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -639,7 +633,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, the user will know that the different colors represent number of cylinders in the car.</p>
 </section>
 <section id="color-legend-limits" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="color-legend-limits">Change legend limits</h3>
+<h3 class="unnumbered anchored" data-anchor-id="color-legend-limits">How to change legend limits in ggplot2</h3>
 <p>Let us assume that we want to modify the data to be displayed i.e.&nbsp;instead of examining the relationship between mileage and displacement for all cars, we desire to look at only cars with at least 6 cylinders. One way to approach this would be to filter the data using <code>filter</code> from dplyr and then visualize it. Instead, we will use the <code>limits</code> argument and filter the data for visualization.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -656,7 +650,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As you can see above, <code>ggplot2</code> returns a warning message indicating data related to 4 cylinders has been dropped. If you observe the legend, it now represents only 6 and 8 cylinders.</p>
 </section>
 <section id="color-legend-labels" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="color-legend-labels">Change legend labels</h3>
+<h3 class="unnumbered anchored" data-anchor-id="color-legend-labels">How to change legend labels in ggplot2</h3>
 <p>The labels in the legend can be modified using the <code>labels</code> argument. Let us change the labels to <code>Four</code>, <code>Six</code> and <code>Eight</code> in the next example. Ensure that the labels are intuitive and easy to interpret for the end user of the plot.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -673,7 +667,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="color-legend-breaks" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="color-legend-breaks">Reorder or hide legend items with breaks</h3>
+<h3 class="unnumbered anchored" data-anchor-id="color-legend-breaks">How to reorder or hide legend items in ggplot2</h3>
 <p>When there are large number of levels in the mapped variable, you may not want the labels in the legend to represent all of them. In such cases, we can use the breaks argument and specify the labels to be used. In the below case, we use the <code>breaks</code> argument to ensure that the labels in legend represent two levels (4, 8) of the mapped variable.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -690,7 +684,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="putting-it-all-together" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="putting-it-all-together">Putting it all together</h3>
+<h3 class="unnumbered anchored" data-anchor-id="putting-it-all-together">How to combine color legend options in ggplot2</h3>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(disp, mpg, <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
@@ -707,7 +701,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="change-legend-fill-colors" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="change-legend-fill-colors"><span class="header-section-number">13.2</span> Change legend fill colors</h2>
+<h2 data-number="13.2" class="anchored" data-anchor-id="change-legend-fill-colors"><span class="header-section-number">13.2</span> How to change legend fill colors in ggplot2</h2>
 <p>we will learn to modify the following using <code>scale_fill_manual()</code> when <code>fill</code> is mapped to categorical variables:</p>
 <ul>
 <li>title</li>
@@ -717,7 +711,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>values</li>
 </ul>
 <section id="plot" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="plot">Plot</h3>
+<h3 class="unnumbered anchored" data-anchor-id="plot">How to create a plot with a fill legend in ggplot2</h3>
 <p>Let us start with a scatter plot examining the relationship between displacement and miles per gallon from the mtcars data set. We will map <code>fill</code> to the <code>cyl</code> variable.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -733,7 +727,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As you can see, the legend acts as a guide for the <code>color</code> aesthetic. Now, let us learn to modify the different aspects of the legend.</p>
 </section>
 <section id="fill-legend-title" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="fill-legend-title">Change the legend title</h3>
+<h3 class="unnumbered anchored" data-anchor-id="fill-legend-title">How to change the fill legend title in ggplot2</h3>
 <p>The title of the legend (<code>factor(cyl)</code>) is not very intuitive. If the user does not know the underlying data, they will not be able to make any sense out of it. Let us change it to <code>Cylinders</code> using the <code>name</code> argument.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -750,7 +744,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="fill-legend-values" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="fill-legend-values">Change legend fill values</h3>
+<h3 class="unnumbered anchored" data-anchor-id="fill-legend-values">How to change legend fill values in ggplot2</h3>
 <p>To change the default colors in the legend, use the <code>values</code> argument and supply a character vector of color names. The number of colors specified must be equal to the number of levels in the categorical variable mapped. In the below example, <code>cyl</code> has 3 levels (4, 6, 8) and hence we have specified 3 colors.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -766,7 +760,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="fill-legend-labels" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="fill-legend-labels">Change legend labels</h3>
+<h3 class="unnumbered anchored" data-anchor-id="fill-legend-labels">How to change fill legend labels in ggplot2</h3>
 <p>The labels in the legend can be modified using the <code>labels</code> argument. Let us change the labels to <code>Four</code>, <code>Six</code> and <code>Eight</code> in the next example. Ensure that the labels are intuitive and easy to interpret for the end user of the plot.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -783,7 +777,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="fill-legend-limits" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="fill-legend-limits">Change legend limits</h3>
+<h3 class="unnumbered anchored" data-anchor-id="fill-legend-limits">How to change fill legend limits in ggplot2</h3>
 <p>Let us assume that we want to modify the data to be displayed i.e.&nbsp;instead of examining the relationship between mileage and displacement for all cars, we desire to look at only cars with at least 6 cylinders. One way to approach this would be to filter the data using <code>filter</code> from dplyr and then visualize it. Instead, we will use the <code>limits</code> argument and filter the data for visualization.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -801,7 +795,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As you can see above, <code>ggplot2</code> returns a warning message indicating data related to 4 cylinders has been dropped. If you observe the legend, it now represents only 6 and 8 cylinders.</p>
 </section>
 <section id="fill-legend-breaks" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="fill-legend-breaks">Reorder or hide legend items with breaks</h3>
+<h3 class="unnumbered anchored" data-anchor-id="fill-legend-breaks">How to reorder or hide fill legend items in ggplot2</h3>
 <p>When there are large number of levels in the mapped variable, you may not want the labels in the legend to represent all of them. In such cases, we can use the breaks argument and specify the labels to be used. In the below case, we use the <code>breaks</code> argument to ensure that the labels in legend represent two levels (4, 8) of the mapped variable.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
@@ -818,7 +812,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="putting-it-all-together-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="putting-it-all-together-1">Putting it all together</h3>
+<h3 class="unnumbered anchored" data-anchor-id="putting-it-all-together-1">How to combine fill legend options in ggplot2</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(disp, mpg, <span class="at">fill =</span> <span class="fu">factor</span>(cyl)), <span class="at">shape =</span> <span class="dv">22</span>) <span class="sc">+</span></span>

@@ -487,12 +487,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Export &amp; Communicate</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cheatsheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">ggplot2 Modern Recipe Cheat Sheet</span></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -503,11 +497,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#customize-legends-with-guides" id="toc-customize-legends-with-guides" class="nav-link active" data-scroll-target="#customize-legends-with-guides"><span class="header-section-number">12.1</span> Customize legends with guides</a>
+  <li><a href="#customize-legends-with-guides" id="toc-customize-legends-with-guides" class="nav-link active" data-scroll-target="#customize-legends-with-guides"><span class="header-section-number">12.1</span> How to customize legends with guides in ggplot2</a>
   <ul class="collapse">
-  <li><a href="#change-the-guide-title" id="toc-change-the-guide-title" class="nav-link" data-scroll-target="#change-the-guide-title">Change the guide title</a></li>
-  <li><a href="#change-guide-labels" id="toc-change-guide-labels" class="nav-link" data-scroll-target="#change-guide-labels">Change guide labels</a></li>
-  <li><a href="#change-the-legend-color-bar" id="toc-change-the-legend-color-bar" class="nav-link" data-scroll-target="#change-the-legend-color-bar">Change the legend color bar</a></li>
+  <li><a href="#change-the-guide-title" id="toc-change-the-guide-title" class="nav-link" data-scroll-target="#change-the-guide-title">How to change the guide title in ggplot2</a></li>
+  <li><a href="#change-guide-labels" id="toc-change-guide-labels" class="nav-link" data-scroll-target="#change-guide-labels">How to change guide labels in ggplot2</a></li>
+  <li><a href="#change-the-legend-color-bar" id="toc-change-the-legend-color-bar" class="nav-link" data-scroll-target="#change-the-legend-color-bar">How to change the legend color bar in ggplot2</a></li>
   </ul></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">12.2</span> Exercises</a></li>
   <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next">Where to go next</a></li>
@@ -565,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <section id="customize-legends-with-guides" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="customize-legends-with-guides"><span class="header-section-number">12.1</span> Customize legends with guides</h2>
+<h2 data-number="12.1" class="anchored" data-anchor-id="customize-legends-with-guides"><span class="header-section-number">12.1</span> How to customize legends with guides in ggplot2</h2>
 <p>In this section, we will learn to modify</p>
 <ul>
 <li>title</li>
@@ -574,7 +568,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>So far, we have learnt to modify the components of a legend using <code>scale_*</code> family of functions. Now, we will use the <code>guide</code> argument and supply it values using the <code>guide_legend()</code> function.</p>
 <section id="change-the-guide-title" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="change-the-guide-title">Change the guide title</h3>
+<h3 class="unnumbered anchored" data-anchor-id="change-the-guide-title">How to change the guide title in ggplot2</h3>
 <section id="title-alignment" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="title-alignment">Title Alignment</h4>
 <p>The horizontal alignment of the title can be managed using the <code>title.hjust</code> argument. It can take any value between <code>0</code> and <code>1</code>.</p>
@@ -637,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="change-guide-labels" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="change-guide-labels">Change guide labels</h3>
+<h3 class="unnumbered anchored" data-anchor-id="change-guide-labels">How to change guide labels in ggplot2</h3>
 <section id="label-position" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="label-position">Label Position</h4>
 <p>The position of the label can be managed using the <code>label.position</code> argument. It can be positioned at:</p>
@@ -774,7 +768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="change-the-legend-color-bar" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="change-the-legend-color-bar">Change the legend color bar</h3>
+<h3 class="unnumbered anchored" data-anchor-id="change-the-legend-color-bar">How to change the legend color bar in ggplot2</h3>
 <p>So far we have looked at modifying components of the legend when it acts as a guide for <code>color</code>, <code>fill</code> or <code>shape</code> i.e.&nbsp;when the aesthetics have been mapped to a categorical variable. In this section, you will learn about <code>guide_colorbar()</code> which will allow us to modify the legend when the aesthetics are mapped to a continuous variable.</p>
 <section id="plot" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="plot">Plot</h4>
