@@ -1,3 +1,8 @@
+[[headers]]
+  for = "/site-kit/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
 [[redirects]]
   from = "https://viz-ggplot2.rsquaredacademy.com/quicktour.html"
   to = "https://viz-ggplot2.rsquaredacademy.com/ggplot2-quicktour.html"

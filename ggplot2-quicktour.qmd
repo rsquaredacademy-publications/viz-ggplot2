@@ -38,7 +38,7 @@ We will use the following libraries in this chapter:
 - [ggplot2](https://ggplot2.tidyverse.org/)
 
 All the data sets used in this chapter can be found [here](https://github.com/rsquaredacademy/datasets)
-and code can be downloaded from [here](https://gist.github.com/rsquaredacademy/3b25fa07c60d44d561819d2c6ab77978).
+and code can be downloaded from [here](https://gist.github.com/aravindhebbali/3b25fa07c60d44d561819d2c6ab77978).
 
 ## Scatter Plot
 
