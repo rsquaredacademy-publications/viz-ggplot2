@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - site-kit
 
 # Interactive R cells (scatter pilot only) via WebAssembly.
 # Scoped to HTML: the webr lua filter rewrites the AST and breaks
@@ -14,7 +16,6 @@ website:
   description: "Learn ggplot2 in R: recipes for scatter, line, bar, box, facets, themes - run in browser."
   open-graph: true
   twitter-card: true
-  # google-analytics: "G-XXXXXXXXXX" # TODO: add GA4 ID when available
 
 book:
   title: "Data Visualization with ggplot2"
@@ -45,6 +46,9 @@ book:
     - ggplot2-label-polish.qmd
     - ggplot2-finale-polish.qmd
     - ggplot2-export-communicate.qmd
+  page-footer:
+    center: |
+      We use Google Analytics 4 to understand how people use this site (pages visited, referring sites, device type and approximate location) so we can improve our free learning material. Google Analytics uses cookies and a pseudonymous identifier; we don't use it for advertising and we never send Google names or email addresses. Visitors in the European Economic Area, the United Kingdom and Switzerland are asked for consent first, and if they decline, no analytics cookies are stored. Anyone can switch analytics off at any time: <a href="#" data-rsa-analytics-optout>Turn off analytics</a>.
 
 execute:
   freeze: auto
@@ -63,7 +67,8 @@ format:
     code-overflow: wrap
     fig-align: center
     fig-dpi: 192
-    include-in-header: google-analytics.html
+    include-in-header:
+      - includes/site-kit-head.html
     repo-url: https://github.com/rsquaredacademy-publications/viz-ggplot2/
   pdf:
     pdf-engine: lualatex

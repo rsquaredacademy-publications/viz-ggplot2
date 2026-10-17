@@ -33,7 +33,7 @@ We will use the following libraries in this chapter:
 - [tibble](https://tibble.tidyverse.org/)
 - [dplyr](https://dplyr.tidyverse.org/)
 
-All the data sets used in this chapter can be found [here](https://github.com/rsquaredacademy/datasets) and code can be downloaded from [here](https://gist.github.com/rsquaredacademy/2d0d5d5b60d0ef0f4d1b227c8fb0335d).
+All the data sets used in this chapter can be found [here](https://github.com/rsquaredacademy/datasets) and code can be downloaded from [here](https://gist.github.com/aravindhebbali/2d0d5d5b60d0ef0f4d1b227c8fb0335d).
 
 ### Data
 

@@ -45,7 +45,7 @@ We will use the following libraries in this chapter:
 - [tidyr](https://tidyr.tidyverse.org/)
 
 All the data sets used in this chapter can be found [here](https://github.com/rsquaredacademy/datasets) 
-and code can be downloaded from [here](https://gist.github.com/rsquaredacademy/a596a4604b2ebda163313caa272f05cd).
+and code can be downloaded from [here](https://gist.github.com/aravindhebbali/a596a4604b2ebda163313caa272f05cd).
 
 ### Data
 
