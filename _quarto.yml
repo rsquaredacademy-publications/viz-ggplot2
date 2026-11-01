@@ -11,15 +11,18 @@ quarto-required: ">=1.6.0"
 
 sitemap: true
 
-website:
-  site-url: https://viz-ggplot2.rsquaredacademy.com/
-  description: "Learn ggplot2 in R: recipes for scatter, line, bar, box, facets, themes - run in browser."
-  open-graph: true
-  twitter-card: true
-
 book:
   title: "Data Visualization with ggplot2"
   author: "Aravind Hebbali"
+  site-url: https://viz-ggplot2.rsquaredacademy.com/
+  description: "Learn ggplot2 in R: recipes for scatter, line, bar, box, facets, themes - run in browser."
+  image: img/social-card.png
+  image-alt: "Data Visualization with ggplot2 - an Rsquared Academy guide"
+  open-graph:
+    site-name: Rsquared Academy
+  twitter-card:
+    card-style: summary_large_image
+    site: "@rsquaredacademy"
   downloads: [pdf, epub]
   chapters:
     - index.qmd
@@ -58,6 +61,9 @@ execute:
 
 format:
   html:
+    # Chapter figures otherwise become a page's preview image; pin the card
+    # everywhere (book: image stays the project default).
+    image: img/social-card.png
     filters:
       - webr
       - includes/rsa-signup.lua
