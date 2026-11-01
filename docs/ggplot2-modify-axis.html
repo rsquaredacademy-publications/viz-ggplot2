@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Learn ggplot2 in R: recipes for scatter, line, bar, box, facets, themes - run in browser.">
 
 <title>11&nbsp; Modify Axis – Data Visualization with ggplot2</title>
 <style>
@@ -84,9 +85,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2955d62dbab0334639da62d0e9c176d5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1052e45d5bb5bba50a03655832ef5fe1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-2955d62dbab0334639da62d0e9c176d5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-93940b3b3c8f18ccfbb4d0fac2c5b15b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ed40b6d0673a2b74ceb9e3d6257bd262.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-93940b3b3c8f18ccfbb4d0fac2c5b15b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -121,6 +122,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="./site-kit/rsa-signup.js" defer=""></script>
 
 
+<meta property="og:title" content="11&nbsp; Modify Axis – Data Visualization with ggplot2">
+<meta property="og:description" content="Learn ggplot2 in R: recipes for scatter, line, bar, box, facets, themes - run in browser.">
+<meta property="og:image" content="https://viz-ggplot2.rsquaredacademy.com/img/social-card.png">
+<meta property="og:site_name" content="Data Visualization with ggplot2">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="11&nbsp; Modify Axis – Data Visualization with ggplot2">
+<meta name="twitter:description" content="Learn ggplot2 in R: recipes for scatter, line, bar, box, facets, themes - run in browser.">
+<meta name="twitter:image" content="https://viz-ggplot2.rsquaredacademy.com/img/social-card.png">
+<meta name="twitter:site" content="@rsquaredacademy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -889,7 +903,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/viz-ggplot2\.rsquaredacademy\.com\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
