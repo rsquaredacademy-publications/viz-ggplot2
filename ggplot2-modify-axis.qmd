@@ -1,6 +1,14 @@
 # Modify Axis {#ggplot2-modify-axis}
 
-In this chapter, we will learn how to modify the X and Y axis using the 
+In this chapter, we will learn how to modify the X and Y axis using the following functions:
+
+- Continuous Axis
+    - `scale_x_continuous()`
+    - `scale_y_continuous()`
+
+- Discrete Axis
+    - `scale_x_discrete()`
+    - `scale_y_discrete()`
 
 :::{.callout-note}
 ## Why this chart
@@ -11,17 +19,8 @@ Axis scales, breaks and labels decide what readers can read off the chart.
 :::{.callout-warning}
 ## Common pitfall
 
-Fighting default breaks with manual limits can clip data; prefer coord_cartesian() to zoom without dropping.
+Fighting default breaks with manual limits can clip data; prefer `coord_cartesian()` to zoom without dropping.
 :::
-following functions:
-
-- Continuous Axis
-    - `scale_x_continuous()`
-    - `scale_y_continuous()`
-
-- Discrete Axis
-    - `scale_x_discrete()`
-    - `scale_y_discrete()`
 
 ```{r guide1, echo=FALSE, eval=TRUE, results='hide', message=FALSE}
 library(ggplot2)
