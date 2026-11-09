@@ -548,7 +548,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this chapter, we will learn how to modify the X and Y axis using the</p>
+<p>In this chapter, we will learn how to modify the X and Y axis using the following functions:</p>
+<ul>
+<li>Continuous Axis
+<ul>
+<li><code>scale_x_continuous()</code></li>
+<li><code>scale_y_continuous()</code></li>
+</ul></li>
+<li>Discrete Axis
+<ul>
+<li><code>scale_x_discrete()</code></li>
+<li><code>scale_y_discrete()</code></li>
+</ul></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -572,22 +584,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fighting default breaks with manual limits can clip data; prefer coord_cartesian() to zoom without dropping.</p>
+<p>Fighting default breaks with manual limits can clip data; prefer <code>coord_cartesian()</code> to zoom without dropping.</p>
 </div>
 </div>
-<p>following functions:</p>
-<ul>
-<li>Continuous Axis
-<ul>
-<li><code>scale_x_continuous()</code></li>
-<li><code>scale_y_continuous()</code></li>
-</ul></li>
-<li>Discrete Axis
-<ul>
-<li><code>scale_x_discrete()</code></li>
-<li><code>scale_y_discrete()</code></li>
-</ul></li>
-</ul>
 <section id="modify-a-continuous-axis" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="modify-a-continuous-axis"><span class="header-section-number">11.1</span> How to modify a continuous axis in ggplot2</h2>
 <p>If the X and Y axis represent continuous data, we can use <code>scale_x_continuous()</code> and <code>scale_y_continuous()</code> to modify the axis. They take the following arguments:</p>
