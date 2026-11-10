@@ -3,7 +3,7 @@
 ## Introduction
 
 :::{.callout-note}
-## Why this chart
+## Why this matters
 
 A 5-minute on-ramp: one ggplot() plus one geom_*() draws your first chart.
 :::
@@ -37,8 +37,7 @@ We will use the following libraries in this chapter:
 - [readr](https://readr.tidyverse.org/)
 - [ggplot2](https://ggplot2.tidyverse.org/)
 
-All the data sets used in this chapter can be found [here](https://github.com/rsquaredacademy/datasets)
-and code can be downloaded from [here](https://gist.github.com/aravindhebbali/3b25fa07c60d44d561819d2c6ab77978).
+All the data sets used in this chapter can be found [here](https://github.com/rsquaredacademy/datasets).
 
 ## Scatter Plot
 
@@ -150,11 +149,13 @@ ggplot(economics, aes(date, unemploy)) +
 ```
 
 The appearance of the line can be modified by setting the `color` outside
-`aes()` as shown below.
+`aes()` as shown below. We also add a title and readable axis labels with
+`labs()`.
 
 ```{r gg13, fig.align='center', fig.height=5, fig.width=6}
 ggplot(economics, aes(date, unemploy)) +
-  geom_line(color = 'red')
+  geom_line(color = 'red') +
+  labs(title = "US unemployment", x = "Date", y = "Unemployed (thousands)")
 ```
 
 ## Histogram
@@ -174,8 +175,6 @@ ggplot(mtcars, aes(mpg)) +
 1. Draw a `ggplot(mtcars)` scatter of `disp` vs `mpg` with `geom_point()`.
 2. Add color by cylinders and a `labs()` title.
 3. Explain in one sentence why `qplot()` is legacy code.
-
-Worked solutions in `solutions/quicktour.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

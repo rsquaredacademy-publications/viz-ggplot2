@@ -3,7 +3,7 @@
 ## Introduction
 
 :::{.callout-note}
-## Why this chart
+## Why this matters
 
 Themes take a correct plot to publication-ready: fonts, gridlines and background tuned once, reused everywhere.
 :::
@@ -14,7 +14,7 @@ Themes take a correct plot to publication-ready: fonts, gridlines and background
 Styling before the data mapping is right wastes effort; get geoms and scales correct first.
 :::
 
-In this final chapter, we will learn to modify the appearance of all non data 
+In this chapter, we will learn to modify the appearance of all non data 
 components of the plot such as:
 
 - axis
@@ -192,8 +192,6 @@ ggplot(mtcars) +
 1. Apply `theme_minimal()` to a scatter plot.
 2. Enlarge all text with `theme(text = element_text(size = 14))`.
 3. Build a reusable custom theme and explain what it standardizes.
-
-Worked solutions in `solutions/themes.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

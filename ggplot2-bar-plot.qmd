@@ -155,8 +155,6 @@ ggplot(ecom) +
 2. Group by gears with dodged bars, gap tuned via `position_dodge(width = 0.8)`.
 3. Rewrite the plot with a message-first title; keep bars starting at zero.
 
-Worked solutions in `solutions/bar.md` (attempt first).
-
 ## Where to go next {.unnumbered}
 
 - ggplot2 book (ggplot2-book.org) for theory behind this layer

@@ -14,7 +14,8 @@ Facets split one plot into small multiples sharing scales, so group differences 
 Too many facet levels shrink each panel past readability; filter or wrap sensibly.
 :::
 
-In this chapter, we will learn about faceting i.e. combining plots.
+In this chapter, we will learn about faceting i.e. splitting one plot into
+panels, one per group.
 
 ```{r facet, echo=FALSE, eval=TRUE, results='hide', message=FALSE}
 library(ggplot2)
@@ -183,8 +184,6 @@ ggplot(mtcars, aes(disp, mpg)) +
 1. Facet `disp` vs `mpg` by cylinders with `facet_wrap()`.
 2. Grid `gear` rows against `carb` columns with `facet_grid()`.
 3. Decide when facets beat color grouping and justify it.
-
-Worked solutions in `solutions/facets.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

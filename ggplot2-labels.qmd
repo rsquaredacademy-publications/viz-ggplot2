@@ -3,7 +3,7 @@
 ## Introduction
 
 :::{.callout-note}
-## Why this chart
+## Why this matters
 
 Axis labels and titles turn a plot into a message; they are the cheapest readability win.
 :::
@@ -175,7 +175,7 @@ modify the color of the title of the plot to `'blue'`.
 
 ```{r axis10, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
-  geom_point(aes(disp, mpg)) + ggtitle('Diaplacement vs Mileage') +
+  geom_point(aes(disp, mpg)) + ggtitle('Displacement vs Mileage') +
   theme(plot.title = element_text(color = 'blue'))
 ```
 
@@ -186,7 +186,7 @@ Let us change the font family of the plot title to `'Arial'` by using the
 
 ```{r axis11, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
-  geom_point(aes(disp, mpg)) + ggtitle('Diaplacement vs Mileage') +
+  geom_point(aes(disp, mpg)) + ggtitle('Displacement vs Mileage') +
   theme(plot.title = element_text(family = 'Arial'))
 ```
 
@@ -204,7 +204,7 @@ plot.
 
 ```{r axis12, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
-  geom_point(aes(disp, mpg)) + ggtitle('Diaplacement vs Mileage') +
+  geom_point(aes(disp, mpg)) + ggtitle('Displacement vs Mileage') +
   theme(plot.title = element_text(face = 'bold'))
 ```
 
@@ -214,7 +214,7 @@ The size of the title of the plot can be modified using the `size` argument.
 
 ```{r axis13, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
-  geom_point(aes(disp, mpg)) + ggtitle('Diaplacement vs Mileage') +
+  geom_point(aes(disp, mpg)) + ggtitle('Displacement vs Mileage') +
   theme(plot.title = element_text(size = 8))
 ```
 
@@ -226,7 +226,7 @@ will be left-aligned and viceversa.
 
 ```{r axis14, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
-  geom_point(aes(disp, mpg)) + ggtitle('Diaplacement vs Mileage') +
+  geom_point(aes(disp, mpg)) + ggtitle('Displacement vs Mileage') +
   theme(plot.title = element_text(hjust = 0.3))
 ```
 
@@ -236,7 +236,7 @@ ggplot(mtcars) +
 
 ```{r axis15, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
-  geom_point(aes(disp, mpg)) + ggtitle('Diaplacement vs Mileage') +
+  geom_point(aes(disp, mpg)) + ggtitle('Displacement vs Mileage') +
   theme(plot.title = element_text(color = 'blue', family = 'Arial',
     face = 'bold', size = 12, hjust = 0.5))
 ```
@@ -245,7 +245,7 @@ ggplot(mtcars) +
 
 ```{r axis16, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
-  geom_point(aes(disp, mpg)) + xlab('Diaplacement') +
+  geom_point(aes(disp, mpg)) + xlab('Displacement') +
   theme(axis.title.x = element_text(color = 'blue', family = 'Arial',
     face = 'bold', size = 8, hjust = 0.5, angle = 15))
 ```
@@ -264,8 +264,6 @@ ggplot(mtcars) +
 1. Add `x`, `y` and `title` labels to a `disp` vs `mpg` scatter plot.
 2. Rename a legend title with the `name` argument of a scale function.
 3. Rewrite a default-titled plot so the title states the conclusion.
-
-Worked solutions in `solutions/labels.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

@@ -3,7 +3,7 @@
 ## How text annotations work in ggplot2 {#introduction}
 
 :::{.callout-note}
-## Why this chart
+## Why this matters
 
 Direct labels and annotations point at the story instead of making readers scan a legend.
 :::
@@ -90,8 +90,8 @@ ggplot(mtcars) +
 
 ### How to change text annotation font face in ggplot2 {#font}
 
-To choose a font of your liking, use the `font` argument and supply it a valid
-value.
+To change the font face (for example, `'bold'` or `'italic'`), use the
+`fontface` argument.
 
 ```{r ann6, fig.align='center'}
 ggplot(mtcars) +
@@ -124,8 +124,6 @@ ggplot(mtcars) +
 1. Annotate the highest-mpg car with `annotate("text", ...)`.
 2. Label only cars with `mpg > 30` using `geom_text()`.
 3. Decide which two points deserve labels and justify the restraint.
-
-Worked solutions in `solutions/annotations.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

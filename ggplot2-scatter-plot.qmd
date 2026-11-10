@@ -238,8 +238,6 @@ ggplot(mtcars, aes(disp, mpg)) +
 2. Add a trend line with `geom_smooth()`: explicit `formula = y ~ x`, no confidence band.
 3. Rewrite the plot with a message-first title and `theme_minimal()`.
 
-Worked solutions in `solutions/scatter.md` (attempt first).
-
 ## Where to go next {.unnumbered}
 
 - ggplot2 book (ggplot2-book.org) for theory behind this layer

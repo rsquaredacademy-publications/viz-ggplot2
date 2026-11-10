@@ -11,7 +11,7 @@ Color and fill legends decode groups; keep titles plain words and show only need
 :::{.callout-warning}
 ## Common pitfall
 
-Using limits silently drops data. Filter with dplyr when you mean to subset.
+`limits` does not filter the data. For color and fill, points outside the limits are drawn in grey (`na.value`); for shape and size they are removed, and ggplot2 warns. Use `filter()` when you mean to subset the data.
 :::
 
 ```{r setup-legend-cf, echo=FALSE, eval=TRUE, results='hide', message=FALSE}
@@ -92,12 +92,16 @@ Instead, we will use the `limits` argument and filter the data for visualization
 ```{r legc5, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, color = factor(cyl))) +
-  scale_color_manual(values = c("red", "blue", "green"), limits = c(6, 8))
+  scale_color_manual(values = c("4" = "red", "6" = "blue", "8" = "green"),
+    limits = c("6", "8"))
 ```
 
-As you can see above, `ggplot2` returns a warning message indicating data related
-to 4 cylinders has been dropped. If you observe the legend, it now represents 
-only 6 and 8 cylinders.
+The legend now represents only 6 and 8 cylinders. The four-cylinder cars are
+not dropped: they stay on the plot but are drawn in grey, the default
+`na.value` for values outside the limits. If you want to remove them from the
+data, use `filter(cyl >= 6)`. Supplying numbers instead
+(`limits = c(6, 8)`) also works but adds the warning "Continuous limits
+supplied to discrete scale"; character values avoid it.
 
 ### How to change legend labels in ggplot2 {#color-legend-labels .unnumbered}
 
@@ -116,24 +120,32 @@ ggplot(mtcars) +
 
 When there are large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
-use the breaks argument and specify the labels to be used. In the below case, 
-we use the `breaks` argument to ensure that the labels in legend represent 
-two levels (4, 8) of the mapped variable.
+use the breaks argument and specify which levels to show in the legend. In the
+below case, we use the `breaks` argument to ensure that the labels in legend
+represent two levels (4, 8) of the mapped variable.
 
 ```{r legc7, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, color = factor(cyl))) +
-  scale_color_manual(values = c("red", "blue", "green"),
-    breaks = c(4, 8))
+  scale_color_manual(values = c("4" = "red", "6" = "blue", "8" = "green"),
+    breaks = c("4", "8"))
 ```
+
+`breaks` controls which keys appear in the legend: here only 4 and 8 cylinders
+are listed. It does not change the data, and because the values are named,
+every point keeps its colour, including the six-cylinder cars that no longer
+have a legend key. With unnamed values, the colours are matched to `breaks`
+instead, so the unlisted group would turn grey.
 
 ### How to combine color legend options in ggplot2 {#putting-it-all-together .unnumbered}
 
 ```{r legc8, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, color = factor(cyl))) +
-  scale_color_manual(name = "Cylinders", values = c("red", "blue", "green"),
-    labels = c('Four', 'Six', 'Eight'), limits = c(4, 6, 8), breaks = c(4, 6, 8))
+  scale_color_manual(name = "Cylinders",
+    values = c("4" = "red", "6" = "blue", "8" = "green"),
+    labels = c('Four', 'Six', 'Eight'), limits = c("4", "6", "8"),
+    breaks = c("4", "6", "8"))
 ```
 
 ## How to change legend fill colors in ggplot2 {#change-legend-fill-colors}
@@ -157,7 +169,7 @@ ggplot(mtcars) +
   geom_point(aes(disp, mpg, fill = factor(cyl)), shape = 22)
 ```
 
-As you can see, the legend acts as a guide for the `color` aesthetic. Now, let 
+As you can see, the legend acts as a guide for the `fill` aesthetic. Now, let 
 us learn to modify the different aspects of the legend.
 
 ### How to change the fill legend title in ggplot2 {#fill-legend-title .unnumbered}
@@ -211,36 +223,47 @@ Instead, we will use the `limits` argument and filter the data for visualization
 ```{r legc13}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, fill = factor(cyl)), shape = 22) +
-  scale_fill_manual(values = c("red", "blue", "green"),
-    limits = c(6, 8))
+  scale_fill_manual(values = c("4" = "red", "6" = "blue", "8" = "green"),
+    limits = c("6", "8"))
 ```
 
-As you can see above, `ggplot2` returns a warning message indicating data related
-to 4 cylinders has been dropped. If you observe the legend, it now represents 
-only 6 and 8 cylinders.
+The legend now represents only 6 and 8 cylinders. The four-cylinder cars are
+not dropped: they stay on the plot but are drawn in grey, the default
+`na.value` for values outside the limits. If you want to remove them from the
+data, use `filter(cyl >= 6)`. Supplying numbers instead
+(`limits = c(6, 8)`) also works but adds the warning "Continuous limits
+supplied to discrete scale"; character values avoid it.
 
 ### How to reorder or hide fill legend items in ggplot2 {#fill-legend-breaks .unnumbered}
 
 When there are large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
-use the breaks argument and specify the labels to be used. In the below case, 
-we use the `breaks` argument to ensure that the labels in legend represent 
-two levels (4, 8) of the mapped variable.
+use the breaks argument and specify which levels to show in the legend. In the
+below case, we use the `breaks` argument to ensure that the labels in legend
+represent two levels (4, 8) of the mapped variable.
 
 ```{r legc14}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, fill = factor(cyl)), shape = 22) +
-  scale_fill_manual(values = c("red", "blue", "green"),
-    breaks = c(4, 8))
+  scale_fill_manual(values = c("4" = "red", "6" = "blue", "8" = "green"),
+    breaks = c("4", "8"))
 ```
+
+`breaks` controls which keys appear in the legend: here only 4 and 8 cylinders
+are listed. It does not change the data, and because the values are named,
+every point keeps its colour, including the six-cylinder cars that no longer
+have a legend key. With unnamed values, the colours are matched to `breaks`
+instead, so the unlisted group would turn grey.
 
 ### How to combine fill legend options in ggplot2 {#putting-it-all-together-1 .unnumbered}
 
 ```{r legc15}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, fill = factor(cyl)), shape = 22) +
-  scale_fill_manual(name = "Cylinders", values = c("red", "blue", "green"),
-    labels = c('Four', 'Six', 'Eight'), limits = c(4, 6, 8), breaks = c(4, 6, 8))
+  scale_fill_manual(name = "Cylinders",
+    values = c("4" = "red", "6" = "blue", "8" = "green"),
+    labels = c('Four', 'Six', 'Eight'), limits = c("4", "6", "8"),
+    breaks = c("4", "6", "8"))
 ```
 
 
@@ -249,8 +272,6 @@ ggplot(mtcars) +
 1. Recolor cylinder groups with `scale_color_manual(values = ...)`.
 2. Rename legend entries with the `labels` argument.
 3. Show only 4- and 8-cylinder levels with `breaks` and justify vs `limits`.
-
-Worked solutions in `solutions/legend-color-fill.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

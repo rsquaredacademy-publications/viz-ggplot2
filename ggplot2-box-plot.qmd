@@ -253,8 +253,6 @@ ggplot(tidy_returns) +
 2. Draw a single-variable boxplot of `mpg` using modern syntax (no `factor(1)`).
 3. Rewrite the grouped plot with a message-first title and no redundant legend.
 
-Worked solutions in `solutions/box.md` (attempt first).
-
 ## Where to go next {.unnumbered}
 
 - ggplot2 book (ggplot2-book.org) for theory behind this layer

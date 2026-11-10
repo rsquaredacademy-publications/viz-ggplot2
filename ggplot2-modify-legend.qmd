@@ -291,8 +291,6 @@ ggplot(mtcars) +
 2. Move discrete legend labels with `label.position`.
 3. Size a colorbar with `barwidth`/`barheight` for a continuous guide.
 
-Worked solutions in `solutions/legend.md` (attempt first).
-
 ## Where to go next {.unnumbered}
 
 - ggplot2 book scales and guides chapters

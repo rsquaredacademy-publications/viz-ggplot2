@@ -11,7 +11,7 @@ In this chapter, we will learn how to modify the X and Y axis using the followin
     - `scale_y_discrete()`
 
 :::{.callout-note}
-## Why this chart
+## Why this matters
 
 Axis scales, breaks and labels decide what readers can read off the chart.
 :::
@@ -116,6 +116,17 @@ ggplot(mtcars) + geom_point(aes(disp, mpg)) +
                      labels = c('0', '15', '30', '45'))
 ```
 
+### How to zoom without dropping data {#zoom-without-dropping}
+
+`limits` removes rows that fall outside the range before plotting. To zoom in
+without dropping data, use `coord_cartesian()`: the data is kept, and only the
+visible window changes.
+
+```{r guide10, fig.align='center'}
+ggplot(mtcars) + geom_point(aes(disp, mpg)) +
+  coord_cartesian(xlim = c(100, 400), ylim = c(15, 30))
+```
+
 ## How to modify a discrete axis in ggplot2 {#modify-a-discrete-axis}
 
 If the X and Y axis represent discrete or categorical data, `scale_x_discrete()` 
@@ -174,8 +185,6 @@ ggplot(mtcars) + geom_bar(aes(factor(cyl))) +
 1. Set custom breaks on the x axis with `scale_x_continuous()`.
 2. Zoom to `mpg > 20` with `coord_cartesian()` without dropping data.
 3. Explain when `coord_cartesian()` beats `limits` for zooming.
-
-Worked solutions in `solutions/axis.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

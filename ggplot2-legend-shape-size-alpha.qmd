@@ -101,37 +101,50 @@ Instead, we will use the `limits` argument and filter the data for visualization
 
 
 ```{r legs21, fig.align='center'}
+#| warning: true
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, shape = factor(cyl))) +
-  scale_shape_manual(values = c(4, 24), limits = c(6, 8))
+  scale_shape_manual(values = c("4" = 4, "6" = 12, "8" = 24),
+    limits = c("6", "8"))
 ```
 
-As you can see above, `ggplot2` returns a warning message indicating data related
-to 4 cylinders has been dropped. If you observe the legend, it now represents 
-only 6 and 8 cylinders.
+Unlike color, `shape` cannot draw an out-of-range group in grey: the
+four-cylinder cars are removed before plotting, and ggplot2 reports the number
+of rows it removed. The legend shows only 6 and 8 cylinders. Filter the data
+with `filter()` if you want to remove them yourself.
 
 ### How to reorder or hide shape legend items in ggplot2 {#shape-legend-breaks .unnumbered}
 
 When there are large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
-use the breaks argument and specify the labels to be used. In the below case, 
-we use the `breaks` argument to ensure that the labels in legend represent 
-two levels (4, 8) of the mapped variable.
+use the breaks argument and specify which levels to show in the legend. In the
+below case, we use the `breaks` argument to ensure that the labels in legend
+represent two levels (4, 8) of the mapped variable.
 
 ```{r legs22, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, shape = factor(cyl))) +
-  scale_shape_manual(values = c(4, 12, 24), breaks = c(4, 8))
+  scale_shape_manual(values = c("4" = 4, "6" = 12, "8" = 24),
+    breaks = c("4", "8"))
 ```
+
+`breaks` hides the 6-cylinder key but keeps every point: the six-cylinder cars
+still use shape 12. With unnamed values, the shapes are matched to `breaks` and
+the unlisted group is removed instead.
 
 ### How to combine shape legend options in ggplot2 {#putting-it-all-together .unnumbered}
 
 ```{r legs23, fig.align='center'}
+#| warning: true
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, shape = factor(cyl))) +
-  scale_shape_manual(name = "Cylinders", labels = c('Six', 'Eight'),  
-     values = c(4, 24), limits = c(6, 8), breaks = c(6, 8))
+  scale_shape_manual(name = "Cylinders", labels = c('Six', 'Eight'),
+    values = c("6" = 12, "8" = 24), limits = c("6", "8"),
+    breaks = c("6", "8"))
 ```
+
+The four-cylinder cars are outside the limits, so ggplot2 removes them and
+reports it. The legend lists only the two remaining groups.
 
 ## How to change legend point sizes in ggplot2 {#change-legend-point-sizes}
 
@@ -194,10 +207,15 @@ and then visualize it. Instead, we will use the `limits` argument and filter
 the data for visualization.
 
 ```{r legs27}
+#| warning: true
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, size = hp)) +
   scale_size_continuous(limits = c(100, 350))
 ```
+
+`limits` removes the rows whose horsepower is outside 100--350, so the plot and
+the legend only describe the remaining cars; ggplot2 warns that it removed
+them.
 
 ### How to reorder or hide size legend items in ggplot2 {#size-legend-breaks .unnumbered}
 
@@ -304,6 +322,9 @@ ggplot(mtcars) +
   scale_alpha_continuous(limits = c(100, 350))
 ```
 
+Points outside the limits are drawn fully transparent, so they disappear from
+the plot; ggplot2 does not warn for alpha.
+
 ### How to change the legend transparency range in ggplot2 {#alpha-legend-range .unnumbered}
 
 The range of the transparency of points can be modified using the `range` 
@@ -349,8 +370,6 @@ ggplot(mtcars) +
 1. Map `shape` to cylinders with `scale_shape_manual(values = ...)`.
 2. Control point spread with `scale_size_continuous(range = ...)`.
 3. Explain why `size`/`alpha` must map to continuous variables.
-
-Worked solutions in `solutions/legend-shape-size-alpha.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 
