@@ -184,10 +184,10 @@ ggplot(mtcars, aes(x = disp, y = mpg)) +
 
 So far we have focused on `geom_point()` to learn how to map aesthetics to
 variables. To explore line type and line width, we will use `geom_line()`. In
-the previous chapter, we used it to build line charts. Now we will modify the
-appearance of the line. In the section below, we will specify values for color,
-line type and width. In the next section, we will map the same to variables in
-the data. We will use a new data set, `EuStockMarkets`, a data set
+the previous chapter, we used `geom_line()` to build line charts. Now we will
+modify the appearance of the line. In the section below, we will specify values
+for color, line type and width. In the next section, we will map the same to
+variables in the data. We will use a new data set, `EuStockMarkets`, a data set
 that ships with R. It records the daily closing prices of four European stock
 indices — DAX, SMI, CAC and FTSE — from mid-1991 to mid-1998. See
 `?EuStockMarkets` for details and the source.

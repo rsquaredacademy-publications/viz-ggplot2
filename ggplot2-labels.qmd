@@ -41,7 +41,7 @@ ggplot(mtcars) +
 
 ## Title & Subtitle
 
-There are two ways to add title to a plot:
+There are two ways to add a title to a plot:
 
 - `ggtitle()`
 - `labs()`
@@ -61,7 +61,7 @@ ggplot(mtcars) +
 
 ## Axis Labels
 
-You can add labels to the axis using:
+You can add labels to the axes using:
 
 - `xlab()`
 - `ylab()`
@@ -75,7 +75,7 @@ ggplot(mtcars) +
 
 ## Labs
 
-The `labs()` function can be used to add the following to a plot:
+We can use the `labs()` function to add the following to a plot:
 
 - title
 - subtitle
@@ -91,8 +91,8 @@ ggplot(mtcars) +
 
 ## Axis Range
 
-In certain scenarios, you may want to modify the range of the axis. In ggplot2, 
-we can achieve this using:
+Sometimes you may want to modify the range of an axis. In ggplot2, we can do
+this using:
 
 - `xlim()`
 - `ylim()`
@@ -101,11 +101,11 @@ we can achieve this using:
 
 - `xlim()` and `ylim()` take a numeric vector of length 2 as input
 - `expand_limits()` takes two numeric vectors (each of length 2), one for each axis 
-- in all of the above functions, the first element represents the lower limit and the second element represents the upper limit
+- in all of these functions, the first element is the lower limit and the second element is the upper limit
 
 ### X Axis
 
-In the below example, we limit the range of the X axis between `0` and `600` using `xlim`.
+In the example below, we limit the range of the X axis between `0` and `600` using `xlim`.
 
 ```{r axis6, fig.align='center'}
 ggplot(mtcars) +
@@ -125,10 +125,10 @@ ggplot(mtcars) +
 
 ### Expand Limits
 
-Let us use `expand_limits()` to limit the range of both the X and Y axis. The 
-first input is the range for the X axis and the second input for the Y axis. In
-both the cases, we use a numeric vector of length 2 to specify the lower and 
-upper limit.
+Let us use `expand_limits()` to limit the range of both the X and Y axis. The
+first input is the range for the X axis and the second input the range for the
+Y axis. In both cases, we use a numeric vector of length 2 to specify the lower
+and upper limit.
 
 ```{r axis8, fig.align='center'}
 ggplot(mtcars) +
@@ -138,14 +138,14 @@ ggplot(mtcars) +
 
 ### Remove Axis Labels
 
-If you want to remove the axis labels all together, use the `theme()` function. 
-It allows us to modify every aspect of the theme of the plot. Within `theme()`, 
-set the following to `element_blank()`.
+If you want to remove the axis labels altogether, use the `theme()` function.
+It allows us to modify every aspect of the plot theme. Within `theme()`, set the
+following to `element_blank()`.
 
 - `axis.title.x`
 - `axis.title.y`
 
-`element_blank()` will remove the title of the X and Y axis.
+`element_blank()` removes the title of the X and Y axes.
 
 ```{r axis9, fig.align='center'}
 ggplot(mtcars) +
@@ -155,8 +155,8 @@ ggplot(mtcars) +
 
 ## Format Title & Axis Labels
 
-To format the title or the axis labels, we have to modify the theme of the plot 
-using the `theme()` function. We can modify: 
+To format the title or the axis labels, we modify the theme of the plot using
+`theme()`. We can modify:
 
 - color
 - font family
@@ -165,13 +165,13 @@ using the `theme()` function. We can modify:
 - horizontal alignment 
 - and angle
 
-In addition to `theme()`, we will also use `element_text()`. It should be used
-whenever you want to modify the appearance of any text element of your plot.
+In addition to `theme()`, we will also use `element_text()`. Use it whenever
+you want to modify the appearance of any text element of your plot.
 
 ### Color
 
-In the below example, we use the `color` argument within `element_text()` to
-modify the color of the title of the plot to `'blue'`.
+In the example below, we use the `color` argument within `element_text()` to
+modify the color of the plot title to `'blue'`.
 
 ```{r axis10, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
@@ -199,8 +199,7 @@ The font face can be any of the following:
 - `italic` 
 - `bold.italic`
 
-The `face` argument can be used to modify the font face of the title of the 
-plot. 
+We can use the `face` argument to modify the font face of the plot title.
 
 ```{r axis12, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
@@ -210,7 +209,7 @@ ggplot(mtcars) +
 
 ### Font Size
 
-The size of the title of the plot can be modified using the `size` argument.
+Use the `size` argument to modify the size of the plot title.
 
 ```{r axis13, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
@@ -220,9 +219,9 @@ ggplot(mtcars) +
 
 ## Horizontal Alignment
 
-To modify the horizontal alignment of the title, use the `hjust` argument. It 
+To modify the horizontal alignment of the title, use the `hjust` argument. It
 can take values between `0` and `1`. If the value is closer to `0`, the text
-will be left-aligned and viceversa.
+will be left-aligned and vice versa.
 
 ```{r axis14, fig.align='center', message=FALSE, warning=FALSE}
 ggplot(mtcars) +
