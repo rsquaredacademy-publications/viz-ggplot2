@@ -322,8 +322,9 @@ ggplot(mtcars) +
   scale_alpha_continuous(limits = c(100, 350))
 ```
 
-Points outside the limits are drawn fully transparent, so they disappear from
-the plot; ggplot2 does not warn for alpha.
+Points outside the limits get `alpha = NA`, which ggplot2 draws fully opaque,
+so the nine cars with horsepower below `100` stay on the plot and no warning is
+raised.
 
 ### How to change the legend transparency range in ggplot2 {#alpha-legend-range .unnumbered}
 
