@@ -1,7 +1,7 @@
 # Scales, Formatting & Color Accessibility {#ggplot2-scales-accessibility}
 
 In this chapter, we will format axis labels with the `scales` package,
-use colorblind-safe viridis palettes and check contrast for accessibility.
+use colorblind-safe viridis palettes, and check contrast for accessibility.
 
 :::{.callout-note}
 ## Why this matters
@@ -14,8 +14,8 @@ charts instantly legible to everyone.
 :::{.callout-warning}
 ## Common pitfall
 
-Red-green contrasts are invisible to the most common form of
-colorblindness. Never encode critical groups with a red-versus-green
+The most common form of colorblindness makes red and green hard to
+tell apart. Never encode critical groups with a red-versus-green
 scale alone.
 :::
 
