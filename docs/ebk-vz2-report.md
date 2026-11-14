@@ -475,6 +475,9 @@ error and no new warning. `--to html` is the site format; PDF and EPUB were not 
   (`ggplot2-facets.qmd:27`); Scales, Formatting & Color Accessibility said red-green contrasts are "invisible"
   (`ggplot2-scales-accessibility.qmd:17`). These correct technical meaning rather than style alone and are
   recorded here under the strict meaning-preservation rule.
+- **One light line restored in `ebk-vz3`:** the Box Plots invitation "You can play around with the
+  transparency of the outlier…" (`ggplot2-box-plot.qmd:171`) is back; the `ebk-vz3` audit found the flattening
+  unnecessary, and the brief asks to keep light lines.
 - **"learnt" → "learned"** was applied where the pass touched the sentence (Aesthetics, Histograms, Modify
   Legend, Quick Tour). Other chapters may still carry "learnt"; a book-wide sweep was not done, as the guide
   leaves the spelling to Aravind (§4.3).

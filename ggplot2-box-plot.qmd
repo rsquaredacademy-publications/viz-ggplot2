@@ -169,7 +169,7 @@ ggplot(tidy_returns) +
   geom_boxplot(aes(x = stock, y = returns), outlier.size = 3) 
 ```
 
-You can change the transparency of the outlier using the 
+You can play around with the transparency of the outlier using the 
 `outlier.alpha` argument. It takes values between `0` and `1`.
 
 ```{r box11, fig.align='center'}
