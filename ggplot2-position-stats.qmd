@@ -1,8 +1,8 @@
 # Position & Stats Tuning {#ggplot2-position-stats}
 
 In this chapter, we will fine-tune how ggplot2 arranges and transforms
-marks: parametric position adjustments, summary statistics and modern
-stat mapping syntax.
+marks: position adjustments, summary statistics and modern
+stat-mapping syntax.
 
 :::{.callout-note}
 ## Why this matters
