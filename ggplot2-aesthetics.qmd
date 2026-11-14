@@ -14,10 +14,10 @@ Aesthetics map variables to position, color, size and shape so patterns pop out.
 Putting a constant inside aes() (e.g. aes(color='red')) creates a bogus legend; constants belong outside aes().
 :::
 
-In this chapter, we will focus on the aesthetics i.e. color, shape, size, alpha, 
-line type, line width etc. We can map these to variables or specify values for 
-them. If we want to map the above to variables, we have to specify them within 
-the `aes()` function. We will look at both methods in the following sections.
+In this chapter, we will focus on the aesthetics: color, shape, size, alpha,
+line type and line width. We can map these to variables or specify values for
+them. To map them to variables, we specify them within the `aes()` function. We
+will look at both methods in the following sections.
 
 Explore aesthetics such as 
 
@@ -69,43 +69,41 @@ ecom
 
 ## Color
 
-In ggplot2, when we mention `color` or `colour`, it usually refers to the color 
-of the geoms. The `fill` argument is used to specify the color of the shapes in 
-certain cases. In this first section, we will see how we can specify the color 
-for the different geoms we learnt in the previous chapter. 
+In ggplot2, `color` or `colour` usually refers to the color of the geoms. The
+`fill` argument specifies the color of the shapes in certain cases. In this
+first section, we will see how to specify the color for the different geoms we
+learned in the previous chapter.
 
 ### Point
 
-For points, the `color` argument specifies the color of the point for certain 
-shapes and border for others. The `fill` argument is used to specify the 
-background for some shapes and will not work with other shapes. Let us look at 
-an example:
+For points, the `color` argument specifies the color of the point for certain
+shapes and the border for others. The `fill` argument specifies the background
+for some shapes and does not work with others. Let us look at an example:
 
 ```{r aes2, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg, color = factor(cyl))) +
   geom_point()
 ```
 
-We can map the variable to color in the `geom_point()` function as well since 
-it inherits the data from the `ggplot()` function.
+We can also map the variable to color in the `geom_point()` function, since it
+inherits the data from `ggplot()`.
 
 ```{r aes3, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(aes(color = factor(cyl)))
 ```
 
-If you do not want to map a variable to color, you can specify it separately 
-using the `color` argument but in this case it should be outside the `aes()` 
-function.
+If you do not want to map a variable to color, specify it separately using the
+`color` argument, outside the `aes()` function.
 
 ```{r aes4, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(color = 'blue')
 ```
 
-Now we will change the shape of the points to understand the difference between 
-`color` and `fill` arguments. It can be again mapped to variables or values. 
-Let us map shape to variables.
+Now we will change the shape of the points to understand the difference between
+the `color` and `fill` arguments. Shape can again be mapped to variables or
+values. Let us map shape to variables.
 
 ```{r aes5, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg, shape = factor(cyl))) +
@@ -113,16 +111,16 @@ ggplot(mtcars, aes(x = disp, y = mpg, shape = factor(cyl))) +
 ```
 
 Let us map shape to `cyl` in the `geom_point()` function. Remember, when you
-are mapping an aesthetic to a variable, it must be inside `aes()`.
+map an aesthetic to a variable, it must be inside `aes()`.
 
 ```{r aes6, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(aes(shape = factor(cyl)))
 ```
 
-Instead of mapping shape to a variable, let us specify a value for shape. In 
-this case, `shape` is not wrapped inside `aes()` as we are not mapping it to 
-a variable.
+Instead of mapping shape to a variable, let us specify a value for shape. In
+this case, `shape` is outside `aes()` because we are not mapping it to a
+variable.
 
 ```{r aes7, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg)) +
@@ -136,16 +134,16 @@ ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(shape = 5, color = 'blue')
 ```
 
-Background color cannot be added for all shapes. In the below example, we try 
-to modify the background color using the `fill` argument but it does not work.
+Not all shapes take a background color. In the example below, we try to modify
+the background color using the `fill` argument but it does not work.
 
 ```{r aes9, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(shape = 5, fill = 'blue')
 ```
 
-Since shapes 21–25 have both a fill and a border, the `fill` argument will add
-background color in the below case.
+Since shapes 21–25 have both a fill and a border, the `fill` argument adds the
+background color:
 
 ```{r aes10, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg)) +
@@ -159,8 +157,8 @@ ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(shape = 22, color = 'blue')
 ```
 
-Let us map size of points to a variable. It is advised to map size only to 
-continuous variables and not categorical variables.
+Let us map the size of points to a variable. Map size only to continuous
+variables, not categorical variables.
 
 ```{r aes12, fig.align='center', fig.height=5, fig.width=6}
 ggplot(mtcars, aes(x = disp, y = mpg, size = disp)) +
@@ -184,12 +182,12 @@ ggplot(mtcars, aes(x = disp, y = mpg)) +
 
 ## Line Chart
 
-So far we have focussed on `geom_point()` to learn how to map aesthetics to 
-variables. To explore line type and line width, we will use `geom_line()`. In 
-the previous chapter, we used `geom_line()` to build line charts. Now we will 
-modify the appearance of the line. In the section below, we will specify values
-for color, line type and width. In the next section, we will map the same to 
-variables in the data. We will use a new data set, `EuStockMarkets`, a data set
+So far we have focused on `geom_point()` to learn how to map aesthetics to
+variables. To explore line type and line width, we will use `geom_line()`. In
+the previous chapter, we used it to build line charts. Now we will modify the
+appearance of the line. In the section below, we will specify values for color,
+line type and width. In the next section, we will map the same to variables in
+the data. We will use a new data set, `EuStockMarkets`, a data set
 that ships with R. It records the daily closing prices of four European stock
 indices — DAX, SMI, CAC and FTSE — from mid-1991 to mid-1998. See
 `?EuStockMarkets` for details and the source.
@@ -202,7 +200,7 @@ stocks$year <- as.numeric(time(EuStockMarkets))
 head(stocks)
 ```
 
-A line chart can be created using `geom_line()`. In the below example, we 
+We can create a line chart using `geom_line()`. In the example below, we
 examine the DAX index and modify the color of the line to `'blue'`.
 
 ```{r aes15, fig.align='center', fig.height=5, fig.width=6}
@@ -218,22 +216,22 @@ ggplot(stocks, aes(year, DAX)) +
   geom_line(linetype = 2)
 ```
 
-The line type can also be mentioned in the following way:
+The line type can also be specified by name:
 
 ```{r aes17, fig.align='center', fig.height=5, fig.width=6}
 ggplot(stocks, aes(year, DAX)) +
   geom_line(linetype = 'dashed')
 ```
 
-The width of the line can be modified using the `linewidth` argument.
+Use the `linewidth` argument to modify the width of the line.
 
 ```{r aes18, fig.align='center', fig.height=5, fig.width=6}
 ggplot(stocks, aes(year, DAX)) +
   geom_line(linewidth = 2)
 ```
 
-Now let us map the aesthetics to the variables. The data used in the above 
-example cannot be used as we need a variable with index names. We will use 
+Now let us map the aesthetics to the variables. We cannot use the data from the
+example above, because we need a variable with index names. We will use the
 `pivot_longer()` function from the `tidyr` package to reshape the data.
 
 ```{r aes19, fig.align='center', fig.height=5, fig.width=6}
@@ -245,11 +243,11 @@ stocks2 <-
 head(stocks2)
 ```
 
-To map the aesthetics to a variable, we must use the `group` argument. In the 
-below example, we map the aesthetics to `index`. But we cannot distinguish 
-between the lines as their color, width and line type are the same. We have 
+To map the aesthetics to a variable, we must use the `group` argument. In the
+example below, we map the aesthetics to `index`. But we cannot distinguish
+between the lines, as their color, width and line type are the same. We have
 easily plotted the price trend of all four indices using the `group` argument.
-Now, let us ensure that we can distinguish and identify them using different 
+Now let us ensure that we can distinguish and identify them using different
 aesthetics.
 
 ```{r aes20, fig.align='center', fig.height=5, fig.width=6}
@@ -257,8 +255,8 @@ ggplot(stocks2, aes(year, price, group = index)) +
   geom_line()
 ```
 
-Let us begin by ensuring that the lines have different color using the
-`color` argument within `aes()` and assigning it the variable `index`.
+Let us begin by giving the lines different colors with the `color` argument,
+mapped to `index` inside `aes()`.
 
 ```{r aes21, fig.align='center', fig.height=5, fig.width=6}
 ggplot(stocks2, aes(year, price, group = index)) +
@@ -272,8 +270,8 @@ ggplot(stocks2, aes(year, price, group = index)) +
   geom_line(aes(linetype = index))
 ```
 
-In the below instance, we assign different width to the lines using the `linewidth`
-argument.
+In the example below, we assign a different width to each line using the
+`linewidth` argument.
 
 ```{r aes23, fig.align='center', fig.height=5, fig.width=6}
 ggplot(stocks2, aes(year, price, group = index)) +
@@ -311,9 +309,9 @@ ggplot(ecom) +
   geom_boxplot(aes(device, duration, fill = purchase))
 ```
 
-In all the above cases, you can observe that when we are mapping aesthetics 
-such as color, fill, shape, size or linetype to variables, they are all wrapped 
-inside `aes()`.
+In all the cases above, you can observe that when we map aesthetics such as
+color, fill, shape, size or linetype to variables, they are all wrapped inside
+`aes()`.
 
 ## Exercises
 
