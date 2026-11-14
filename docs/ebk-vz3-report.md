@@ -6,7 +6,8 @@ Date: 2026-11-14. Worktree `F:/R/ebooks/_worktrees/vz-style`, branch `task/vz-st
 switch, no other worktree touched. `roadmap/` was already in `.gitignore`.
 
 Scope: the audit's H1, M1, M2a–e, M3 and L1–L3. Headings, anchors, chunk options, code and examples are
-unchanged except where an M2 correction required a prose sentence. Commits:
+unchanged except where an M2 correction required a prose sentence. Commits for the fix groups (the report and
+its follow-up tidy are separate docs commits):
 
 | Commit | Finding group |
 | :-- | :-- |

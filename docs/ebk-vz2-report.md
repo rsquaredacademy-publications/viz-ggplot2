@@ -463,11 +463,11 @@ error and no new warning. `--to html` is the site format; PDF and EPUB were not 
 - **The three legend chapters keep their reference content.** `title.hjust`, `label.vjust`, `nbin`,
   `draw.ulim`/`draw.llim` and the "1 Hundred / 2 Hundred" labels stay. The learner review recommends folding
   these into one task-based chapter; that is restructuring and example work, outside this pass.
-- **`limits` still reads as filtering** in the lead-in sentence of the two `limits` sections ("we will use the
-  `limits` argument and filter the data for visualization"). The paragraph after each chunk (the vz1 fix) says
-  what really happens, so the wording is left; rewriting the lead-in is a content decision for Aravind. Resolved
-  in `ebk-vz3`: the three affected lead-ins now say that `limits` sets the legend range and that the data is
-  not filtered.
+- **`limits` read as filtering in the vz2 lead-ins:** the two `limits` sections said "we will use the
+  `limits` argument and filter the data for visualization". The paragraph after each chunk (the vz1 fix) said
+  what really happens, so the wording was left; rewriting the lead-in was a content decision for Aravind.
+  Resolved in `ebk-vz3`: the three affected lead-ins now say that `limits` sets the legend range and that the
+  data is not filtered.
 - **Five technical clarifications, flagged for review:** Bar Plots said "the height of all the bars is
   proportional or same" (`ggplot2-bar-plot.qmd:106`); Box Plots called the horizontal section a "horizontal bar
   plot" (`ggplot2-box-plot.qmd:103`); the alpha `breaks` paragraph said "mapped to size"
@@ -476,8 +476,8 @@ error and no new warning. `--to html` is the site format; PDF and EPUB were not 
   (`ggplot2-scales-accessibility.qmd:17`). These correct technical meaning rather than style alone and are
   recorded here under the strict meaning-preservation rule.
 - **One light line restored in `ebk-vz3`:** the Box Plots invitation "You can play around with the
-  transparency of the outlier…" (`ggplot2-box-plot.qmd:171`) is back; the `ebk-vz3` audit found the flattening
-  unnecessary, and the brief asks to keep light lines.
+  transparency of the outlier…" (`ggplot2-box-plot.qmd:171` in vz2, now line 172) is back; the `ebk-vz3` audit
+  found the flattening unnecessary, and the brief asks to keep light lines.
 - **"learnt" → "learned"** was applied where the pass touched the sentence (Aesthetics, Histograms, Modify
   Legend, Quick Tour). Other chapters may still carry "learnt"; a book-wide sweep was not done, as the guide
   leaves the spelling to Aravind (§4.3).
