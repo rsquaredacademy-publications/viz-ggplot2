@@ -12,7 +12,7 @@ active R user, he has authored several R packages such as
 - [xplorerr](https://xplorerr.rsquaredacademy.com)
 
 In 2015, he founded [Rsquared Academy](https://www.rsquaredacademy.com), a 
-free and open source education initiative with focus on data science and 
+free and open source education initiative with a focus on data science and 
 analytics. Apart from self paced online courses, Rsquared Academy offers 
 customized learning modules for corporates and universities. 
 
