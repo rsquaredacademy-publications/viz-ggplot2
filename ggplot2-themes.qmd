@@ -14,7 +14,7 @@ Themes take a correct plot to publication-ready: fonts, gridlines and background
 Styling before the data mapping is right wastes effort; get geoms and scales correct first.
 :::
 
-In this chapter, we will learn to modify the appearance of all non data 
+In this chapter, we will learn to modify the appearance of all non-data 
 components of the plot such as:
 
 - axis
@@ -33,7 +33,7 @@ library(readr)
 ## Basic Plot
 
 We will continue with the scatter plot examining the relationship between 
-displacement and miles per gallon from the the mtcars data set.
+displacement and miles per gallon from the mtcars data set.
 
 ```{r theme1, fig.align='center'}
 p <- ggplot(mtcars) +
@@ -45,13 +45,13 @@ p
 
 ### Style axis text {#style-axis-text}
 
-The `axis.title.x` argument can be used to modify the appearance of the `X` 
-axis. In the below example, we modify the color and size of the title using
-the `element_text()` function. Remember, whenever you are trying to modify the
-appearance of a theme element which is a text, you must use `element_text()`.
+We can use the `axis.title.x` argument to modify the appearance of the `X` 
+axis. In the example below, we modify the color and size of the title using
+the `element_text()` function. Remember, whenever you want to modify the
+appearance of a theme element which is text, you must use `element_text()`.
 
-You can use `axis.title.y` to modify the `Y` axis title and to modify the 
-title of both the axis together, use `axis.title`.
+You can use `axis.title.y` to modify the `Y` axis title. To modify the 
+title of both axes together, use `axis.title`.
 
 ```{r theme2, fig.align='center'}
 p + theme(axis.title.x = element_text(color = "red", size = 10, face = "italic"))
@@ -61,7 +61,7 @@ p + theme(axis.title.x = element_text(color = "red", size = 10, face = "italic")
 
 To modify the appearance of the axis ticks, use the `axis.ticks` argument. You can
 change the color, linewidth, linetype and length of the ticks using the `element_line()`
-function as shown below. 
+function. 
 
 ```{r theme5, fig.align='center'}
 p + theme(axis.ticks = element_line(color = 'blue', linewidth = 1.25, linetype = 2), 
@@ -70,7 +70,7 @@ p + theme(axis.ticks = element_line(color = 'blue', linewidth = 1.25, linetype =
 
 ### Style axis lines {#style-axis-lines}
 
-The `axis.line` argument should be used to modify the appearance of the 
+Use the `axis.line` argument to modify the appearance of the 
 axis lines. You can change the color, linewidth and linetype of the line using
 the `element_line()` function.
 
@@ -90,7 +90,7 @@ p
 
 ### Style the legend background {#style-legend-background}
 
-The background of the legend can be modified using the `legend.background`
+We can modify the background of the legend using the `legend.background`
 argument. You can change the background color, the border color and line type
 using `element_rect()`.
 
@@ -101,7 +101,7 @@ p + theme(legend.background = element_rect(fill = 'gray', linetype = 3,
 
 ### Style legend text {#style-legend-text}
 
-The appearance of the text can be modified using the `legend.text` argument.
+We can modify the appearance of the text using the `legend.text` argument.
 You can change the color, size and font using the `element_text()` function.
 
 ```{r theme34, fig.align='center'}
@@ -110,7 +110,7 @@ p + theme(legend.text = element_text(color = 'green', face = 'italic'))
 
 ### Style the legend title {#style-legend-title}
 
-The appearance of the title of the legend can be modified using the 
+We can modify the appearance of the legend title using the 
 `legend.title` argument. You can change the color, size, font and alignment
 using `element_text()`.
 
@@ -120,7 +120,7 @@ p + theme(legend.title = element_text(color = 'blue', face = 'bold', hjust = 0.1
 
 ### Move the legend position {#move-the-legend-position}
 
-The position and direction of the legend can be changed using:
+We can change the position and direction of the legend using:
 
 - `legend.position`
 - and `legend.direction`
