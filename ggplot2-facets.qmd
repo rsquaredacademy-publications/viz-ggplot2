@@ -14,7 +14,7 @@ Facets split one plot into small multiples sharing scales, so group differences 
 Too many facet levels shrink each panel past readability; filter or wrap sensibly.
 :::
 
-In this chapter, we will learn about faceting i.e. splitting one plot into
+In this chapter, we will learn about faceting, i.e. splitting one plot into
 panels, one per group.
 
 ```{r facet, echo=FALSE, eval=TRUE, results='hide', message=FALSE}
@@ -23,18 +23,18 @@ library(readr)
 ```
 
 Let us continue with the scatter plot examining the relationship between 
-displacement and miles per gallon but let us make one additional change.
-We now want 3 sub plots for each type of cylinder. How can we do this? We can
-split or group the data by cylinder type and plot the subset of data which 
+displacement and miles per gallon, but let us make one additional change.
+We now want 3 sub plots, one for each type of cylinder. How can we do this? We can
+split or group the data by cylinder type and plot the subset of data, which
 means dealing with 3 different data sets, plotting 3 plots and arranging them
-for comparison. ggplot2 offers the following 2 functions which allow us to plot
-subset of data with a simple formula based interface:
+for comparison. ggplot2 offers the following 2 functions, which allow us to plot
+subsets of data with a simple formula-based interface:
 
 - `facet_grid()`
 - `facet_wrap()`
 
 Faceting allows us to create multiple sub plots. It partitions a plot into a 
-matrix of panels with each panel showing a different subset of data.
+matrix of panels, with each panel showing a different subset of data.
 
 ## Arrange facets in a grid {#facet-grid}
 
@@ -42,9 +42,9 @@ matrix of panels with each panel showing a different subset of data.
 
 `facet_grid()` allows us to split up the data by one or two discrete variables 
 and create sub plots. The sub plots can be arranged horizontally or vertically 
-using a formula of the form `vertical ~ horizontal`. In the below example, 3 
-sub plots are created, one each for the levels of the `cyl` variable and 
-the sub plots are arranged vertically
+using a formula of the form `vertical ~ horizontal`. In the example below, 3 
+sub plots are created, one for each level of the `cyl` variable, and 
+the sub plots are arranged vertically.
 
 
 ```{r facet2, fig.align='center'}
@@ -65,10 +65,10 @@ ggplot(mtcars, aes(disp, mpg)) +
 
 ### Facet rows and columns together {#facet-grid-rows-columns}
 
-In certain cases, we might want different discrete variables to represent the
-horizontal and vertical direction. In the below example, we examine the 
+Sometimes, we might want different discrete variables to represent the
+horizontal and vertical direction. In the example below, we examine the 
 relationship between displacement and miles per gallon for different combinations
-of `cyl` and `gear` variables. 
+of the `cyl` and `gear` variables. 
 
 ```{r facet3, fig.align='center'}
 ggplot(mtcars, aes(disp, mpg)) + 
@@ -87,9 +87,9 @@ ggplot(mtcars, aes(disp, mpg)) +
 
 ### Use free scales in a facet grid {#facet-grid-free-scales}
 
-If you carefully observe the second example, the range of `X` axis is same for
-all the 3 sub plots i.e. it is a fixed range. You can allow each of the sub 
-plots to have different range using the `scales` argument and supplying it the
+If you observe the second example carefully, the range of the `X` axis is the
+same for all the 3 sub plots, i.e. it is a fixed range. You can allow each of the sub 
+plots to have a different range using the `scales` argument and supplying it the
 value `'free'`. 
 
 ```{r facet5, fig.align='center'}
@@ -98,16 +98,16 @@ ggplot(mtcars, aes(disp, mpg, color = factor(cyl))) +
   facet_grid(. ~ cyl, scales = "free")
 ```
 
-Now, each of the sub plot has a different range.
+Now, each of the sub plots has a different range.
 
 ### Move facet labels with switch {#facet-grid-switch}
 
 In the third example, the labels are displayed at the bottom for `X` axis and 
-at the right for the `Y` axis. It can be changed using the `switch` argument 
+at the right for the `Y` axis. You can change this using the `switch` argument 
 and supplying the value `'both'`. The labels will now be displayed at the top 
-for the `X` axis and at left for the `Y` axis. If you just want to change the 
+for the `X` axis and at the left for the `Y` axis. If you just want to change the 
 labels for a particular axis, use the values `x` and `y` for the `X` and `Y` 
-axis respectively.
+axes respectively.
 
 ```{r facet6, fig.align='center'}
 ggplot(mtcars, aes(disp, mpg)) + 
@@ -118,7 +118,7 @@ ggplot(mtcars, aes(disp, mpg)) +
 ## Wrap facets into panels {#facet-wrap}
 
 `facet_wrap()` allows us to arrange sub plots in a certain number of rows and 
-columns. In the below example, we will use `facet_wrap()` to arrange the sub 
+columns. In the example below, we will use `facet_wrap()` to arrange the sub 
 plots in a single row.
 
 ```{r facet7, fig.align='center'}
@@ -130,7 +130,7 @@ ggplot(mtcars, aes(disp, mpg)) +
 ### Set facet rows {#facet-wrap-rows}
 
 To arrange the sub plots in a specific number of rows, use the `nrow` argument.
-In the below example, we arrange the sub plots in 2 rows.
+In the example below, we arrange the sub plots in 2 rows.
 
 ```{r facet8, fig.align='center'}
 ggplot(mtcars, aes(disp, mpg)) +
@@ -151,7 +151,7 @@ ggplot(mtcars, aes(disp, mpg)) +
 
 ### Use free scales in wrapped facets {#facet-wrap-free-scales}
 
-You can allow each of the sub plots to have different range using the `scales` 
+You can allow each of the sub plots to have a different range using the `scales` 
 argument and supplying it the value `'free'`. 
 
 ```{r facet12, fig.align='center'}
@@ -163,7 +163,7 @@ ggplot(mtcars, aes(disp, mpg)) +
 ### Set facet rows and columns {#facet-wrap-rows-columns}
 
 If 2 discrete variables are used to create the sub plots, we can either use
-the formula interface to specify the variables as shown below 
+the formula interface to specify the variables:
 
 ```{r facet10, fig.align='center'}
 ggplot(mtcars, aes(disp, mpg)) +
