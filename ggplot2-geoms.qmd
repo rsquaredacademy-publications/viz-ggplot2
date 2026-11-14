@@ -58,17 +58,17 @@ ecom
 
 ## Point
 
-A scatter plot displays the relationship between two continuous variables. In 
-ggplot2, we can build a scatter plot using `geom_point()`. Scatter plots can 
-show you visually 
+A scatter plot displays the relationship between two continuous variables. In
+ggplot2, we build a scatter plot using `geom_point()`. A scatter plot shows
+visually
 
-- the strength of the relationship between the variables 
-- the direction of the relationship between the variables 
+- the strength of the relationship between the variables
+- the direction of the relationship between the variables
 - and whether outliers exist
 
-The variables representing the X and Y axis can be specified either in `ggplot()`
-or in `geom_point()`. We will learn to modify the appearance of the points in
-the Aesthetics chapter.
+We can specify the variables for the X and Y axis either in `ggplot()` or in
+`geom_point()`. We will learn to modify the appearance of the points in the
+Aesthetics chapter.
 
 ```{r geoms2, fig.align='center'}
 ggplot(ecom, aes(x = n_pages, y = duration)) + 
@@ -82,8 +82,8 @@ A regression line can be fit using either:
 - `geom_abline()`
 - `geom_smooth()`
 
-If you are using `geom_abline()`, you need to specify the intercept and slope 
-as shown in the below example:
+If you are using `geom_abline()`, you need to specify the intercept and slope
+as shown in the example below:
 
 ```{r geoms5, fig.align='center'}
 ggplot(mtcars, aes(x = wt, y = mpg)) +
@@ -92,8 +92,8 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
 ```
 
 If you are using `geom_smooth()`, you need to specify the method of fitting the
-line, which can be `lm` or `loess`. You also need to indicate whether the 
-confidence interval must be displayed using the `se` argument.
+line, which can be `lm` or `loess`. You also need to indicate whether to
+display the confidence interval using the `se` argument.
 
 ```{r geoms6, fig.align='center'}
 ggplot(mtcars, aes(x = wt, y = mpg)) +
@@ -128,7 +128,7 @@ ggplot(ecom, aes(x = factor(device))) +
 ### Weight
 
 If the bars should represent a continuous variable, use the `weight` argument
-within `aes()`. In the below example, the bars do not represent the count of 
+within `aes()`. In the example below, the bars do not represent the count of
 devices, instead, they represent the total order value for each device type.
 
 ```{r geoms9, fig.align='center'}
@@ -159,9 +159,9 @@ ggplot(ecom, aes(x = factor(device))) +
 
 ## Columns
 
-If the data has already been summarized, you can use `geom_col()` instead of 
-`geom_bar()`. In the below example, we have the total visits for each device
-type. The data has already been summarized and as such we cannot use `geom_bar()`.
+If the data has already been summarized, use `geom_col()` instead of
+`geom_bar()`. In the example below, we have the total visits for each device
+type. The data has already been summarized, so we cannot use `geom_bar()`.
 
 ```{r geoms12, fig.align='center', fig.height=4}
 device <- c('laptop', 'mobile', 'tablet')
@@ -176,7 +176,7 @@ ggplot(traffic, aes(x = device, y = visits)) +
 The box plot is a standardized way of displaying the distribution of data 
 based on the five number summary: minimum, first quartile, median, third 
 quartile, and maximum. Box plots are useful for detecting outliers and for 
-comparing distributions. It shows the shape, central tendancy and variability 
+comparing distributions. It shows the shape, central tendency and variability
 of the data. Use `geom_boxplot()` to create a box plot.
 
 ```{r geoms13, fig.align='center'}
@@ -186,9 +186,9 @@ ggplot(ecom, aes(x = factor(device), y = n_pages)) +
 
 ## Histogram
 
-A histogram is a plot that can be used to examine the shape and spread of 
-continuous data. It looks very similar to a bar graph and can be used to detect 
-outliers and skewness in data. Use `geom_histogram()` to create a histogram.
+A histogram examines the shape and spread of continuous data. It looks very
+similar to a bar graph and can be used to detect outliers and skewness in data.
+Use `geom_histogram()` to create a histogram.
 
 
 ```{r geoms15, fig.align='center'}
@@ -205,8 +205,8 @@ ggplot(ecom, aes(x = duration)) +
 
 ## Line
 
-Line charts are used to examine trends over time. We will use a different data 
-set for exploring line plots.
+We use line charts to examine trends over time. We will use a different data
+set to explore line plots.
 
 ### Data
 
@@ -216,7 +216,7 @@ stocks$year <- as.numeric(time(EuStockMarkets))
 head(stocks)
 ```
 
-Use `geom_line()` to create a line chart. In the below plot, we chart the DAX
+Use `geom_line()` to create a line chart. In the plot below, we chart the DAX
 index across the period.
 
 ```{r geomline1, fig.align='center'}
@@ -239,7 +239,7 @@ Add horizontal or vertical lines using
 
 ### Horizontal Line
 
-To add a horizontal line, the Y axis intercept must be supplied using the 
+To add a horizontal line, supply the Y axis intercept using the
 `yintercept` argument.
 
 ```{r geoms4, fig.align='center'}
@@ -250,7 +250,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
 
 ### Vertical Line
 
-For the vertical line, the X axis intercept must be supplied using the 
+For the vertical line, supply the X axis intercept using the
 `xintercept` argument.
 
 ```{r geoms3, fig.align='center'}
