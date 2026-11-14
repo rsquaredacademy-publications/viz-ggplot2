@@ -50,7 +50,7 @@ head(stocks)
 
 ## Line Chart
 
-To create a line chart, use `geom_line()`. In the below example, we examine the
+To create a line chart, use `geom_line()`. In the example below, we examine the
 DAX index over the period.
 
 ```{r line100, fig.align='center'}
@@ -61,7 +61,7 @@ ggplot(stocks, aes(year, DAX)) +
 ### Line Color
 
 To modify the color of the line, use the `color` argument and supply it a valid
-color name. In the below example, we modify the color of the line to `'blue'`. 
+color name. In the example below, we modify the color of the line to `'blue'`. 
 Remember that the `color` argument should be outside `aes()`.
 
 ```{r line1, fig.align='center'}
@@ -71,8 +71,8 @@ ggplot(stocks, aes(year, DAX)) +
 
 ### Line Type
 
-The line type can be modified using the `linetype` argument. It can take 7 different
-values. You can specify the line type either using numbers or words as shown below:
+We can modify the line type using the `linetype` argument. It takes 7 different
+values. You can specify the line type using numbers or words:
 
 - 0 : blank
 - 1 : solid
@@ -90,7 +90,7 @@ ggplot(stocks, aes(year, DAX)) +
   geom_line(linetype = 2)
 ```
 
-The above example can be recreated by supplying the value `'dashed'` instead 
+We can recreate the example above by supplying the value `'dashed'` instead 
 of `2`.
 
 ```{r line3, fig.align='center'}
@@ -100,7 +100,7 @@ ggplot(stocks, aes(year, DAX)) +
 
 ### Line Size
 
-The width of the line can be modified using the `linewidth` argument. It can take
+We can modify the width of the line using the `linewidth` argument. It takes
 any value above 0 as input.
 
 ```{r line4, fig.align='center'}
@@ -112,8 +112,8 @@ ggplot(stocks, aes(year, DAX)) +
 
 ### Modify Data
 
-Now let us map the aesthetics to the variables. The data used in the above 
-example cannot be used as we need a variable with index names. We will use 
+Now let us map the aesthetics to the variables. We cannot use the data from the
+example above, because we need a variable with index names. We will use the
 `pivot_longer()` function from the `tidyr` package to reshape the data.
 
 ```{r line5, fig.align='center'}
@@ -124,46 +124,44 @@ stocks2 <- stocks |>
 head(stocks2)
 ```
 
-In the original data, to plot the price trend of multiple indices we will have
-to use `geom_line()` multiple times. But in the reshaped data, we have the 
-index names as one of the variables and this can be used along with the 
-`group` argument to plot data of multiple indices with a single line of code 
-as shown below. By mapping index to the `group` argument, we have plotted 
-data of all indices.
+In the original data, plotting the price trend of multiple indices requires
+`geom_line()` several times. In the reshaped data, the index names are one of
+the variables, and we can use them with the `group` argument to plot all the
+indices in a single line of code. By mapping index to the `group` argument, we
+plot data of all indices.
 
 ```{r line6, fig.align='center'}
 ggplot(stocks2, aes(year, price, group = index)) +
   geom_line()
 ```
 
-In the above plot, we cannot distinguish between the lines and there is no way
+In the plot above, we cannot distinguish between the lines, and there is no way
 to identify which line represents which index. To make it easier to identify
-the trend of different indices, let us map the `color` argument to the 
-variable index as shown below. Now, each index will be represented by line 
-of different color.
+the trend of different indices, let us map the `color` argument to the variable
+index. Now, each index is represented by a line of a different color.
 
 ```{r line7, fig.align='center'}
 ggplot(stocks2, aes(year, price, group = index)) +
   geom_line(aes(color = index))
 ```
 
-We can map `linetype` argument to index as well. In this case, each index
-will be represented by a different line type.
+We can also map the `linetype` argument to index. In this case, each index is
+represented by a different line type.
 
 ```{r line8, fig.align='center'}
 ggplot(stocks2, aes(year, price, group = index)) +
   geom_line(aes(linetype = index))
 ```
 
-We can map the width of the line to the variable index as well. But in this 
-case, the plot does not look either elegant or intuitive. 
+We can also map the width of the line to the variable index. But in this
+case, the plot does not look elegant or intuitive.
 
 ```{r line9, fig.align='center'}
 ggplot(stocks2, aes(year, price, group = index)) +
   geom_line(aes(linewidth = index))
 ```
 
-Remember that in all the above cases, we mapped the arguments to a variable 
+Remember that in all the cases above, we mapped the arguments to a variable
 inside `aes()`.
 
 ## Exercises
