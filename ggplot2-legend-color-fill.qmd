@@ -53,9 +53,9 @@ us learn to modify the different aspects of the legend.
 ### How to change legend color values in ggplot2 {#color-legend-values .unnumbered}
 
 To change the default colors in the legend, use the `values` argument and
-supply a character vector of color names. The number of colors specified 
-must be equal to the number of levels in the categorical variable mapped.
-In the below example, `cyl` has 3 levels (4, 6, 8) and hence we have specified
+supply a character vector of color names. The number of colors must equal the
+number of levels in the categorical variable mapped.
+In the example below, `cyl` has 3 levels (4, 6, 8) and hence we have specified
 3 colors.
 
 ```{r legc3, fig.align='center'}
@@ -67,8 +67,8 @@ ggplot(mtcars) +
 ### How to change the legend title in ggplot2 {#color-legend-title .unnumbered}
 
 In the previous example, the title of the legend (`factor(cyl)`) is not very
-intuitive. If the user does not know the underlying data, they will not be able
-to make any sense out of it. Let us change it to `Cylinders` using the `name`
+intuitive. If the user does not know the underlying data, they will not
+make any sense of it. Let us change it to `Cylinders` using the `name`
 argument.
 
 ```{r legc4, fig.align='center'}
@@ -78,15 +78,15 @@ ggplot(mtcars) +
     values = c("red", "blue", "green"))
 ```
 
-Now, the user will know that the different colors represent number of cylinders in
+Now, the user will know that the different colors represent the number of cylinders in
 the car.
 
 ### How to change legend limits in ggplot2 {#color-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed i.e. instead of 
+Let us assume that we want to modify the data to be displayed: instead of 
 examining the relationship between mileage and displacement for all cars, we 
-desire to look at only cars with at least 6 cylinders. One way to approach this
-would be to filter the data using `filter` from dplyr and then visualize it. 
+want to look at only cars with at least 6 cylinders. One way to do this
+is to filter the data using `filter` from dplyr and then visualize it. 
 Instead, we will use the `limits` argument and filter the data for visualization.
 
 ```{r legc5, fig.align='center'}
@@ -105,7 +105,7 @@ supplied to discrete scale"; character values avoid it.
 
 ### How to change legend labels in ggplot2 {#color-legend-labels .unnumbered}
 
-The labels in the legend can be modified using the `labels` argument. Let us 
+We can modify the labels in the legend using the `labels` argument. Let us 
 change the labels to `Four`, `Six` and `Eight` in the next example. Ensure that
 the labels are intuitive and easy to interpret for the end user of the plot.
 
@@ -118,11 +118,11 @@ ggplot(mtcars) +
 
 ### How to reorder or hide legend items in ggplot2 {#color-legend-breaks .unnumbered}
 
-When there are large number of levels in the mapped variable, you may not 
+When there are a large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
 use the breaks argument and specify which levels to show in the legend. In the
-below case, we use the `breaks` argument to ensure that the labels in legend
-represent two levels (4, 8) of the mapped variable.
+example below, we use the `breaks` argument to ensure that the labels in the
+legend represent two levels (4, 8) of the mapped variable.
 
 ```{r legc7, fig.align='center'}
 ggplot(mtcars) +
@@ -150,7 +150,7 @@ ggplot(mtcars) +
 
 ## How to change legend fill colors in ggplot2 {#change-legend-fill-colors}
 
-we will learn to modify the following using `scale_fill_manual()` when `fill` is mapped to categorical variables:
+We will learn to modify the following using `scale_fill_manual()` when `fill` is mapped to categorical variables:
 
 - title
 - breaks
@@ -174,9 +174,9 @@ us learn to modify the different aspects of the legend.
 
 ### How to change the fill legend title in ggplot2 {#fill-legend-title .unnumbered}
 
-The title of the legend (`factor(cyl)`) is not very intuitive. If the user 
-does not know the underlying data, they will not be able to make any sense out 
-of it. Let us change it to `Cylinders` using the `name` argument.
+The title of the legend (`factor(cyl)`) is not very intuitive. If the user
+does not know the underlying data, they will not make any sense of it. Let us
+change it to `Cylinders` using the `name` argument.
 
 ```{r legc10}
 ggplot(mtcars) +
@@ -188,9 +188,9 @@ ggplot(mtcars) +
 ### How to change legend fill values in ggplot2 {#fill-legend-values .unnumbered}
 
 To change the default colors in the legend, use the `values` argument and
-supply a character vector of color names. The number of colors specified 
-must be equal to the number of levels in the categorical variable mapped.
-In the below example, `cyl` has 3 levels (4, 6, 8) and hence we have specified
+supply a character vector of color names. The number of colors must equal the
+number of levels in the categorical variable mapped.
+In the example below, `cyl` has 3 levels (4, 6, 8) and hence we have specified
 3 colors.
 
 ```{r legc11}
@@ -201,7 +201,7 @@ ggplot(mtcars) +
 
 ### How to change fill legend labels in ggplot2 {#fill-legend-labels .unnumbered}
 
-The labels in the legend can be modified using the `labels` argument. Let us 
+We can modify the labels in the legend using the `labels` argument. Let us 
 change the labels to `Four`, `Six` and `Eight` in the next example. Ensure that
 the labels are intuitive and easy to interpret for the end user of the plot.
 
@@ -214,10 +214,10 @@ ggplot(mtcars) +
 
 ### How to change fill legend limits in ggplot2 {#fill-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed i.e. instead of 
+Let us assume that we want to modify the data to be displayed: instead of 
 examining the relationship between mileage and displacement for all cars, we 
-desire to look at only cars with at least 6 cylinders. One way to approach this
-would be to filter the data using `filter` from dplyr and then visualize it. 
+want to look at only cars with at least 6 cylinders. One way to do this
+is to filter the data using `filter` from dplyr and then visualize it. 
 Instead, we will use the `limits` argument and filter the data for visualization.
 
 ```{r legc13}
@@ -236,11 +236,11 @@ supplied to discrete scale"; character values avoid it.
 
 ### How to reorder or hide fill legend items in ggplot2 {#fill-legend-breaks .unnumbered}
 
-When there are large number of levels in the mapped variable, you may not 
+When there are a large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
 use the breaks argument and specify which levels to show in the legend. In the
-below case, we use the `breaks` argument to ensure that the labels in legend
-represent two levels (4, 8) of the mapped variable.
+example below, we use the `breaks` argument to ensure that the labels in the
+legend represent two levels (4, 8) of the mapped variable.
 
 ```{r legc14}
 ggplot(mtcars) +
