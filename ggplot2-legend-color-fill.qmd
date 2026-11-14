@@ -83,11 +83,12 @@ the car.
 
 ### How to change legend limits in ggplot2 {#color-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed: instead of 
-examining the relationship between mileage and displacement for all cars, we 
-want to look at only cars with at least 6 cylinders. One way to do this
-is to filter the data using `filter` from dplyr and then visualize it. 
-Instead, we will use the `limits` argument and filter the data for visualization.
+Let us assume that we want to change the groups shown in the legend: instead of
+examining the relationship between mileage and displacement for all cars, we want
+the legend to list only cars with at least 6 cylinders. One way to do this
+is to filter the data using `filter` from dplyr and then visualize it.
+Instead, we will use the `limits` argument to set the legend range; the data
+itself is not filtered.
 
 ```{r legc5, fig.align='center'}
 ggplot(mtcars) +
@@ -214,11 +215,12 @@ ggplot(mtcars) +
 
 ### How to change fill legend limits in ggplot2 {#fill-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed: instead of 
-examining the relationship between mileage and displacement for all cars, we 
-want to look at only cars with at least 6 cylinders. One way to do this
-is to filter the data using `filter` from dplyr and then visualize it. 
-Instead, we will use the `limits` argument and filter the data for visualization.
+Let us assume that we want to change the groups shown in the legend: instead of
+examining the relationship between mileage and displacement for all cars, we want
+the legend to list only cars with at least 6 cylinders. One way to do this
+is to filter the data using `filter` from dplyr and then visualize it.
+Instead, we will use the `limits` argument to set the legend range; the data
+itself is not filtered.
 
 ```{r legc13}
 ggplot(mtcars) +

@@ -309,12 +309,11 @@ ggplot(mtcars) +
 
 ### How to change transparency legend limits in ggplot2 {#alpha-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed: instead of 
-examining the relationship between mileage and displacement for all cars, we 
-want to look at only cars whose horsepower is between `100` and `350`. 
-One way to do this is to filter the data using `filter` from dplyr 
-and then visualize it. Instead, we will use the `limits` argument and filter 
-the data for visualization.
+Let us assume that we want to change the range shown in the legend: instead of
+the full range of horsepower, we want the legend to cover only cars whose
+horsepower is between `100` and `350`. One way to do this is to filter the data
+using `filter` from dplyr and then visualize it. Instead, we will use the
+`limits` argument to set the legend range; the data itself is not filtered.
 
 ```{r legs34, fig.align='center'}
 ggplot(mtcars) +
