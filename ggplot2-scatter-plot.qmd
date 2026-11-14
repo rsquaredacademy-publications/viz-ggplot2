@@ -32,9 +32,9 @@ library(readr)
 
 ## Basic Plot
 
-As we did in the previous chapter, let us begin by creating a scatter plot using  
-`geom_point()` to examine the relationship between displacement and miles per 
-gallon using the mtcars data. 
+As we did in the previous chapter, let us begin by creating a scatter plot with
+`geom_point()` to examine the relationship between displacement and miles per
+gallon in the mtcars data.
 
 ```{r scat2, fig.align='center'}
 ggplot(mtcars) +
@@ -56,16 +56,16 @@ ggplot(mtcars, aes(disp, mpg)) +
 
 ## Jitter
 
-If you want to avoid over plotting, use the `position` argument and supply it 
-the value `'jitter'`. It adds random noise to a plot and makes it easier to 
-read.
+If you want to avoid overplotting, use the `position` argument and supply it
+the value `'jitter'`. It adds random noise to a plot and makes the points
+easier to read.
 
 ```{r scat22, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg), position = 'jitter')
 ```
 
-Another way to avoid over plotting is to use `geom_jitter()`.
+Another way to avoid overplotting is to use `geom_jitter()`.
 
 ```{r scat3, fig.align='center'}
 ggplot(mtcars) +
@@ -83,8 +83,8 @@ Now let us modify the appearance of the points. There are two ways:
 
 #### Color
 
-To modify the color of the points, you can use the  `color` argument and 
-supply it a valid color name. In the below example, we change the color of the
+To modify the color of the points, use the `color` argument and
+supply it a valid color name. In the example below, we change the color of the
 points to `'blue'`. Keep in mind that the `color` argument should be outside
 `aes()`.
 
@@ -95,7 +95,7 @@ ggplot(mtcars) +
 
 #### Alpha
 
-The transparency of the color can be modified using the `alpha` argument. It
+We can modify the transparency of the color using the `alpha` argument. It
 takes values between `0` and `1`.
 
 ```{r scat7, fig.align='center'}
@@ -105,7 +105,7 @@ ggplot(mtcars) +
 
 #### Shape
 
-The shape of the points can be modified using the `shape` argument. It
+We can modify the shape of the points using the `shape` argument. It
 takes values between `0` and `25`.
 
 ```{r scat9, fig.align='center'}
@@ -115,7 +115,7 @@ ggplot(mtcars) +
 
 #### Size
 
-The size of the points can be modified using the `size` argument. It can take 
+We can modify the size of the points using the `size` argument. It takes
 any value greater than `0`.
 
 ```{r scat11, fig.align='center'}
@@ -125,14 +125,14 @@ ggplot(mtcars) +
 
 ### Map Variables 
 
-So far, we have specified values for color, shape, size etc. Now, let us map 
+So far, we have specified values for color, shape and size. Now let us map
 them to variables using `aes()`.
 
 #### Color
 
-You can modify the color of the points by mapping them to a variable using 
-`aes()`. It allows you to examine the relationship between two continuous
-variables at different levels of a categorical variable. 
+You can modify the color of the points by mapping them to a variable using
+`aes()`. This examines the relationship between two continuous variables at
+different levels of a categorical variable.
 
 ```{r scat4, fig.align='center'}
 ggplot(mtcars) +
@@ -140,9 +140,9 @@ ggplot(mtcars) +
              position = 'jitter')
 ```
 
-The color can be mapped to a conitnuous variable as well and in this case you
-will be able to examine the relationship betweem two continuous variable for 
-a range of value of a third variable. 
+We can also map the color to a continuous variable; in this case, you will be
+able to examine the relationship between two continuous variables for a range
+of values of a third variable.
 
 ```{r scat5, fig.align='center'}
 ggplot(mtcars) +
@@ -152,9 +152,9 @@ ggplot(mtcars) +
 
 #### Shape
 
-Shape can be mapped to categorical variables. In the below example, we use 
+Shape can be mapped to categorical variables. In the example below, we use
 `factor()` to convert `cyl` to categorical data before mapping shape to it.
-ggplot2 will throw an error if you map shape to a continuous variable. 
+ggplot2 throws an error if you map shape to a continuous variable.
 
 ```{r scat8, fig.align='center'}
 ggplot(mtcars) +
@@ -163,16 +163,16 @@ ggplot(mtcars) +
 
 #### Size
 
-Size must be always mapped to continuous variables. In the below example, we
-have mapped size to `hp` variable. 
+Size must always be mapped to continuous variables. In the example below, we
+have mapped size to the `hp` variable.
 
 ```{r scat10, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, size = hp), color = 'blue', position = 'jitter')
 ```
 
-If you map size to categorical data as shown in the below example, ggplot2 
-will throw a warning.
+If you map size to categorical data, as shown in the example below, ggplot2
+throws a warning.
 
 ```{r scat10a, fig.align='center'}
 ggplot(mtcars) +
@@ -181,9 +181,9 @@ ggplot(mtcars) +
 
 ## Regression Line
 
-`geom_smooth()` allows us to fit a regression line to the plot. By default it 
-will use least squares method to fit the line but you can also use the loess 
-method. In the below example, we fit a regression line using the least squares 
+`geom_smooth()` allows us to fit a regression line to the plot. By default, it
+uses the least squares method to fit the line, but you can also use the loess
+method. In the example below, we fit a regression line using the least squares
 technique by supplying the value `'lm'` to the `method` argument.
 
 ```{r aes12a, fig.align='center'}
@@ -192,8 +192,8 @@ ggplot(mtcars, aes(disp, mpg)) +
   geom_smooth(method = 'lm', formula = y ~ x, se = FALSE)
 ```
 
-The `se` argument will add a confidence interval around the regression line, 
-if set to `TRUE`.
+If set to `TRUE`, the `se` argument adds a confidence interval around the
+regression line.
 
 #### Conf. Interval
 
@@ -205,7 +205,7 @@ ggplot(mtcars, aes(disp, mpg)) +
 
 #### Loess Method
 
-In the below example, we use the loess method instead of the default least 
+In the example below, we use the loess method instead of the default least
 squares method to fit the regression line.
 
 ```{r aes14a, fig.align='center'}
