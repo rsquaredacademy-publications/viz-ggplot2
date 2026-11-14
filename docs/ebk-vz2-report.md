@@ -12,8 +12,9 @@ footer structure are untouched. The learner review
 (`F:/pm/notes/2026-11-09-ebook-review/viz-ggplot2-review.md`) is context only; no restructuring, no new chapters,
 no example changes.
 
-Rows are in source order. One row is one sentence or paragraph; the `before` quotes the source exactly, inline
-code intact. Line numbers are the line in the committed file. Each chapter carries one consolidated refusal
+Rows are in source order. One row is one sentence or paragraph, quoted as contiguous source text with inline
+code intact; a cell may begin or end mid-sentence, but it never splices non-adjacent fragments. Line numbers are
+the line in the committed file. Each chapter carries one consolidated refusal
 paragraph listing the sentences left alone and the override that protects them, so the coverage numbers are
 real. Changes are grouped per contiguous diff block, so a row may hold two or three adjacent sentences that were
 rewritten together.
@@ -223,7 +224,7 @@ Refusals: The data chunk and its column types stay. The `position = 'dodge'` / `
 | :-- | :-- | :-- | :-- |
 | `ggplot2-box-plot.qmd:33` | 3, 8 | is useful for detecting outliers and for comparing distributions and shows the shape, central tendancy and variability of the data. | is useful for detecting outliers and for comparing distributions, and it shows the shape, central tendency and variability of the data. |
 | `ggplot2-box-plot.qmd:52` | 3, 9 | We are going to use two different data sets in this chapter. Both the data sets have the same data but are in different formats. | We will use two different data sets in this chapter. Both data sets have the same data but in different formats. |
-| `ggplot2-box-plot.qmd:62` | 3, 4 | If you are not comparing the distribution of continuous data, you can create `geom_boxplot()`. In the below example, we examine the distribution of | If you are not comparing the distribution of continuous data, you can create a `geom_boxplot()`. In the example below, we examine the distribution of |
+| `ggplot2-box-plot.qmd:62` | 3, 4 | you can create box plot for a single variable. Map the variable to `y` and add `geom_boxplot()`. | you can create a box plot for a single variable. Map the variable to `y` and add `geom_boxplot()`. |
 | `ggplot2-box-plot.qmd:83` | 4, 9 | For the rest of the chapter, we will use the below data set. Instead of 5 columns, we have two columns. One for the stock names and another for returns. | For the rest of the chapter, we will use the data set below. Instead of 5 columns, we have two. One for the stock names and another for returns. |
 | `ggplot2-box-plot.qmd:93` | 4, 3, 8 | With the above data, let us create a box plot where we compate the distribution of stock returns of different companies. We map X axis to the column with stock names and Y axis to the column with stock returns. Note that, the column names are wrapped inside `aes()`. | With the data above, let us create a box plot where we compare the distribution of stock returns of different companies. We map the X axis to the column with stock names and the Y axis to the column with stock returns. Note that the column names are wrapped inside `aes()`. |
 | `ggplot2-box-plot.qmd:103` | 8, 13 | To create a horizontal bar plot, we can use `coord_flip()` which will flip the | To create a horizontal box plot, we can use `coord_flip()`, which flips the |
@@ -254,7 +255,7 @@ Refusals: The structure bullets stay (they are definition prose with no actor to
 | `ggplot2-histogram.qmd:105` | 18, 1, 2 | As we have learnt before, the transparency of the background color can be modified using the `alpha` argument. It can take any value between `0` and `1`. | As we have learned before, we can modify the transparency of the background color using the `alpha` argument. It takes any value between `0` and `1`. |
 | `ggplot2-histogram.qmd:113` | 1, 9 | The color of the histogram border can be modified using the `color` argument. The color can be specified either using its name or the associated hex code. | We can modify the color of the histogram border using the `color` argument. Specify the color using its name or the associated hex code. |
 | `ggplot2-histogram.qmd:123` | 4, 3 | Let us modify the bins, the background and border color of the histogram in the below example. | Let us modify the bins, and the background and border color of the histogram in the example below. |
-| `ggplot2-histogram.qmd:133` | 2, 9, 4 | Another way to control the number of bins in a histogram is by using the of the number of bins. As you can see, in the below example, we do not use the `bins` argument when using the `binwidth` argument. You can use either of them but not both. | Another way to control the number of bins in a histogram is to use the of their number. In the example below, we do not use the `bins` argument when using `binwidth`. You can use either of them but not both. |
+| `ggplot2-histogram.qmd:133` | 2, 9, 4 | Another way to control the number of bins in a histogram is by using the `binwidth` argument. In this case, we specify the width of the bins instead of the number of bins. As you can see, in the below example, we do not use the `bins` argument when using the `binwidth` argument. You can use either of them but not both. | Another way to control the number of bins in a histogram is to use the `binwidth` argument. In this case, we specify the width of the bins instead of their number. In the example below, we do not use the `bins` argument when using `binwidth`. You can use either of them but not both. |
 | `ggplot2-histogram.qmd:145` | 1, 2 | The line type of the histogram border can be modified using the `linetype` argument. It can take any integer value between `0` and `6`. | We can modify the line type of the histogram border using the `linetype` argument. It takes any integer value between `0` and `6`. |
 | `ggplot2-histogram.qmd:156` | 2 | Use the `linewidth` argument to modify the width of the border of the histogram bins. It can take any value greater than `0`. | Use the `linewidth` argument to modify the width of the border of the histogram bins. It takes any value greater than `0`. |
 | `ggplot2-histogram.qmd:167` | 5, 4, 9 | You can map the aesthetics to variables as well. In the below example, we map variables as well. | You can also map the aesthetics to variables. In the example below, we map variables too. |
@@ -440,9 +441,14 @@ Result: **zero changed code fences, chunk headers, headings or inline-code spans
 files. (One span was accidentally dropped and restored during the pass — `geom_line()` in Aesthetics — and one
 added span was removed again in Labels; both were corrected before the chapter committed.)
 
-`git diff 7fc4623 --stat` lists only the 22 chapter `.qmd` files, `about-the-author.qmd` and
-`docs/ebk-vz2-report.md`. No code file, data file, image, `_quarto.yml`, `_freeze` entry or `docs/` output is in
-the diff.
+`git diff 7fc4623 --stat` lists 22 touched prose files (21 chapter `.qmd` files plus `about-the-author.qmd`)
+and `docs/ebk-vz2-report.md`. No code file, data file, image, `_quarto.yml`, `_freeze` entry or `docs/` output is
+in the diff.
+
+Two guard exceptions are recorded. The duplicate prose numeral `2` in `ggplot2-modify-axis.qmd:58` was deleted
+with no change to a value or to numerical behaviour, so the numeral sequence is not entirely unchanged.
+Separately, `git diff --check 7fc4623..a6f9631` reports 69 trailing-whitespace diagnostics on added prose lines;
+that is whitespace hygiene, not a render or technical failure.
 
 ## Renders
 
@@ -459,10 +465,16 @@ error and no new warning. `--to html` is the site format; PDF and EPUB were not 
   these into one task-based chapter; that is restructuring and example work, outside this pass.
 - **`limits` still reads as filtering** in the lead-in sentence of the two `limits` sections ("we will use the
   `limits` argument and filter the data for visualization"). The paragraph after each chunk (the vz1 fix) says
-  what really happens, so the wording is left; rewriting the lead-in is a content decision for Aravind.
-- **Two wording slips fixed, flagged for review:** Box Plots called the horizontal section a "horizontal bar
+  what really happens, so the wording is left; rewriting the lead-in is a content decision for Aravind. Resolved
+  in `ebk-vz3`: the three affected lead-ins now say that `limits` sets the legend range and that the data is
+  not filtered.
+- **Five technical clarifications, flagged for review:** Bar Plots said "the height of all the bars is
+  proportional or same" (`ggplot2-bar-plot.qmd:106`); Box Plots called the horizontal section a "horizontal bar
   plot" (`ggplot2-box-plot.qmd:103`); the alpha `breaks` paragraph said "mapped to size"
-  (`ggplot2-legend-shape-size-alpha.qmd:298`). Both are one-word fixes inside otherwise unchanged sentences.
+  (`ggplot2-legend-shape-size-alpha.qmd:298`); Faceting said "3 sub plots for each type of cylinder"
+  (`ggplot2-facets.qmd:27`); Scales, Formatting & Color Accessibility said red-green contrasts are "invisible"
+  (`ggplot2-scales-accessibility.qmd:17`). These correct technical meaning rather than style alone and are
+  recorded here under the strict meaning-preservation rule.
 - **"learnt" → "learned"** was applied where the pass touched the sentence (Aesthetics, Histograms, Modify
   Legend, Quick Tour). Other chapters may still carry "learnt"; a book-wide sweep was not done, as the guide
   leaves the spelling to Aravind (§4.3).
