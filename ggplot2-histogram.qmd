@@ -27,7 +27,9 @@ In this chapter, we will learn to
     - line size
 - map aesthetics to variables
 
-A histogram is a plot that can be used to examine the shape and spread of  continuous data. It looks very similar to a bar graph and can be used to detect outliers and skewness in data. The histogram graphically shows the following:
+A histogram examines the shape and spread of continuous data. It looks very
+similar to a bar graph and can be used to detect outliers and skewness in data.
+A histogram graphically shows the following:
 
 - center (location) of the data
 - spread (dispersion) of the data
@@ -35,7 +37,10 @@ A histogram is a plot that can be used to examine the shape and spread of  conti
 - outliers
 - presence of multiple modes
 
-To construct a histogram, the data is split into intervals called bins. The intervals may or may not be equal sized. For each bin, the number of data points that fall into it are counted (frequency). The Y axis of the histogram represents the frequency and the X axis represents the variable. 
+To construct a histogram, we split the data into intervals called bins. The
+intervals may or may not be of equal size. For each bin, we count the number of
+data points that fall into it (frequency). The Y axis of the histogram
+represents the frequency and the X axis represents the variable.
 
 ```{r hist, echo=FALSE, eval=TRUE, results='hide', message=FALSE}
 library(ggplot2)
@@ -66,7 +71,7 @@ ecom
 ## Plot
 
 To create a histogram, we will use `geom_histogram()` and specify the variable
-name within `aes()`. In the below example, we create histogram of the variable 
+name within `aes()`. In the example below, we create a histogram of the variable
 `n_visit`.
 
 ```{r hist2, fig.align='center'}
@@ -76,8 +81,8 @@ ggplot(ecom) +
 
 ### Specify Bins
 
-The default number of bins in ggplot2 is `30`. You can modify the number of 
-bins using the `bins` argument. In the below example, we create a histogram
+The default number of bins in ggplot2 is `30`. You can modify the number of
+bins using the `bins` argument. In the example below, we create a histogram
 with 7 bins.
 
 ```{r hist4, fig.align='center'}
@@ -89,7 +94,7 @@ ggplot(ecom) +
 
 Now that we know how to create a histogram, let us learn to modify its 
 appearance. We will begin with the background color. Use the `fill` argument
-to modify the background color of the histogram. In the below case, we change
+to modify the background color of the histogram. In the example below, we change
 the color of the histogram to 'blue'.
 
 ```{r hist3, fig.align='center'}
@@ -97,16 +102,16 @@ ggplot(ecom) +
   geom_histogram(aes(n_visit), bins = 7, fill = 'blue')
 ```
 
-As we have learnt before, the transparency of the background color can be 
-modified using the `alpha` argument. It can take any value between `0` and `1`.
+As we have learned before, we can modify the transparency of the background
+color using the `alpha` argument. It takes any value between `0` and `1`.
 
 ```{r hist11, fig.align='center'}
 ggplot(ecom) +
   geom_histogram(aes(n_visit), bins = 7, fill = 'blue', alpha = 0.3)
 ```
 
-The color of the histogram border can be modified using the `color` argument. 
-The color can be specified either using its name or the associated hex code.
+We can modify the color of the histogram border using the `color` argument.
+Specify the color using its name or the associated hex code.
 
 ```{r hist8, fig.align='center'}
 ggplot(ecom) +
@@ -115,8 +120,8 @@ ggplot(ecom) +
 
 ## Putting it all together
 
-Let us modify the bins, the background and border color of the histogram in 
-the below example.
+Let us modify the bins, and the background and border color of the histogram in
+the example below.
 
 ```{r hist9, fig.align='center'}
 ggplot(ecom) +
@@ -125,11 +130,10 @@ ggplot(ecom) +
 
 ## Bin Width
 
-Another way to control the number of bins in a histogram is by using the 
+Another way to control the number of bins in a histogram is to use the
 `binwidth` argument. In this case, we specify the width of the bins instead
-of the number of bins. As you can see, in the below example, we do not use 
-the `bins` argument when using the `binwidth` argument. You can use either of
-them but not both.
+of their number. In the example below, we do not use the `bins` argument when
+using `binwidth`. You can use either of them but not both.
 
 ```{r hist5, fig.align='center'}
 ggplot(ecom) +
@@ -138,8 +142,8 @@ ggplot(ecom) +
 
 ## Line Type
 
-The line type of the histogram border can be modified using the `linetype` 
-argument. It can take any integer value between `0` and `6`.
+We can modify the line type of the histogram border using the `linetype` 
+argument. It takes any integer value between `0` and `6`.
 
 ```{r hist6, fig.align='center'}
 ggplot(ecom) +
@@ -149,8 +153,8 @@ ggplot(ecom) +
 
 ## Line Size
 
-Use the `linewidth` argument to modify the width of the border of the histogram bins. 
-It can take any value greater than `0`.
+Use the `linewidth` argument to modify the width of the border of the histogram bins.
+It takes any value greater than `0`.
 
 ```{r hist10, fig.align='center'}
 ggplot(ecom) +
@@ -160,9 +164,9 @@ ggplot(ecom) +
 
 ## Map Variables
 
-You can map the aesthetics to variables as well. In the below example, we map
+You can also map the aesthetics to variables. In the example below, we map
 `fill` to the device variable. You can try mapping color, linetype and linewidth to
-variables as well.
+variables too.
 
 ```{r hist7, fig.align='center'}
 ggplot(ecom) +
