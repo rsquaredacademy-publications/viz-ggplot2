@@ -100,8 +100,8 @@ this using:
 
 
 - `xlim()` and `ylim()` take a numeric vector of length 2 as input
-- `expand_limits()` takes two numeric vectors (each of length 2), one for each axis 
-- in all of these functions, the first element is the lower limit and the second element is the upper limit
+- `expand_limits()` takes values named by aesthetic, for example `x = 0` or `y = c(0, 40)`
+- in `xlim()` and `ylim()`, the first element is the lower limit and the second element is the upper limit
 
 ### X Axis
 
@@ -125,10 +125,10 @@ ggplot(mtcars) +
 
 ### Expand Limits
 
-Let us use `expand_limits()` to limit the range of both the X and Y axis. The
-first input is the range for the X axis and the second input the range for the
-Y axis. In both cases, we use a numeric vector of length 2 to specify the lower
-and upper limit.
+Let us use `expand_limits()` to extend the range of both the X and Y axis. We
+pass the values to include as named arguments, here `x = c(0, 600)` and
+`y = c(0, 40)`. Unlike `xlim()` and `ylim()`, this only widens the range, so no
+data is dropped.
 
 ```{r axis8, fig.align='center'}
 ggplot(mtcars) +

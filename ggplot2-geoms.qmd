@@ -161,7 +161,8 @@ ggplot(ecom, aes(x = factor(device))) +
 
 If the data has already been summarized, use `geom_col()` instead of
 `geom_bar()`. In the example below, we have the total visits for each device
-type. The data has already been summarized, so we cannot use `geom_bar()`.
+type. The data has already been summarized, so we use `geom_col()`, a shortcut
+for `geom_bar(stat = 'identity')`.
 
 ```{r geoms12, fig.align='center', fig.height=4}
 device <- c('laptop', 'mobile', 'tablet')

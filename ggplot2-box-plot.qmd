@@ -49,8 +49,9 @@ library(readr)
 
 ## Data
 
-We will use two different data sets in this chapter. Both data sets have the
-same data but in different formats.
+We will use two different data sets in this chapter. Both data sets have returns
+for the same five stocks, but in different formats; the long file has four extra
+rows.
 
 ```{r show, eval=TRUE, message=FALSE}
 daily_returns <- readr::read_csv('https://raw.githubusercontent.com/rsquaredacademy/datasets/master/tickers.csv')

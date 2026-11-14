@@ -102,11 +102,11 @@ Now, each of the sub plots has a different range.
 
 ### Move facet labels with switch {#facet-grid-switch}
 
-In the third example, the labels are displayed at the bottom for `X` axis and 
+In the third example, the labels are displayed at the top for `X` axis and 
 at the right for the `Y` axis. You can change this using the `switch` argument 
-and supplying the value `'both'`. The labels will now be displayed at the top 
+and supplying the value `'both'`. The labels will now be displayed at the bottom 
 for the `X` axis and at the left for the `Y` axis. If you just want to change the 
-labels for a particular axis, use the values `x` and `y` for the `X` and `Y` 
+labels for a particular axis, use the values `x` and `y` for the `X` and `Y`
 axes respectively.
 
 ```{r facet6, fig.align='center'}
