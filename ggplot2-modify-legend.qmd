@@ -28,7 +28,7 @@ In this section, we will learn to modify
 - label
 - and bar
 
-So far, we have learnt to modify the components of a legend using `scale_*` 
+So far, we have learned to modify the components of a legend using the `scale_*` 
 family of functions. Now, we will use the `guide` argument and supply it 
 values using the `guide_legend()` function.
 
@@ -36,13 +36,13 @@ values using the `guide_legend()` function.
 
 #### Title Alignment {.unnumbered}
 
-The horizontal alignment of the title can be managed using the `title.hjust` 
-argument. It can take any value between `0` and `1`.
+We can manage the horizontal alignment of the title using the `title.hjust` 
+argument. It takes any value between `0` and `1`.
 
 - 0 (left)
 - 1 (right)
 
-In the below example, we align the title to the center by assigning the value
+In the example below, we align the title to the center by assigning the value
 `0.5`.
 
 ```{r legg38, fig.align='center'}
@@ -63,7 +63,7 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = hp)) +
 
 #### Title Position {.unnumbered}
 
-The position of the title can be managed using `title.position` argument. It 
+We can manage the position of the title using the `title.position` argument. It 
 can be positioned at:
 
 - top
@@ -83,7 +83,7 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
 
 #### Label Position {.unnumbered}
 
-The position of the label can be managed using the `label.position` argument.
+We can manage the position of the label using the `label.position` argument.
 It can be positioned at:
 
 - top
@@ -91,7 +91,7 @@ It can be positioned at:
 - left
 - right
 
-In the below example, we position the label at right.
+In the example below, we position the label at right.
 
 ```{r legg41, fig.align='center'}
 ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
@@ -101,13 +101,13 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
 
 #### Label Alignment {.unnumbered}
 
-The horizontal alignment of the label can be managed using the `label.hjust` 
-argument. It can take any value between `0` and `1`.
+We can manage the horizontal alignment of the label using the `label.hjust` 
+argument. It takes any value between `0` and `1`.
 
 - 0 (left)
 - 1 (right)
 
-In the below example, we align the label to the center by assigning the value
+In the example below, we align the label to the center by assigning the value
 `0.5`.
 
 - alignment 
@@ -122,7 +122,7 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
 
 #### Labels Alignment (Vertical) {.unnumbered}
 
-The vertical alignment of the label can be managed using the `label.vjust` 
+We can manage the vertical alignment of the label using the `label.vjust` 
 argument.
 
 ```{r legg43, fig.align='center'}
@@ -134,8 +134,8 @@ ggplot(mtcars) +
 
 #### Direction {.unnumbered}
 
-The direction of the label can be either horizontal or vertical and it can be 
-set using the `direction` argument. 
+The direction of the label can be horizontal or vertical, and we set it
+using the `direction` argument. 
 
 ```{r legg44, fig.align='center'}
 ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
@@ -145,8 +145,8 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
 
 #### Rows {.unnumbered}
 
-The label can be spread across multiple rows using the `nrow` argument. In the
-below example, the label is spread across 2 rows.
+We can spread the label across multiple rows using the `nrow` argument. In the
+example below, the label is spread across 2 rows.
 
 ```{r legg45, fig.align='center'}
 ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
@@ -156,9 +156,8 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
 
 #### Reverse {.unnumbered}
 
-The order of the labels can be reversed using the `reverse` argument. We need
-to supply logical values i.e. either `TRUE` or `FALSE`. If `TRUE`, the order
-will be reversed.
+We can reverse the order of the labels using the `reverse` argument. Supply
+a logical value, `TRUE` or `FALSE`. If `TRUE`, the order is reversed.
 
 ```{r legg46, fig.align='center'}
 ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
@@ -180,9 +179,9 @@ ggplot(mtcars) + geom_point(aes(disp, mpg, color = factor(cyl))) +
 ### How to change the legend color bar in ggplot2 {#change-the-legend-color-bar .unnumbered}
 
 So far we have looked at modifying components of the legend when it acts as a
-guide for `color`, `fill` or `shape` i.e. when the aesthetics have been mapped 
+guide for `color`, `fill` or `shape`, i.e. when the aesthetics have been mapped 
 to a categorical variable. In this section, you will learn about
-`guide_colorbar()` which will allow us to modify the legend when the aesthetics
+`guide_colorbar()`, which allows us to modify the legend when the aesthetics
 are mapped to a continuous variable.
 
 #### Plot {.unnumbered}
@@ -198,8 +197,8 @@ ggplot(mtcars) +
 
 #### Width {.unnumbered}
 
-The width of the bar can be modified using the `barwidth` argument. It is used
-inside the `guide_colorbar()` function which itself is supplied to the `guide`
+We can modify the width of the bar using the `barwidth` argument. It is used
+inside the `guide_colorbar()` function, which is itself supplied to the `guide`
 argument of `scale_color_continuous()`. 
 
 ```{r legg49, fig.align='center'}
@@ -211,7 +210,7 @@ ggplot(mtcars) +
 
 #### Height {.unnumbered}
 
-Similarly, the height of the bar can be modified using the `barheight` argument.
+Similarly, we can modify the height of the bar using the `barheight` argument.
 
 ```{r legg50, fig.align='center'}
 ggplot(mtcars) +
@@ -233,7 +232,7 @@ ggplot(mtcars) +
 
 #### Ticks {.unnumbered}
 
-The ticks of the bar can be removed using the `ticks` argument and setting it 
+We can remove the ticks of the bar by setting the `ticks` argument 
 to `FALSE`.
 
 ```{r legg52, fig.align='center'}
@@ -245,7 +244,7 @@ ggplot(mtcars) +
 
 #### Upper/Lower Limits {.unnumbered}
 
-The upper and lower limits of the bars can be drawn or undrawn using the 
+We can draw or hide the upper and lower limits of the bars using the 
 `draw.ulim` and `draw.llim` arguments. They both accept logical values.
 
 ```{r legg53, fig.align='center'}
@@ -257,10 +256,10 @@ ggplot(mtcars) +
 
 #### Guides: Color, Shape & Size
 
-The `guides()` function can be used to create multiple legends to act as a
-guide for `color`, `shape`, `size` etc. as shown below. First, we map color, 
-shape and size to different variables. Next, in the `guides()` function, we
-supply values to each of the above aesthetics to indicate the type of legend.
+We can use the `guides()` function to create multiple legends, one for each of
+`color`, `shape` and `size`. First, we map color, shape and size to different
+variables. Next, in the `guides()` function, we supply values to each of the
+above aesthetics to indicate the type of legend.
 
 ```{r legg54, fig.align='center'}
 ggplot(mtcars) +
@@ -272,9 +271,9 @@ ggplot(mtcars) +
 #### Guides: Title {.unnumbered}
 
 To modify the components of the different legends, we must use the 
-`guide_*` family of functions. In the below example, we use `guide_colorbar()`
-for the legend acting as guide for color mapped to a continuous variable and
-`guide_legend()` for the legends acting as guide for shape/size mapped to 
+`guide_*` family of functions. In the example below, we use `guide_colorbar()`
+for the legend acting as guide for color mapped to a continuous variable, and
+`guide_legend()` for the legends acting as guide for shape and size mapped to 
 categorical variables.
 
 ```{r legg55, fig.align='center'}
