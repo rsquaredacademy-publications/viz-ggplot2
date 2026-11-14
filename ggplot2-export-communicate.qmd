@@ -64,7 +64,7 @@ Before sharing any figure, run this Knaflic-inspired check:
 ## Before and After
 
 Apply the checklist to a default scatter plot: add a message-first
-title, direct axis units and a restrained palette.
+title, clear axis units and a restrained palette.
 
 ```{r exp3, fig.align='center'}
 ggplot(mtcars) +
