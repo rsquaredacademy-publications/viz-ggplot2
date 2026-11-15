@@ -77,7 +77,7 @@ plots were inspected, not only the build data.
 | `:227` (Box Plots, line 62) | spliced fragments: "you can create `geom_boxplot()`." → "you can create a `geom_boxplot()`." | exact source: "you can create box plot for a single variable. Map the variable to `y` and add `geom_boxplot()`." → "you can create a box plot for a single variable. Map the variable to `y` and add `geom_boxplot()`." |
 | `:258` (Histograms, line 133) | spliced fragments: "is by using the of the number of bins" → "is to use the of their number" | exact source paragraph, including the intervening `binwidth` material and the changed "As you can see, in the below example" clause |
 | `:444` (Guard) | "`git diff 7fc4623 --stat` lists only the 22 chapter `.qmd` files, `about-the-author.qmd` and `docs/ebk-vz2-report.md`." | "lists 22 touched prose files (21 chapter `.qmd` files plus `about-the-author.qmd`) and `docs/ebk-vz2-report.md`." |
-| `:448`–`:451` (Guard) | no record of exceptions | records the deleted duplicate numeral `2` at `ggplot2-modify-axis.qmd:58` and the 69 trailing-whitespace diagnostics in `git diff --check 7fc4623..a6f9631` |
+| `:448`–`:451` (Guard) | no record of exceptions | records the deleted duplicate numeral `2` at `ggplot2-modify-axis.qmd:58` and the 68 trailing-whitespace diagnostics in `git diff --check 7fc4623..a6f9631` |
 | `:471`–`:477` (follow-ups) | "Two wording slips fixed" (box and alpha only) | "Five technical clarifications": `ggplot2-bar-plot.qmd:106`, `ggplot2-box-plot.qmd:103`, `ggplot2-legend-shape-size-alpha.qmd:298`, `ggplot2-facets.qmd:27`, `ggplot2-scales-accessibility.qmd:17` |
 | `:478`–`:480` (follow-ups) | — | notes the L1 light line restored in this round |
 | `:466`–`:470` (`limits` follow-up) | said the lead-ins were left for a content decision | notes they were resolved in `ebk-vz3` |
@@ -94,8 +94,9 @@ technical corrections, not meaning-neutral style edits.
 - **L2** — no book change. The five sampled clarifications are correct and are now recorded in the vz2 report
   (see M3). The colour-vision wording and the other four corrections were left in place, as the audit advises.
 - **L3** — the deleted duplicate numeral at `ggplot2-modify-axis.qmd:58` ("It takes a vector of length 2 i.e.
-  2 values…") is a deliberate vz2 edit with no numerical change; it is recorded, not reverted. The 69 vz2
-  trailing-whitespace diagnostics are recorded and left in place (whitespace hygiene only; cleaning the whole
+  2 values…") is a deliberate vz2 edit with no numerical change; it is recorded, not reverted. The 68 vz2
+  trailing-whitespace diagnostics (`git diff --check 7fc4623..a6f9631`; 69 over the combined
+  `origin/master..a6f9631`) are recorded and left in place (whitespace hygiene only; cleaning the whole
   range would enlarge this fix round's diff). The three single trailing spaces on lines this round rewrote were
   trimmed, so `git diff --check a6f9631..HEAD` exits 0. No Markdown hard break was affected (none used two or
   more trailing spaces).
@@ -128,8 +129,9 @@ was not run because no push was authorised; the webR cell was not executed in a 
 2. **Shape and size lead-ins** still say `limits` "filter[s] the data for visualization". At draw time the rows
    are removed (with the warnings the book already shows), so this is accurate, but if Aravind prefers
    "removes" wording, that is a small copy edit.
-3. **69 vz2 trailing-whitespace diagnostics** remain in the `7fc4623..a6f9631` range. They are harmless; a
-   book-wide trim is a separate hygiene pass.
+3. **68 vz2 trailing-whitespace diagnostics** remain in the `7fc4623..a6f9631` range (69 over
+   `origin/master..a6f9631`, 59 over `origin/master..HEAD`). They are harmless; a book-wide trim is a
+   separate hygiene pass.
 4. **Only the two quotations the audit flagged were regenerated.** The other 212 report rows were not
    re-derived mechanically; a full regeneration would be a separate audit task.
 5. **The audit's "four cut sentences" premise** remains unsubstantiated: the vz2 report has no deletion list,

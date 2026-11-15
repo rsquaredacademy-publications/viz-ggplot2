@@ -447,7 +447,7 @@ in the diff.
 
 Two guard exceptions are recorded. The duplicate prose numeral `2` in `ggplot2-modify-axis.qmd:58` was deleted
 with no change to a value or to numerical behaviour, so the numeral sequence is not entirely unchanged.
-Separately, `git diff --check 7fc4623..a6f9631` reports 69 trailing-whitespace diagnostics on added prose lines;
+Separately, `git diff --check 7fc4623..a6f9631` reports 68 trailing-whitespace diagnostics on added prose lines;
 that is whitespace hygiene, not a render or technical failure.
 
 ## Renders
