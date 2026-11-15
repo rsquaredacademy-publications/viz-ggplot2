@@ -1,6 +1,6 @@
 # Modify Axis {#ggplot2-modify-axis}
 
-In this chapter, we will learn how to modify the X and Y axis using the following functions:
+In this chapter, we will learn how to modify the X and Y axes using the following functions:
 
 - Continuous Axis
     - `scale_x_continuous()`
@@ -11,7 +11,7 @@ In this chapter, we will learn how to modify the X and Y axis using the followin
     - `scale_y_discrete()`
 
 :::{.callout-note}
-## Why this chart
+## Why this matters
 
 Axis scales, breaks and labels decide what readers can read off the chart.
 :::
@@ -28,8 +28,8 @@ library(ggplot2)
 
 ## How to modify a continuous axis in ggplot2 {#modify-a-continuous-axis}
 
-If the X and Y axis represent continuous data, we can use 
-`scale_x_continuous()` and `scale_y_continuous()` to modify the axis. They take
+If the X and Y axes represent continuous data, we can use 
+`scale_x_continuous()` and `scale_y_continuous()` to modify them. They take
 the following arguments:
 
 - name
@@ -38,14 +38,14 @@ the following arguments:
 - labels
 - position
 
-Let us continue with the scatter plot we have used in previous chapter.
+Let us continue with the scatter plot we have used in the previous chapter.
 
 ```{r guide2, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg))
 ```
 
-The `name` argument is used to modify the X axis label. In the below example, 
+The `name` argument modifies the X axis label. In the example below, 
 we change the X axis label to `'Displacement'`. In previous chapters, we 
 have used `xlab()` to work with the X axis label.
 
@@ -56,8 +56,7 @@ ggplot(mtcars) +
 ```
 
 To modify the range, use the `limits` argument. It takes a vector of length
-2 i.e. 2 values, the lower and upper limit of the range. It is an alternative
-for `xlim()`.
+2, the lower and upper limit of the range. It is an alternative to `xlim()`.
 
 ```{r guide4, fig.align='center'}
 ggplot(mtcars) +
@@ -65,11 +64,11 @@ ggplot(mtcars) +
   scale_x_continuous(limits = c(0, 600))
 ```
 
-In the above plot, the ticks on the X axis appear at `0`, `200`, `400` and 
-`600`. Let us say we want the ticks to appear more closer i.e. the difference 
-between the tick should be reduced by `50`. The `breaks` argument will allow
-us to specify where the ticks appear. It takes a numeric vector equal to the 
-length of the number of ticks.
+In the plot above, the ticks on the X axis appear at `0`, `200`, `400` and 
+`600`. Let us say we want the ticks to appear closer together, i.e. the difference
+between the ticks should be reduced by `50`. The `breaks` argument allows
+us to specify where the ticks appear. It takes a numeric vector equal to the
+number of ticks.
 
 ```{r guide5, fig.align='center'}
 ggplot(mtcars) +
@@ -77,9 +76,9 @@ ggplot(mtcars) +
   scale_x_continuous(breaks = c(150, 300, 450))
 ```
 
-We can change the tick labels using the `labels` argument. In the below 
-example, we use words instead of numbers. When adding labels, we need to
-ensure that the length of the `breaks` and `labels` are same.
+We can change the tick labels using the `labels` argument. In the example
+below, we use words instead of numbers. When adding labels, we need to
+ensure that `breaks` and `labels` have the same length.
 
 ```{r guide6, fig.align='center'}
 ggplot(mtcars) +
@@ -88,8 +87,8 @@ ggplot(mtcars) +
     labels = c('One Hundred Fifty', 'Three Hundred', 'Four Hundred Fifty'))
 ```
 
-The position of the axes can be changed using the `position` argument. In the 
-below example, we can move the axes to the top of the plot by supplying the 
+We can change the position of the axes using the `position` argument. In the
+example below, we move the axes to the top of the plot by supplying the
 value `'top'`.
 
 ```{r guide7, fig.align='center'}
@@ -116,17 +115,29 @@ ggplot(mtcars) + geom_point(aes(disp, mpg)) +
                      labels = c('0', '15', '30', '45'))
 ```
 
+### How to zoom without dropping data {#zoom-without-dropping}
+
+`limits` removes rows that fall outside the range before plotting. To zoom in
+without dropping data, use `coord_cartesian()`: the data is kept, and only the
+visible window changes.
+
+```{r guide10, fig.align='center'}
+ggplot(mtcars) + geom_point(aes(disp, mpg)) +
+  coord_cartesian(xlim = c(100, 400), ylim = c(15, 30))
+```
+
 ## How to modify a discrete axis in ggplot2 {#modify-a-discrete-axis}
 
-If the X and Y axis represent discrete or categorical data, `scale_x_discrete()` 
-and `scale_y_discrete()` can be used to modify them. They take the following arguments:
+If the X and Y axes represent discrete or categorical data, we can use
+`scale_x_discrete()` and `scale_y_discrete()` to modify them. They take the
+following arguments:
 
 - name
 - labels
 - breaks
 - position
 
-The above options serve the same purpose as in the case of continuous scales.
+The options above serve the same purpose as the continuous scales.
 
 ### How to change axis labels in ggplot2 {#change-axis-labels}
 
@@ -174,8 +185,6 @@ ggplot(mtcars) + geom_bar(aes(factor(cyl))) +
 1. Set custom breaks on the x axis with `scale_x_continuous()`.
 2. Zoom to `mpg > 20` with `coord_cartesian()` without dropping data.
 3. Explain when `coord_cartesian()` beats `limits` for zooming.
-
-Worked solutions in `solutions/axis.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

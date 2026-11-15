@@ -54,7 +54,7 @@ ecom
 ## Basic Plot
 
 We can create a bar plot using `geom_bar()`. It takes a single input, a 
-categorical variable. In the below example, we plot the number of visits for 
+categorical variable. In the example below, we plot the number of visits for 
 each device type. 
 
 ```{r bar2, fig.align='center'}
@@ -64,9 +64,9 @@ ggplot(ecom) +
 
 ## Bar Color
 
-The color of the bars can be modified using the `fill` argument. In the below
-example, we assign different colors to the 3 bars in the plot. If you use the
-`color` argument, it will modify the color of the bar line and not the 
+We can modify the color of the bars using the `fill` argument. In the example
+below, we assign different colors to the 3 bars in the plot. If you use the
+`color` argument, it modifies the color of the bar line, not the 
 background color of the bars. We will look at that later in the chapter.
 
 ```{r bar3, fig.align='center'}
@@ -76,11 +76,11 @@ ggplot(ecom) +
 
 ## Stacked Bar Plot
 
-If you want to look at distribution of one categorical variable across the 
+If you want to look at the distribution of one categorical variable across the
 levels of another categorical variable, you can create a stacked bar plot. In
-ggplot2, a stacked bar plot is created by mapping the `fill` argument to the
-second categorical variable. In the below example, we have mapped `fill` to 
-`referrer` variable. 
+ggplot2, we create a stacked bar plot by mapping the `fill` argument to the
+second categorical variable. In the example below, we have mapped `fill` to 
+the `referrer` variable. 
 
 ```{r bar7, fig.align='center'}
 ggplot(ecom) +
@@ -91,10 +91,10 @@ ggplot(ecom) +
 
 Grouped bar plots are a variation of stacked bar plots. Instead of being 
 stacked on top of one another, the bars are placed next to one another and 
-grouped by levels. In the below example, we create a grouped bar plot and you
+grouped by levels. In the example below, we create a grouped bar plot and you
 can observe that the bars are placed next to one another instead of being 
-stacked as was shown in the previous example. To create a grouped bar plot,
-use the `position` argument and set it to `'dodge'`. 
+stacked. To create a grouped bar plot, use the `position` argument and set it
+to `'dodge'`. 
 
 ```{r bar8, fig.align='center'}
 ggplot(ecom) +
@@ -103,9 +103,8 @@ ggplot(ecom) +
 
 ## Proportional Bar Plot
 
-In a proportional bar plot, the height of all the bars is proportional or same. 
-To create a proportional bar plot, use the `position` argument and set it to 
-`'fill'`.
+In a proportional bar plot, all the bars have the same height. To create a
+proportional bar plot, use the `position` argument and set it to `'fill'`.
 
 ```{r bar10, fig.align='center'}
 ggplot(ecom) +
@@ -114,7 +113,7 @@ ggplot(ecom) +
 
 ## Horizontal Bar Plot
 
-A horizontal bar plot can be created by flipping the coordinate axes of a 
+We can create a horizontal bar plot by flipping the coordinate axes of a 
 regular plot. To flip the axes, use `coord_flip()` as shown below.
 
 ```{r bar9, fig.align='center'}
@@ -125,24 +124,24 @@ ggplot(ecom) +
 
 ## Bar Line 
 
-The color of the bar line can be modified using the `color` argument. The color
-can be specified either using its name or hex code.
+We can modify the color of the bar line using the `color` argument. Specify the
+color using its name or hex code.
 
 ```{r bar4, fig.align='center'}
 ggplot(ecom) +
   geom_bar(aes(device), fill = 'white', color = c('red', 'blue', 'green'))
 ```
 
-To modify the line type of the bar line, use the `linetype` argument. It can 
-take values between `0` and `6`.
+To modify the line type of the bar line, use the `linetype` argument. It takes
+values between `0` and `6`.
 
 ```{r bar5, fig.align='center'}
 ggplot(ecom) +
   geom_bar(aes(device), fill = 'white',  color = 'black', linetype = 2)
 ```
 
-The width of the bar line can be modified using the `linewidth` argument. It can
-take any value greater than `0`.
+We can modify the width of the bar line using the `linewidth` argument. It takes
+any value greater than `0`.
 
 ```{r bar6, fig.align='center'}
 ggplot(ecom) +
@@ -154,8 +153,6 @@ ggplot(ecom) +
 1. Draw counts of cars per cylinder class from `mtcars`.
 2. Group by gears with dodged bars, gap tuned via `position_dodge(width = 0.8)`.
 3. Rewrite the plot with a message-first title; keep bars starting at zero.
-
-Worked solutions in `solutions/bar.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

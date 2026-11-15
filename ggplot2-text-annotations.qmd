@@ -3,7 +3,7 @@
 ## How text annotations work in ggplot2 {#introduction}
 
 :::{.callout-note}
-## Why this chart
+## Why this matters
 
 Direct labels and annotations point at the story instead of making readers scan a legend.
 :::
@@ -14,7 +14,7 @@ Direct labels and annotations point at the story instead of making readers scan 
 Over-annotating every point creates clutter; annotate only the points that change the conclusion.
 :::
 
-In this chapter, we will learn to add text to the plots.
+In this chapter, we will learn to add text to plots.
 
 - add custom text 
 - modify color
@@ -24,9 +24,9 @@ In this chapter, we will learn to add text to the plots.
 
 ## How to annotate plots with text in ggplot2 {#annotate}
 
-We will use the `annotate()` function to add custom text to the plots. You can 
-use the `annotate()` function to add rectangles/segments/pointrange as well but 
-our focus will be on adding text. Let us start with a simple scatter plot.
+We will use the `annotate()` function to add custom text to plots. You can 
+also use the `annotate()` function to add rectangles, segments or pointranges,
+but our focus will be on text. Let us start with a simple scatter plot.
 
 ```{r ann1, echo=FALSE, eval=TRUE, results='hide', message=FALSE}
 library(ggplot2)
@@ -47,18 +47,17 @@ library(readr)
 ### How to add text labels to a ggplot2 plot {#add-text}
 
 Let us begin by adding text to a scatter plot. We will use the mtcars data set
-and continue to examine the relationship between displacement and miles per 
-gallon. To add the text, we have to indicate that we are using `annotate()` 
-for adding text, and we do this by ensuring that the first input is the word 
-`'text'`. Now, ggplot2 knows that it should add a text to the plot but it still
-needs other information such as:
+and examine the relationship between displacement and miles per gallon. To add
+the text, we indicate that we are using `annotate()` for text, and we do this
+by making the first input the word `'text'`. Now, ggplot2 knows that it should
+add text to the plot but it still needs other information such as:
 
-- where should the text appear on the plot i.e. location of the text
+- where the text should appear on the plot, i.e. the location of the text
 - and the text itself
 
-We will provide the location by specifying points on the X and Y axis which are
-also the second and third inputs to `annotate()` and the final input is the text
-itself, which in our example is `'Sample Text'`.
+We will provide the location by specifying points on the X and Y axis. These
+are also the second and third inputs to `annotate()`, and the final input is
+the text itself, which in our example is `'Sample Text'`.
 
 ```{r ann2, fig.align='center'}
 ggplot(mtcars) +
@@ -68,9 +67,9 @@ ggplot(mtcars) +
 
 ### How to change text annotation color in ggplot2 {#color}
 
-Now that we know how to add text, let us look at modifying the appearance of 
-the text. To change the color, use the `color` argument. In the below example,
-we modify the color to `'red'`.
+Now that we know how to add text, let us look at modifying its appearance. To
+change the color, use the `color` argument. In the example below, we modify the
+color to `'red'`.
 
 ```{r ann4, fig.align='center'}
 ggplot(mtcars) +
@@ -80,7 +79,7 @@ ggplot(mtcars) +
 
 ### How to change text annotation size in ggplot2 {#size}
 
-The `size` argument can be used to modify the size of the text.
+Use the `size` argument to modify the size of the text.
 
 ```{r ann5, fig.align='center'}
 ggplot(mtcars) +
@@ -90,8 +89,8 @@ ggplot(mtcars) +
 
 ### How to change text annotation font face in ggplot2 {#font}
 
-To choose a font of your liking, use the `font` argument and supply it a valid
-value.
+To change the font face (for example, `'bold'` or `'italic'`), use the
+`fontface` argument.
 
 ```{r ann6, fig.align='center'}
 ggplot(mtcars) +
@@ -101,8 +100,8 @@ ggplot(mtcars) +
 
 ### How to rotate text annotations in ggplot2 {#angle}
 
-The angle of the text can also be modified using the `angle` argument. In the 
-below example, we modify the angle of the text to `25`.
+Use the `angle` argument to modify the angle of the text. In the example below,
+we modify the angle of the text to `25`.
 
 ```{r ann7, fig.align='center'}
 ggplot(mtcars) +
@@ -124,8 +123,6 @@ ggplot(mtcars) +
 1. Annotate the highest-mpg car with `annotate("text", ...)`.
 2. Label only cars with `mpg > 30` using `geom_text()`.
 3. Decide which two points deserve labels and justify the restraint.
-
-Worked solutions in `solutions/annotations.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

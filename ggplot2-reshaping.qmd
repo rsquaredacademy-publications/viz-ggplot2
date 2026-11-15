@@ -37,8 +37,8 @@ wide <- data.frame(
 wide
 ```
 
-Plotting this directly forces one layer per series — repetitive and
-unscalable.
+Plotting this directly forces one layer per series, and the recipe does not
+scale.
 
 ## Long Data
 

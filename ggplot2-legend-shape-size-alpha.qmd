@@ -47,7 +47,7 @@ us learn to modify the different aspects of the legend.
 ### How to change the shape legend title in ggplot2 {#shape-legend-title .unnumbered}
 
 The title of the legend (`factor(cyl)`) is not very intuitive. If the user does 
-not know the underlying data, they will not be able to make any sense out of it. 
+not know the underlying data, they will not make any sense of it. 
 Let us change it to `Cylinders` using the `name` argument.
 
 ```{r legs17, fig.align='center'}
@@ -56,8 +56,8 @@ ggplot(mtcars) +
   scale_shape_manual(name = "Cylinders", values = c(4, 12, 24))
 ```
 
-If you have mapped shape/size to a discrete variable which has less than six 
-categories, you can use `scale_shape()`.
+If you have mapped shape to a discrete variable with up to six categories, you
+can use `scale_shape()`.
 
 ```{r legs18, fig.align='center'}
 ggplot(mtcars) +
@@ -68,9 +68,9 @@ ggplot(mtcars) +
 ### How to change legend shape values in ggplot2 {#shape-legend-values .unnumbered}
 
 To change the default shapes in the legend, use the `values` argument and
-supply a numeric vector of shapes. The number of shapes specified 
-must be equal to the number of levels in the categorical variable mapped.
-In the below example, `cyl` has 3 levels (4, 6, 8) and hence we have specified
+supply a numeric vector of shapes. Supply a shape for each level of the
+categorical variable that you want to display.
+In the example below, `cyl` has 3 levels (4, 6, 8) and hence we have specified
 3 different shapes.
 
 ```{r legs19, fig.align='center'}
@@ -81,7 +81,7 @@ ggplot(mtcars) +
 
 ### How to change shape legend labels in ggplot2 {#shape-legend-labels .unnumbered}
 
-The labels in the legend can be modified using the `labels` argument. Let us 
+We can modify the labels in the legend using the `labels` argument. Let us 
 change the labels to `Four`, `Six` and `Eight` in the next example. Ensure that
 the labels are intuitive and easy to interpret for the end user of the plot.
 
@@ -93,49 +93,62 @@ ggplot(mtcars) +
 
 ### How to change shape legend limits in ggplot2 {#shape-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed i.e. instead of 
+Let us assume that we want to modify the data to be displayed: instead of 
 examining the relationship between mileage and displacement for all cars, we 
-desire to look at only cars with at least 6 cylinders. One way to approach this
-would be to filter the data using `filter` from dplyr and then visualize it. 
+want to look at only cars with at least 6 cylinders. One way to do this
+is to filter the data using `filter` from dplyr and then visualize it. 
 Instead, we will use the `limits` argument and filter the data for visualization.
 
 
 ```{r legs21, fig.align='center'}
+#| warning: true
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, shape = factor(cyl))) +
-  scale_shape_manual(values = c(4, 24), limits = c(6, 8))
+  scale_shape_manual(values = c("4" = 4, "6" = 12, "8" = 24),
+    limits = c("6", "8"))
 ```
 
-As you can see above, `ggplot2` returns a warning message indicating data related
-to 4 cylinders has been dropped. If you observe the legend, it now represents 
-only 6 and 8 cylinders.
+Unlike color, `shape` cannot draw an out-of-range group in grey: the
+four-cylinder cars are removed before plotting, and ggplot2 reports the number
+of rows it removed. The legend shows only 6 and 8 cylinders. Filter the data
+with `filter()` if you want to remove them yourself.
 
 ### How to reorder or hide shape legend items in ggplot2 {#shape-legend-breaks .unnumbered}
 
-When there are large number of levels in the mapped variable, you may not 
+When there are a large number of levels in the mapped variable, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
-use the breaks argument and specify the labels to be used. In the below case, 
-we use the `breaks` argument to ensure that the labels in legend represent 
-two levels (4, 8) of the mapped variable.
+use the breaks argument and specify which levels to show in the legend. In the
+example below, we use the `breaks` argument to ensure that the labels in the
+legend represent two levels (4, 8) of the mapped variable.
 
 ```{r legs22, fig.align='center'}
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, shape = factor(cyl))) +
-  scale_shape_manual(values = c(4, 12, 24), breaks = c(4, 8))
+  scale_shape_manual(values = c("4" = 4, "6" = 12, "8" = 24),
+    breaks = c("4", "8"))
 ```
+
+`breaks` hides the 6-cylinder key but keeps every point: the six-cylinder cars
+still use shape 12. With unnamed values, the shapes are matched to `breaks` and
+the unlisted group is removed instead.
 
 ### How to combine shape legend options in ggplot2 {#putting-it-all-together .unnumbered}
 
 ```{r legs23, fig.align='center'}
+#| warning: true
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, shape = factor(cyl))) +
-  scale_shape_manual(name = "Cylinders", labels = c('Six', 'Eight'),  
-     values = c(4, 24), limits = c(6, 8), breaks = c(6, 8))
+  scale_shape_manual(name = "Cylinders", labels = c('Six', 'Eight'),
+    values = c("6" = 12, "8" = 24), limits = c("6", "8"),
+    breaks = c("6", "8"))
 ```
+
+The four-cylinder cars are outside the limits, so ggplot2 removes them and
+reports it. The legend lists only the two remaining groups.
 
 ## How to change legend point sizes in ggplot2 {#change-legend-point-sizes}
 
-We will learn to modify the following using `scale_size_continuous` when `size` aesthetic is mapped to variables:
+We will learn to modify the following using `scale_size_continuous` when the `size` aesthetic is mapped to variables:
 
 - title
 - breaks
@@ -162,7 +175,7 @@ us learn to modify the different aspects of the legend.
 ### How to change the size legend title in ggplot2 {#size-legend-title .unnumbered}
 
 The title of the legend (`hp`) is not very intuitive. If the user does 
-not know the underlying data, they will not be able to make any sense out of it. 
+not know the underlying data, they will not make any sense of it. 
 Let us change it to `Horsepower` using the `name` argument.
 
 ```{r legs25}
@@ -173,10 +186,10 @@ ggplot(mtcars) +
 
 ### How to change the legend size range in ggplot2 {#size-legend-range .unnumbered}
 
-The range of the size of points can be modified using the `range` argument. We
-need to specify a lower and upper range using a numeric vector. In the below
-example, we use `range` and supply the lower and upper limits as `3` and `6`. 
-The size of the points will now lie between `3` and `6` only.
+We can modify the range of the size of points using the `range` argument. We
+need to specify a lower and upper range using a numeric vector. In the example
+below, we use `range` and supply the lower and upper limits as `3` and `6`. 
+The size of the points now lies between `3` and `6` only.
 
 ```{r legs26}
 ggplot(mtcars) +
@@ -186,26 +199,31 @@ ggplot(mtcars) +
 
 ### How to change size legend limits in ggplot2 {#size-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed i.e. instead of 
+Let us assume that we want to modify the data to be displayed: instead of 
 examining the relationship between mileage and displacement for all cars, we 
-desire to look at only cars whose horsepower is between `100` and `350`. 
-One way to approach this would be to filter the data using `filter` from dplyr 
+want to look at only cars whose horsepower is between `100` and `350`. 
+One way to do this is to filter the data using `filter` from dplyr 
 and then visualize it. Instead, we will use the `limits` argument and filter 
 the data for visualization.
 
 ```{r legs27}
+#| warning: true
 ggplot(mtcars) +
   geom_point(aes(disp, mpg, size = hp)) +
   scale_size_continuous(limits = c(100, 350))
 ```
 
+`limits` removes the rows whose horsepower is outside 100--350, so the plot and
+the legend only describe the remaining cars; ggplot2 warns that it removed
+them.
+
 ### How to reorder or hide size legend items in ggplot2 {#size-legend-breaks .unnumbered}
 
 When the range of the variable mapped to size is large, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
-use the breaks argument and specify the labels to be used. In the below case, 
-we use the `breaks` argument to ensure that the labels in legend represent 
-certain midpoints (125, 200, 275) of the mapped variable.
+use the breaks argument and specify the labels to be used. In the example
+below, we use the `breaks` argument to ensure that the labels in the legend
+represent certain midpoints (125, 200, 275) of the mapped variable.
 
 ```{r legs28}
 ggplot(mtcars) +
@@ -215,7 +233,7 @@ ggplot(mtcars) +
 
 ### How to change size legend labels in ggplot2 {#size-legend-labels .unnumbered}
 
-The labels in the legend can be modified using the `labels` argument. Let us 
+We can modify the labels in the legend using the `labels` argument. Let us 
 change the labels to "1 Hundred", "2 Hundred" and "3 Hundred" in the next example. 
 Ensure that the labels are intuitive and easy to interpret for the end user of 
 the plot.
@@ -266,7 +284,7 @@ us learn to modify the different aspects of the legend.
 ### How to change the transparency legend title in ggplot2 {#alpha-legend-title .unnumbered}
 
 The title of the legend (`hp`) is not very intuitive. If the user does 
-not know the underlying data, they will not be able to make any sense out of it. 
+not know the underlying data, they will not make any sense of it. 
 Let us change it to `Horsepower` using the `name` argument.
 
 ```{r legs32, fig.align='center'}
@@ -277,11 +295,11 @@ ggplot(mtcars) +
 
 ### How to reorder or hide alpha legend items in ggplot2 {#alpha-legend-breaks .unnumbered}
 
-When the range of the variable mapped to size is large, you may not 
+When the range of the variable mapped to alpha is large, you may not 
 want the labels in the legend to represent all of them. In such cases, we can 
-use the breaks argument and specify the labels to be used. In the below case, 
-we use the `breaks` argument to ensure that the labels in legend represent 
-certain midpoints (125, 200, 275) of the mapped variable.
+use the breaks argument and specify the labels to be used. In the example
+below, we use the `breaks` argument to ensure that the labels in the legend
+represent certain midpoints (125, 200, 275) of the mapped variable.
 
 ```{r legs33, fig.align='center'}
 ggplot(mtcars) +
@@ -291,12 +309,11 @@ ggplot(mtcars) +
 
 ### How to change transparency legend limits in ggplot2 {#alpha-legend-limits .unnumbered}
 
-Let us assume that we want to modify the data to be displayed i.e. instead of 
-examining the relationship between mileage and displacement for all cars, we 
-desire to look at only cars whose horsepower is between `100` and `350`. 
-One way to approach this would be to filter the data using `filter` from dplyr 
-and then visualize it. Instead, we will use the `limits` argument and filter 
-the data for visualization.
+Let us assume that we want to change the range shown in the legend: instead of
+the full range of horsepower, we want the legend to cover only cars whose
+horsepower is between `100` and `350`. One way to do this is to filter the data
+using `filter` from dplyr and then visualize it. Instead, we will use the
+`limits` argument to set the legend range; the data itself is not filtered.
 
 ```{r legs34, fig.align='center'}
 ggplot(mtcars) +
@@ -304,12 +321,16 @@ ggplot(mtcars) +
   scale_alpha_continuous(limits = c(100, 350))
 ```
 
+Points outside the limits get `alpha = NA`, which ggplot2 draws fully opaque,
+so the nine cars with horsepower below `100` stay on the plot and no warning is
+raised.
+
 ### How to change the legend transparency range in ggplot2 {#alpha-legend-range .unnumbered}
 
-The range of the transparency of points can be modified using the `range` 
+We can modify the range of the transparency of points using the `range` 
 argument. We need to specify a lower and upper range using a numeric vector. 
-In the below example, we use `range` and supply the lower and upper limits as 
-`0.4` and `0.8`. The transparency of the points will now lie between `0.4` and 
+In the example below, we use `range` and supply the lower and upper limits as 
+`0.4` and `0.8`. The transparency of the points now lies between `0.4` and 
 `0.8` only.
 
 ```{r legs35, fig.align='center'}
@@ -320,7 +341,7 @@ ggplot(mtcars) +
 
 ### How to change transparency legend labels in ggplot2 {#alpha-legend-labels .unnumbered}
 
-The labels in the legend can be modified using the `labels` argument. Let us 
+We can modify the labels in the legend using the `labels` argument. Let us 
 change the labels to "1 Hundred", "2 Hundred" and "3 Hundred" in the next example. 
 Ensure that the labels are intuitive and easy to interpret for the end user of 
 the plot.
@@ -349,8 +370,6 @@ ggplot(mtcars) +
 1. Map `shape` to cylinders with `scale_shape_manual(values = ...)`.
 2. Control point spread with `scale_size_continuous(range = ...)`.
 3. Explain why `size`/`alpha` must map to continuous variables.
-
-Worked solutions in `solutions/legend-shape-size-alpha.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

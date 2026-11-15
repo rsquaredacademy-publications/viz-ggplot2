@@ -33,43 +33,46 @@ library(tidyr)
 
 ## Case Study
 
-We will use a data set related to GDP growth rate. You can download it from 
-[here](https://github.com/rsquaredacademy/datasets/blob/master/gdp.csv). It 
-contains GDP (Gross Domestic Product) growth data for the BRICS (Brazil, 
-Russia, India, China, South Africa) for the years 2000 to 2005.
+We will use `EuStockMarkets`, a data set that ships with R. It records the
+daily closing prices of four European stock indices — DAX (Germany), SMI
+(Switzerland), CAC (France) and FTSE (United Kingdom) — from mid-1991 to
+mid-1998. See `?EuStockMarkets` for details and the source.
 
 ### Data
 
 ```{r import200, eval=TRUE, message=FALSE}
-gdp <- readr::read_csv('https://raw.githubusercontent.com/rsquaredacademy/datasets/master/gdp.csv')
-gdp
+stocks <- as.data.frame(EuStockMarkets)
+stocks$year <- as.numeric(time(EuStockMarkets))
+head(stocks)
 ```
+
+`year` is the decimal year recorded by `time()`, so `1991.5` is mid-1991.
 
 ## Line Chart
 
-To create a line chart, use `geom_line()`. In the below example, we examine the
-GDP growth rate trend of India for the years 2000 to 2005.
+To create a line chart, use `geom_line()`. In the example below, we examine the
+DAX index over the period.
 
 ```{r line100, fig.align='center'}
-ggplot(gdp, aes(year, india)) +
+ggplot(stocks, aes(year, DAX)) +
   geom_line()
 ```
 
 ### Line Color
 
 To modify the color of the line, use the `color` argument and supply it a valid
-color name. In the below example, we modify the color of the line to `'blue'`. 
+color name. In the example below, we modify the color of the line to `'blue'`. 
 Remember that the `color` argument should be outside `aes()`.
 
 ```{r line1, fig.align='center'}
-ggplot(gdp, aes(year, india)) +
+ggplot(stocks, aes(year, DAX)) +
   geom_line(color = 'blue')
 ```
 
 ### Line Type
 
-The line type can be modified using the `linetype` argument. It can take 7 different
-values. You can specify the line type either using numbers or words as shown below:
+We can modify the line type using the `linetype` argument. It takes 7 different
+values. You can specify the line type using numbers or words:
 
 - 0 : blank
 - 1 : solid
@@ -83,25 +86,25 @@ Let us modify the line type to dashed style by supplying the value `2` to the
 `linetype` argument.
 
 ```{r line2, fig.align='center'}
-ggplot(gdp, aes(year, india)) +
+ggplot(stocks, aes(year, DAX)) +
   geom_line(linetype = 2)
 ```
 
-The above example can be recreated by supplying the value `'dashed'` instead 
+We can recreate the example above by supplying the value `'dashed'` instead 
 of `2`.
 
 ```{r line3, fig.align='center'}
-ggplot(gdp, aes(year, india)) +
+ggplot(stocks, aes(year, DAX)) +
   geom_line(linetype = 'dashed')
 ```
 
 ### Line Size
 
-The width of the line can be modified using the `linewidth` argument. It can take
+We can modify the width of the line using the `linewidth` argument. It takes
 any value above 0 as input.
 
 ```{r line4, fig.align='center'}
-ggplot(gdp, aes(year, india)) +
+ggplot(stocks, aes(year, DAX)) +
   geom_line(linewidth = 2)
 ```
 
@@ -109,58 +112,56 @@ ggplot(gdp, aes(year, india)) +
 
 ### Modify Data
 
-Now let us map the aesthetics to the variables. The data used in the above 
-example cannot be used as we need a variable with country names. We will use 
+Now let us map the aesthetics to the variables. We cannot use the data from the
+example above, because we need a variable with index names. We will use the
 `pivot_longer()` function from the `tidyr` package to reshape the data.
 
 ```{r line5, fig.align='center'}
-gdp2 <- gdp |>
-  select(year, growth, india, china) |>
-  tidyr::pivot_longer(cols = -year, names_to = "country", values_to = "gdp")
+stocks2 <- stocks |>
+  select(year, DAX, SMI, CAC, FTSE) |>
+  tidyr::pivot_longer(cols = -year, names_to = "index", values_to = "price")
 
-gdp2
+head(stocks2)
 ```
 
-In the original data, to plot GDP trend of multiple countries we will have to 
-use `geom_line()` multiple times. But in the reshaped data, we have the 
-country names as one of the variables and this can be used along with the 
-`group` argument to plot data of multiple countries with a single line of code 
-as shown below. By mapping country to the `group` argument, we have plotted 
-data of all countries.
+In the original data, plotting the price trend of multiple indices requires
+`geom_line()` several times. In the reshaped data, the index names are one of
+the variables, and we can use them with the `group` argument to plot all the
+indices in a single line of code. By mapping index to the `group` argument, we
+plot data of all indices.
 
 ```{r line6, fig.align='center'}
-ggplot(gdp2, aes(year, gdp, group = country)) +
+ggplot(stocks2, aes(year, price, group = index)) +
   geom_line()
 ```
 
-In the above plot, we cannot distinguish between the lines and there is no way
-to identify which line represents which country. To make it easier to identify
-the trend of different countries, let us map the `color` argument to the 
-variable country as shown below. Now, each country will be represented by line 
-of different color.
+In the plot above, we cannot distinguish between the lines, and there is no way
+to identify which line represents which index. To make it easier to identify
+the trend of different indices, let us map the `color` argument to the variable
+index. Now, each index is represented by a line of a different color.
 
 ```{r line7, fig.align='center'}
-ggplot(gdp2, aes(year, gdp, group = country)) +
-  geom_line(aes(color = country))
+ggplot(stocks2, aes(year, price, group = index)) +
+  geom_line(aes(color = index))
 ```
 
-We can map `linetype` argument to country as well. In this case, each country
-will be represented by a different line type.
+We can also map the `linetype` argument to index. In this case, each index is
+represented by a different line type.
 
 ```{r line8, fig.align='center'}
-ggplot(gdp2, aes(year, gdp, group = country)) +
-  geom_line(aes(linetype = country))
+ggplot(stocks2, aes(year, price, group = index)) +
+  geom_line(aes(linetype = index))
 ```
 
-We can map the width of the line to the variable country as well. But in this 
-case, the plot does not look either elegant or intuitive. 
+We can also map the width of the line to the variable index. But in this
+case, the plot does not look elegant or intuitive.
 
 ```{r line9, fig.align='center'}
-ggplot(gdp2, aes(year, gdp, group = country)) +
-  geom_line(aes(linewidth = country))
+ggplot(stocks2, aes(year, price, group = index)) +
+  geom_line(aes(linewidth = index))
 ```
 
-Remember that in all the above cases, we mapped the arguments to a variable 
+Remember that in all the cases above, we mapped the arguments to a variable
 inside `aes()`.
 
 ## Exercises
@@ -168,8 +169,6 @@ inside `aes()`.
 1. Draw the `unemploy` series from `economics` over `date` with `linewidth = 1`.
 2. Reshape `unemploy` + `uempmed` to long format and draw both series distinguished by color.
 3. Rewrite the plot with a message-first title and units on the y axis.
-
-Worked solutions in `solutions/line.md` (attempt first).
 
 ## Where to go next {.unnumbered}
 

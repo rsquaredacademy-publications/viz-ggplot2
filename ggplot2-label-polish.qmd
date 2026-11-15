@@ -64,7 +64,7 @@ ggplot(df) +
 
 ## Wrapping Long Titles
 
-The same helper tidies wrapped plot titles and subtitles:
+The same helper wraps plot titles and subtitles:
 
 ```{r lab4, fig.align='center'}
 ggplot(df) +

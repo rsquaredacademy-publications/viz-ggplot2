@@ -1,8 +1,8 @@
 # Position & Stats Tuning {#ggplot2-position-stats}
 
 In this chapter, we will fine-tune how ggplot2 arranges and transforms
-marks: parametric position adjustments, summary statistics and modern
-stat mapping syntax.
+marks: position adjustments, summary statistics and modern
+stat-mapping syntax.
 
 :::{.callout-note}
 ## Why this matters
@@ -27,12 +27,15 @@ library(dplyr)
 
 ## Position Dodge
 
-Grouped bar plots dodge side by side. Control the gap with `width` —
-smaller values widen the gap between groups.
+Grouped bar plots dodge side by side. Control the gap with `width`: the bar
+width must be smaller than the dodge width to leave a gap. Here `width = 0.7`
+inside a dodge width of `0.8` leaves a small gap, and `preserve = "single"`
+keeps every bar the same width when a group has no bar for one level.
 
 ```{r pos1, fig.align='center'}
 ggplot(mtcars) +
-  geom_bar(aes(factor(cyl), fill = factor(gear)), position = position_dodge(width = 0.8))
+  geom_bar(aes(factor(cyl), fill = factor(gear)), width = 0.7,
+    position = position_dodge(width = 0.8, preserve = "single"))
 ```
 
 ## Position Jitter
