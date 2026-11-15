@@ -132,7 +132,7 @@ was not run because no push was authorised; the webR cell was not executed in a 
    are removed (with the warnings the book already shows), so this is accurate, but if Aravind prefers
    "removes" wording, that is a small copy edit.
 3. **68 vz2 trailing-whitespace diagnostics** remain in the `7fc4623..a6f9631` range (69 over
-   `origin/master..a6f9631`, 59 over `origin/master..HEAD`). They are harmless; a book-wide trim is a
+   `origin/master..a6f9631`, 59 over `origin/master..a3bde9f`, 58 after ebk-vz4). They are harmless; a book-wide trim is a
    separate hygiene pass.
 4. **Only the two quotations the audit flagged were regenerated.** The other 212 report rows were not
    re-derived mechanically; a full regeneration would be a separate audit task.
