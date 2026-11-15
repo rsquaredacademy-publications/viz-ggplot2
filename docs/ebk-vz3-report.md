@@ -137,10 +137,11 @@ was not run because no push was authorised; the webR cell was not executed in a 
    re-derived mechanically; a full regeneration would be a separate audit task.
 5. **The audit's "four cut sentences" premise** remains unsubstantiated: the vz2 report has no deletion list,
    and this round did not invent one.
-6. **Existing generic wording** flagged by the audit but outside this brief is untouched:
-   `ggplot2-position-stats.qmd:10` ("Defaults get you 80% there"), `ggplot2-scales-accessibility.qmd:11`
-   ("instantly legible to everyone"), `ggplot2-export-communicate.qmd:9`–`:10` ("fails at the finish line"),
-   and the stock-index em-dash parentheticals.
+6. **Existing generic wording** flagged by the audit but outside this brief:
+   `ggplot2-position-stats.qmd:10` ("Defaults get you 80% there") and
+   `ggplot2-export-communicate.qmd:9`–`:10` ("fails at the finish line") remain untouched, as do the
+   stock-index em-dash parentheticals; ebk-vz4 removed the overbroad guarantee in
+   `ggplot2-scales-accessibility.qmd:11` ("instantly legible to everyone").
 7. **The learner review's structural suggestions** (folding the three legend chapters into one task-based
    chapter, course-lesson pointers) remain content/restructuring work.
 8. **Environment gaps** above (Quarto version, PDF/EPUB, CI, webR) mean these local HTML renders do not by

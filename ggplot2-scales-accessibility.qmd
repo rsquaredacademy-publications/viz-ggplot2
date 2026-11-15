@@ -8,7 +8,7 @@ use colorblind-safe viridis palettes, and check contrast for accessibility.
 
 Raw numbers like `150000` slow readers down. Formatted labels
 (`$150k`, `45%`) and palettes readable by colorblind viewers make
-charts instantly legible to everyone.
+charts easier to read.
 :::
 
 :::{.callout-warning}
