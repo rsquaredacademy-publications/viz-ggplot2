@@ -56,8 +56,8 @@ ggplot(mtcars) +
   scale_shape_manual(name = "Cylinders", values = c(4, 12, 24))
 ```
 
-If you have mapped shape or size to a discrete variable with fewer than six
-categories, you can use `scale_shape()`.
+If you have mapped shape to a discrete variable with up to six categories, you
+can use `scale_shape()`.
 
 ```{r legs18, fig.align='center'}
 ggplot(mtcars) +
@@ -68,8 +68,8 @@ ggplot(mtcars) +
 ### How to change legend shape values in ggplot2 {#shape-legend-values .unnumbered}
 
 To change the default shapes in the legend, use the `values` argument and
-supply a numeric vector of shapes. The number of shapes must equal
-the number of levels in the categorical variable mapped.
+supply a numeric vector of shapes. Supply a shape for each level of the
+categorical variable that you want to display.
 In the example below, `cyl` has 3 levels (4, 6, 8) and hence we have specified
 3 different shapes.
 

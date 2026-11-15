@@ -163,7 +163,7 @@ ggplot(mtcars) +
 
 #### Size
 
-Size must always be mapped to continuous variables. In the example below, we
+It is better to map size to continuous variables. In the example below, we
 have mapped size to the `hp` variable.
 
 ```{r scat10, fig.align='center'}

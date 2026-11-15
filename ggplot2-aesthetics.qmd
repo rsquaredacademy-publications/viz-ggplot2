@@ -243,8 +243,8 @@ stocks2 <-
 head(stocks2)
 ```
 
-To map the aesthetics to a variable, we must use the `group` argument. In the
-example below, we map the aesthetics to `index`. But we cannot distinguish
+To map the aesthetics to a variable, we must use the `group` argument here. In
+the example below, we map the aesthetics to `index`. But we cannot distinguish
 between the lines, as their color, width and line type are the same. We have
 easily plotted the price trend of all four indices using the `group` argument.
 Now let us ensure that we can distinguish and identify them using different

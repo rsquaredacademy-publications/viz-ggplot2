@@ -53,8 +53,8 @@ us learn to modify the different aspects of the legend.
 ### How to change legend color values in ggplot2 {#color-legend-values .unnumbered}
 
 To change the default colors in the legend, use the `values` argument and
-supply a character vector of color names. The number of colors must equal the
-number of levels in the categorical variable mapped.
+supply a character vector of color names. Supply a color for each level of the
+categorical variable that you want to display.
 In the example below, `cyl` has 3 levels (4, 6, 8) and hence we have specified
 3 colors.
 
@@ -189,8 +189,8 @@ ggplot(mtcars) +
 ### How to change legend fill values in ggplot2 {#fill-legend-values .unnumbered}
 
 To change the default colors in the legend, use the `values` argument and
-supply a character vector of color names. The number of colors must equal the
-number of levels in the categorical variable mapped.
+supply a character vector of color names. Supply a color for each level of the
+categorical variable that you want to display.
 In the example below, `cyl` has 3 levels (4, 6, 8) and hence we have specified
 3 colors.
 

@@ -133,7 +133,7 @@ ggplot(ecom) +
 Another way to control the number of bins in a histogram is to use the
 `binwidth` argument. In this case, we specify the width of the bins instead
 of their number. In the example below, we do not use the `bins` argument when
-using `binwidth`. You can use either of them but not both.
+using `binwidth`. Use one of them at a time.
 
 ```{r hist5, fig.align='center'}
 ggplot(ecom) +
