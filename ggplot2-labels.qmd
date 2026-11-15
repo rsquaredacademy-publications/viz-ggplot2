@@ -101,7 +101,7 @@ this using:
 
 - `xlim()` and `ylim()` take a numeric vector of length 2 as input
 - `expand_limits()` takes values named by aesthetic, for example `x = 0` or `y = c(0, 40)`
-- in `xlim()` and `ylim()`, the first element is the lower limit and the second element is the upper limit
+- in `xlim()` and `ylim()`, the two values are the axis endpoints; the first is the lower limit for an ordinary ascending axis, and reversing the values reverses the axis
 
 ### X Axis
 
