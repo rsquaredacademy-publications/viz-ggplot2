@@ -343,7 +343,7 @@ Recounted with `git diff --check <range> | grep -c "trailing whitespace"`:
 | :-- | --: |
 | `7fc4623..a6f9631` | 68 |
 | `origin/master..a6f9631` | 69 |
-| `origin/master..HEAD` | 59 |
+| `origin/master..HEAD` | 58 |
 | `a6f9631..HEAD` | 0 |
 
 Before and after, `docs/ebk-vz2-report.md:450`:
@@ -384,8 +384,9 @@ After:
 
 ```text
 1. **If the alpha section should really subset the data**, that is a code/content change: `filter(hp >= 100 &
-   hp <= 350)`. The chapter plots displacement and mileage on its axes, so axis limits and `coord_cartesian()`
-   cannot select cars by horsepower; they only change the visible window. The prose now teaches what `limits`
+   hp <= 350)`. The chapter plots displacement and mileage on its axes, so neither axis limits nor
+   `coord_cartesian()` can select cars by horsepower: `xlim()`/`ylim()` censor out-of-range positions to `NA`
+   (dropping those rows from the layer), while `coord_cartesian()` keeps the data and only zooms the window. The prose now teaches what `limits`
    actually does; changing the teaching goal needs a separate review.
 ```
 
@@ -475,7 +476,7 @@ with no `.Rprofile`, no `renv/` and no project file.
    from the original builder; it cannot be reconstructed from Git. This round
    neither invented nor approved such a list.
 
-2. **59 trailing-whitespace diagnostics remain across `origin/master..HEAD`** (68
+2. **58 trailing-whitespace diagnostics remain across `origin/master..HEAD`** (68
    in the vz2 range alone). They are hygiene only and were left alone because a
    book-wide trim would enlarge this round's diff; a separate single-purpose
    commit is the right place for it.
