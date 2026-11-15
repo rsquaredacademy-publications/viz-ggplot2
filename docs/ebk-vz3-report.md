@@ -124,8 +124,9 @@ was not run because no push was authorised; the webR cell was not executed in a 
 ## Follow-ups, in full
 
 1. **If the alpha section should really subset the data**, that is a code/content change: `filter(hp >= 100 &
-   hp <= 350)`, `xlim()`/`ylim()`, or `coord_cartesian()`. The prose now teaches what `limits` actually does;
-   changing the teaching goal needs a separate review.
+   hp <= 350)`. The chapter plots displacement and mileage on its axes, so axis limits and `coord_cartesian()`
+   cannot select cars by horsepower; they only change the visible window. The prose now teaches what `limits`
+   actually does; changing the teaching goal needs a separate review.
 2. **Shape and size lead-ins** still say `limits` "filter[s] the data for visualization". At draw time the rows
    are removed (with the warnings the book already shows), so this is accurate, but if Aravind prefers
    "removes" wording, that is a small copy edit.
