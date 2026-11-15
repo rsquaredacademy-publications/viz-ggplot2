@@ -182,9 +182,10 @@ ggplot(mtcars) +
 ## Regression Line
 
 `geom_smooth()` allows us to fit a regression line to the plot. By default, the
-method depends on the data: `'loess'` for fewer than 1,000 observations and a GAM
-for larger data. In the example below, we fit a regression line using the least
-squares technique by supplying the value `'lm'` to the `method` argument.
+method depends on the data: `'loess'` when the largest group has fewer than 1,000
+observations, and a GAM for larger groups. In the example below, we fit a
+regression line using the least squares technique by supplying the value `'lm'`
+to the `method` argument.
 
 ```{r aes12a, fig.align='center'}
 ggplot(mtcars, aes(disp, mpg)) +
